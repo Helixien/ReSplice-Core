@@ -4,7 +4,7 @@
 	<WorkGiverDef>
 		<defName>RS_InsertGenepack</defName>
 		<label>insert genepack into gene centrifuge</label>
-		<giverClass>AlteredCarbon.WorkGiver_InsertGenepack</giverClass>
+		<giverClass>ReSpliceCore.WorkGiver_InsertGenepack</giverClass>
 		<workType>Hauling</workType>
 		<verb>insert into gene centrifuge</verb>
 		<gerund>inserting into gene centrifuge</gerund>
@@ -17,7 +17,7 @@
 	<WorkGiverDef>
 		<defName>RS_InsertXenogerm</defName>
 		<label>insert xenogerm into xenogerm duplicator</label>
-		<giverClass>AlteredCarbon.WorkGiver_InsertXenogerm</giverClass>
+		<giverClass>ReSpliceCore.WorkGiver_InsertXenogerm</giverClass>
 		<workType>Hauling</workType>
 		<verb>insert into xenogerm duplicator</verb>
 		<gerund>inserting into xenogerm duplicator</gerund>

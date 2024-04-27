@@ -5,7 +5,7 @@
 		<defName>RS_GeneCentrifuge</defName>
 		<label>gene centrifuge</label>
 		<description>A complex centrifugal system capable of separating desirable genetic elements by exploiting minute molecular differences. In effect, this building can separate a desired gene from the rest of a genepack. After the process, two gene packs will be spawned, with the selected gene in one and the remaining genes in the other.</description>
-		<thingClass>AlteredCarbon.Building_GeneCentrifuge</thingClass>
+		<thingClass>ReSpliceCore.Building_GeneCentrifuge</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Misc/GeneCentrifuge</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -126,7 +126,7 @@
 		<defName>RS_XenoGermDuplicator</defName>
 		<label>xenogerm duplicator</label>
 		<description>A deceptively simple machine that synthesises genetic material in order to mass manufacture an exact copy of an existing xenogerms. This building can duplicate any existing xenogerm, including any present archite genes, as long as it is supplied with the required amount of archite capsules.</description>
-		<thingClass>AlteredCarbon.Building_XenogermDuplicator</thingClass>
+		<thingClass>ReSpliceCore.Building_XenogermDuplicator</thingClass>
 		<tickerType>Normal</tickerType>
 		<passability>PassThroughOnly</passability>
 		<fillPercent>0.4</fillPercent>
