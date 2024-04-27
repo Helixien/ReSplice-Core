@@ -121,4 +121,70 @@
 			<li Class="CompProperties_Flickable"/>
 		</comps>
 	</ThingDef>
+	<!-- ================================ Xenogerm Duplicator ====================== -->
+	<ThingDef ParentName="BuildingBase">
+		<defName>RS_XenoGermDuplicator</defName>
+		<label>xenogerm duplicator</label>
+		<description>A deceptively simple machine that synthesises genetic material in order to mass manufacture an exact copy of an existing xenogerms. This building can duplicate any existing xenogerm, including any present archite genes, as long as it is supplied with the required amount of archite capsules.</description>
+		<thingClass>AlteredCarbon.Building_XenogermDuplicator</thingClass>
+		<tickerType>Normal</tickerType>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>0.4</fillPercent>
+		<pathCost>14</pathCost>
+		<rotatable>false</rotatable>
+		<graphicData>
+			<texPath>Things/Building/Misc/XenoGermDuplicator</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(4, 4)</drawSize>
+		</graphicData>
+		<size>(2, 2)</size>
+		<canOverlapZones>false</canOverlapZones>
+		<defaultPlacingRot>North</defaultPlacingRot>
+		<designationCategory>Biotech</designationCategory>
+		<researchPrerequisites Inherit="False">
+			<li>GeneProcessor</li>
+		</researchPrerequisites>
+		<descriptionHyperlinks>
+			<ThingDef>Xenogerm</ThingDef>
+		</descriptionHyperlinks>
+		<statBases>
+			<MaxHitPoints>350</MaxHitPoints>
+			<WorkToBuild>9000</WorkToBuild>
+			<Mass>85</Mass>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<costList>
+			<Steel>120</Steel>
+			<Plasteel>45</Plasteel>
+			<ComponentIndustrial>5</ComponentIndustrial>
+		</costList>
+		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		<building>
+			<buildingTags>
+				<li>Biotech</li>
+			</buildingTags>
+		</building>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>200</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelLabel>Archite capsules</fuelLabel>
+				<fuelGizmoLabel>Archite capsules</fuelGizmoLabel>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<targetFuelLevelConfigurable>false</targetFuelLevelConfigurable>
+				<fuelCapacity>25</fuelCapacity>
+				<fuelFilter>
+					<thingDefs>
+						<li>ArchiteCapsule</li>
+					</thingDefs>
+				</fuelFilter>
+				<initialFuelPercent>0</initialFuelPercent>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+				<showFuelGizmo>true</showFuelGizmo>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+		</comps>
+	</ThingDef>
 </Defs>
