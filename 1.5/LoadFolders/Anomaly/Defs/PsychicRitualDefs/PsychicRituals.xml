@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PsychicRitualDef_Brainwipe>
+		<defName>RS_DarkArchiteHarvesting</defName>
+		<label>ark archite harvesting</label>
+		<description>text.todo</description>
+		<iconPath>UI/PsychicRituals/Hex_DarkArchiteHarvest</iconPath>
+		<outcomeDescription>One of the targets dark archite genes will be harvested.\n\nWith the current ritual quality, change of a successful harvest is {0}.</outcomeDescription>
+		<researchPrerequisite>RS_DarkArchiteHarvesting</researchPrerequisite>
+		<hoursUntilOutcome>8</hoursUntilOutcome>
+		<targetRole>RS_HarvestTarget</targetRole>
+		<castableOnPocketMaps>false</castableOnPocketMaps>
+		<requiredOffering>
+			<filter>
+				<thingDefs>
+					<li>Shard</li>
+				</thingDefs>
+			</filter>
+			<count>3</count>
+		</requiredOffering>
+		<cooldownHours>1280</cooldownHours>
+		<chanterRole>ChanterAdvanced</chanterRole>
+		<defenderRole>Defender</defenderRole>
+	</PsychicRitualDef_Brainwipe>
+</Defs>
