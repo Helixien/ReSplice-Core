@@ -5,7 +5,8 @@
 		<displayCategory>RS_DarkArchite</displayCategory>
 		<modExtensions>
 			<li Class="VanillaGenesExpanded.GeneExtension">
-				<customBloodIcon>UI\Icons\Genes\GeneBackground_DarkArchiteGene</customBloodIcon>
+				<backgroundPathXenogenes>UI/Icons/Genes/GeneBackground_DarkArchiteGene</backgroundPathXenogenes>
+				<backgroundPathEndogenes>UI/Icons/Genes/GeneBackground_DarkArchiteGene</backgroundPathEndogenes>
 				<hideGene>true</hideGene>
 			</li>
 		</modExtensions>
@@ -16,7 +17,7 @@
 		<label>void touched</label>
 		<labelShortAdj>void-touched</labelShortAdj>
 		<description>Carriers of this gene have seen the depths of the void and drank from its essence. It lives inside them still, guiding their actions and twisting their flesh. It has turned their hair brittle and white. They no longer need sleep or comfort. The void provides for them.</description>
-		<iconPath>VCEF_AlphaFish_a</iconPath>
+		<iconPath>UI/Icons/Genes/Gene_VoidTouched</iconPath>
 		<displayOrderInCategory>0</displayOrderInCategory>
 		<selectionWeight>0</selectionWeight>
 		<biostatCpx>0</biostatCpx>
@@ -121,9 +122,43 @@
 		</exclusionTags>
 		<modExtensions Inherit="false">
 			<li Class="VanillaGenesExpanded.GeneExtension">
-				<customBloodIcon>UI\Icons\Genes\GeneBackground_DarkArchiteGene</customBloodIcon>
+				<backgroundPathXenogenes>UI/Icons/Genes/GeneBackground_DarkArchiteGene</backgroundPathXenogenes>
+				<backgroundPathEndogenes>UI/Icons/Genes/GeneBackground_DarkArchiteGene</backgroundPathEndogenes>
 				<hideGene>true</hideGene>
 				<hediffToWholeBody>VoidTouched</hediffToWholeBody>
+			</li>
+		</modExtensions>
+	</GeneDef>
+	<!-- ================================ Gene - Tentacles Limbs ====================== -->
+	<GeneDef ParentName="RS_GeneTentacleBase">
+		<defName>RS_Tentacle_Limbs</defName>
+		<label>tentacle limbs</label>
+		<description>text.todo</description>
+		<iconPath>UI/Icons/Genes/Gene_TentacleLimbs</iconPath>
+		<iconColor>(0.75, 0.75, 0.75)</iconColor>
+		<displayOrderInCategory>1005</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-1</biostatMet>
+		<modExtensions Inherit="false">
+			<li Class="VanillaGenesExpanded.GeneExtension">
+				<backgroundPathXenogenes>UI/Icons/Genes/CorruptedGeneBackground_Xenogene</backgroundPathXenogenes>
+				<backgroundPathEndogenes>UI/Icons/Genes/CorruptedGeneBackground_Endogene</backgroundPathEndogenes>
+			</li>
+		</modExtensions>
+	</GeneDef>
+	<GeneDef ParentName="RS_GeneTentacleBase">
+		<defName>RS_Tentacle_Whip</defName>
+		<label>flesh whips limbs</label>
+		<description>text.todo</description>
+		<iconPath>UI/Icons/Genes/Gene_WhipLimbs</iconPath>
+		<iconColor>(0.75, 0.75, 0.75)</iconColor>
+		<displayOrderInCategory>1010</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-2</biostatMet>
+		<modExtensions Inherit="false">
+			<li Class="VanillaGenesExpanded.GeneExtension">
+				<backgroundPathXenogenes>UI/Icons/Genes/CorruptedGeneBackground_Xenogene</backgroundPathXenogenes>
+				<backgroundPathEndogenes>UI/Icons/Genes/CorruptedGeneBackground_Endogene</backgroundPathEndogenes>
 			</li>
 		</modExtensions>
 	</GeneDef>

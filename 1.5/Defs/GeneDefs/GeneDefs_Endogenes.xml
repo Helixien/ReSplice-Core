@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+	<!-- ================================ Gene - Tentacle Base Orange Hair ====================== -->
+	<GeneDef Name="RS_GeneTentacleBase" Abstract="True">
+		<displayCategory>Miscellaneous</displayCategory>
+		<randomChosen>false</randomChosen>
+		<exclusionTags>
+			<li>Tentacle</li>
+		</exclusionTags>
+	</GeneDef>
 	<!-- ================================ Gene - Classic Orange Hair ====================== -->
 	<GeneDef ParentName="GeneHairColorBase">
 		<defName>RS_Hair_OrangeReddish</defName>
