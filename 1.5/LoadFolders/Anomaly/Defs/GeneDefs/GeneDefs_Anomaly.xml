@@ -129,6 +129,221 @@
 			</li>
 		</modExtensions>
 	</GeneDef>
+	<!-- ================================ Dark Archite Gene - Unnatural Healing ====================== -->
+	<GeneDef ParentName="RS_DarkArchiteBase">
+		<defName>RS_UnnaturalHealing</defName>
+		<label>unnatural healing</label>
+		<description>Carriers can use dark psychic influence to heal someone. The process will stop bleeding, restore blood loss, and can even heal significant injuries. However, it may also have unexpected side effects.</description>
+		<iconPath>UI/Icons/Genes/Gene_UnnaturalHealing</iconPath>
+		<displayOrderInCategory>5</displayOrderInCategory>
+		<selectionWeight>0</selectionWeight>
+		<biostatCpx>6</biostatCpx>
+		<biostatArc>0</biostatArc>
+		<abilities>
+			<li>UnnaturalHealing</li>
+		</abilities>
+		<descriptionHyperlinks>
+			<AbilityDef>UnnaturalHealing</AbilityDef>
+		</descriptionHyperlinks>
+		<symbolPack>
+			<wholeNameSymbols>
+				<li>
+					<symbol>healer</symbol>
+				</li>
+			</wholeNameSymbols>
+			<prefixSymbols>
+				<li>
+					<symbol>unnatural</symbol>
+				</li>
+				<li>
+					<symbol>heal</symbol>
+				</li>
+				<li>
+					<symbol>dark</symbol>
+				</li>
+				<li>
+					<symbol>psychic</symbol>
+				</li>
+			</prefixSymbols>
+			<suffixSymbols>
+				<li>
+					<symbol>healer</symbol>
+				</li>
+			</suffixSymbols>
+		</symbolPack>
+	</GeneDef>
+	<!-- ================================ Dark Archite Gene - Transmute Steel ====================== -->
+	<GeneDef ParentName="RS_DarkArchiteBase">
+		<defName>RS_TransmuteSteel</defName>
+		<label>transmute steel</label>
+		<description>Carriers can reconfigure steel at the atomic level, turning it into a random valuable material. Can target a stack of steel or a steel slag chunk.</description>
+		<iconPath>UI/Icons/Genes/Gene_TransmuteSteel</iconPath>
+		<displayOrderInCategory>10</displayOrderInCategory>
+		<selectionWeight>0</selectionWeight>
+		<biostatCpx>3</biostatCpx>
+		<biostatArc>0</biostatArc>
+		<abilities>
+			<li>TransmuteSteel</li>
+		</abilities>
+		<descriptionHyperlinks>
+			<AbilityDef>TransmuteSteel</AbilityDef>
+		</descriptionHyperlinks>
+		<symbolPack>
+			<wholeNameSymbols>
+				<li>
+					<symbol>transmuter</symbol>
+				</li>
+			</wholeNameSymbols>
+			<prefixSymbols>
+				<li>
+					<symbol>transmute</symbol>
+				</li>
+				<li>
+					<symbol>reconfigure</symbol>
+				</li>
+				<li>
+					<symbol>atomic</symbol>
+				</li>
+				<li>
+					<symbol>material</symbol>
+				</li>
+			</prefixSymbols>
+			<suffixSymbols>
+				<li>
+					<symbol>transmuter</symbol>
+				</li>
+			</suffixSymbols>
+		</symbolPack>
+	</GeneDef>
+	<!-- ================================ Dark Archite Gene - Transmute Steel ====================== -->
+	<GeneDef ParentName="RS_DarkArchiteBase">
+		<defName>RS_DeadlifeDust</defName>
+		<label>deadlife dust</label>
+		<description>Carriers can release a cloud of dust-like substance that will settle on nearby corpses and raise them as shamblers. The shamblers will only attack your enemies. Deadlife dust is made of nano-scale archites that penetrate and reanimate dead tissue at the cellular level.</description>
+		<iconPath>UI/Icons/Genes/Gene_DeadlifeDust</iconPath>
+		<displayOrderInCategory>15</displayOrderInCategory>
+		<selectionWeight>0</selectionWeight>
+		<biostatCpx>4</biostatCpx>
+		<biostatArc>0</biostatArc>
+		<abilities>
+			<li>ReleaseDeadlifeDust</li>
+		</abilities>
+		<descriptionHyperlinks>
+			<AbilityDef>ReleaseDeadlifeDust</AbilityDef>
+		</descriptionHyperlinks>
+		<symbolPack>
+			<wholeNameSymbols>
+				<li>
+					<symbol>raiser</symbol>
+				</li>
+			</wholeNameSymbols>
+			<prefixSymbols>
+				<li>
+					<symbol>deadlife</symbol>
+				</li>
+				<li>
+					<symbol>dead</symbol>
+				</li>
+				<li>
+					<symbol>life</symbol>
+				</li>
+				<li>
+					<symbol>shamblers</symbol>
+				</li>
+			</prefixSymbols>
+			<suffixSymbols>
+				<li>
+					<symbol>raiser</symbol>
+				</li>
+			</suffixSymbols>
+		</symbolPack>
+	</GeneDef>
+	<!-- ================================ Dark Archite Gene - Shape Flesh ====================== -->
+	<GeneDef ParentName="RS_DarkArchiteBase">
+		<defName>RS_ShapeFlesh</defName>
+		<label>shape flesh</label>
+		<description>Carriers can induce a dark archotech to reconfigure a corpse into a horrendous fleshbeast. The fleshbeast will be hostile to all humans, including the one who created it.</description>
+		<iconPath>UI/Icons/Genes/Gene_ShapeFlesh</iconPath>
+		<displayOrderInCategory>20</displayOrderInCategory>
+		<selectionWeight>0</selectionWeight>
+		<biostatCpx>4</biostatCpx>
+		<biostatArc>0</biostatArc>
+		<abilities>
+			<li>ShapeFlesh</li>
+		</abilities>
+		<descriptionHyperlinks>
+			<AbilityDef>ShapeFlesh</AbilityDef>
+		</descriptionHyperlinks>
+		<symbolPack>
+			<wholeNameSymbols>
+				<li>
+					<symbol>shaper</symbol>
+				</li>
+			</wholeNameSymbols>
+			<prefixSymbols>
+				<li>
+					<symbol>transform</symbol>
+				</li>
+				<li>
+					<symbol>shape</symbol>
+				</li>
+				<li>
+					<symbol>reconfigure</symbol>
+				</li>
+				<li>
+					<symbol>horrendous</symbol>
+				</li>
+			</prefixSymbols>
+			<suffixSymbols>
+				<li>
+					<symbol>shaper</symbol>
+				</li>
+			</suffixSymbols>
+		</symbolPack>
+	</GeneDef>
+	<!-- ================================ Dark Archite Gene - Shape Flesh ====================== -->
+	<GeneDef ParentName="RS_DarkArchiteBase">
+		<defName>RS_PsychicSlaughter</defName>
+		<label>psychic slaughter</label>
+		<description>Carriers can use dark psychic power to induce chaotic reconfiguration of flesh. This kills a flesh creature in seconds and converts its body into a pile of twisted flesh.</description>
+		<iconPath>UI/Icons/Genes/Gene_Slaughter</iconPath>
+		<displayOrderInCategory>25</displayOrderInCategory>
+		<selectionWeight>0</selectionWeight>
+		<biostatCpx>5</biostatCpx>
+		<biostatArc>0</biostatArc>
+		<abilities>
+			<li>PsychicSlaughter</li>
+		</abilities>
+		<descriptionHyperlinks>
+			<AbilityDef>PsychicSlaughter</AbilityDef>
+		</descriptionHyperlinks>
+		<symbolPack>
+			<wholeNameSymbols>
+				<li>
+					<symbol>butcher</symbol>
+				</li>
+			</wholeNameSymbols>
+			<prefixSymbols>
+				<li>
+					<symbol>slaughter</symbol>
+				</li>
+				<li>
+					<symbol>butcher</symbol>
+				</li>
+				<li>
+					<symbol>twisted</symbol>
+				</li>
+				<li>
+					<symbol>horrendous</symbol>
+				</li>
+			</prefixSymbols>
+			<suffixSymbols>
+				<li>
+					<symbol>butcher</symbol>
+				</li>
+			</suffixSymbols>
+		</symbolPack>
+	</GeneDef>
 	<!-- ================================ Gene - Tentacles Limbs ====================== -->
 	<GeneDef ParentName="RS_GeneTentacleBase">
 		<defName>RS_Tentacle_Limbs</defName>
