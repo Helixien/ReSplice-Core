@@ -11,7 +11,7 @@ namespace ReSpliceCore
     [StaticConstructorOnStartup]
     public class Building_GeneCentrifuge : Building_Processor
     {
-        public static Texture2D InsertGenePack = ContentFinder<Texture2D>.Get("UI/Icons/InsertGenePack");
+        public static Texture2D InsertGenePack = ContentFinder<Texture2D>.Get("UI/Gizmos/InsertGenePack");
 
         public Genepack genepackToStore;
 

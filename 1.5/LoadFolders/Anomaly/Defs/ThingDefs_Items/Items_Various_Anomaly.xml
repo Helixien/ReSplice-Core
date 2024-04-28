@@ -3,13 +3,13 @@
 	<!-- ================================ Dark Archite Spike ====================== -->
 	<ThingDef ParentName="GeneSetHolderBase">
 		<defName>RS_DarkArchiteSpike</defName>
-		<label>infuser spike</label>
+		<label>void spike</label>
 		<description>text.todo</description>
 		<graphicData>
 			<texPath>Things/Item/Special/DarkArchiteInfuser</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
-		<thingClass>Genepack</thingClass>
+		<thingClass>ReSpliceCore.DarkArchiteSpike</thingClass>
 		<tickerType>Rare</tickerType>
 		<useHitPoints>true</useHitPoints>
 		<stackLimit>1</stackLimit>

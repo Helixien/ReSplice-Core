@@ -11,7 +11,7 @@ namespace ReSpliceCore
     [StaticConstructorOnStartup]
     public class Building_XenogermDuplicator : Building_Processor
     {
-        public static Texture2D InsertXenogerm = ContentFinder<Texture2D>.Get("UI/Icons/InsertXenogerm");
+        public static Texture2D InsertXenogerm = ContentFinder<Texture2D>.Get("UI/Gizmos/InsertXenogerm");
 
         public Xenogerm xenogermToDuplicate;
         public Xenogerm StoredXenogerm => this.innerContainer.OfType<Xenogerm>().FirstOrDefault();

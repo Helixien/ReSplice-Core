@@ -8,6 +8,9 @@ namespace ReSpliceCore
     {
         public static SoundDef RS_GeneCentrifuge_Ambience, RS_XenoGermDuplicator_Ambience;
         public static JobDef RS_InsertThingIntoProcessor;
-        public static ThingDef RS_GeneCentrifuge, RS_XenoGermDuplicator;
+        public static ThingDef RS_GeneCentrifuge, RS_XenoGermDuplicator, RS_DarkArchiteSpike;
+        public static GeneCategoryDef RS_DarkArchite;
+        public static HediffDef RS_InfusionComa;
+        public static RecipeDef RS_InfuseDarkArchite;
     }
 }

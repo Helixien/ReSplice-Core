@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>RS_InfuseDarkArchite</defName>
+    <label>Infuse dark archite</label>
+    <description>placeholder</description>
+    <jobString>infusing dark archite.</jobString>
+    <workerClass>ReSpliceCore.Recipe_InfuseDarkArchite</workerClass>
+    <workAmount>2000</workAmount>
+    <hideBodyPartNames>true</hideBodyPartNames>
+    <targetsBodyPart>false</targetsBodyPart>
+    <isViolation>true</isViolation>
+    <surgeryOutcomeEffect>RS_InfuseDarkArchite</surgeryOutcomeEffect>
+    <uiIconThing>RS_DarkArchiteSpike</uiIconThing>
+  </RecipeDef>
+
+  <SurgeryOutcomeEffectDef>
+    <defName>RS_InfuseDarkArchite</defName>
+    <outcomes>
+      <li Class="SurgeryOutcome_HediffWithDuration">
+        <chance>1</chance>
+        <failure>false</failure>
+        <hediff>RS_InfusionComa</hediff>
+        <applyEffectsToPart>false</applyEffectsToPart>
+        <qualityToDurationDaysCurve>
+          <points>
+            <li>(0, 3)</li>
+            <li>(1, 1)</li>
+          </points>
+        </qualityToDurationDaysCurve>
+      </li>
+    </outcomes>
+    <comps>
+      <li Class="SurgeryOutcomeComp_SurgeonSuccessChance"/>
+      <li Class="SurgeryOutcomeComp_BedAndRoomQuality"/>
+      <li Class="SurgeryOutcomeComp_Inspired">
+        <inspirationDef>Inspired_Surgery</inspirationDef>
+        <factor>2</factor>
+      </li>
+      <li Class="SurgeryOutcomeComp_PatientAge">
+        <curve>
+          <points>
+            <li>(20, 1)</li>
+            <li>(60, 0.5)</li>
+          </points>
+        </curve>
+      </li>
+    </comps>
+  </SurgeryOutcomeEffectDef>
+</Defs>

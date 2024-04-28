@@ -26,4 +26,16 @@
 	<RS.ContainsXenogerm>Contains: {0}</RS.ContainsXenogerm>
 	<RS.FinishedXenogermDuplicationMessage>Xenogerm duplicator finished duplicating xenogerm!</RS.FinishedXenogermDuplicationMessage>
 	<RS.NotEnoughArchiteCapsulesLoaded>Do you really want to duplicate the xenogerm? Not enough archite capsules are loaded to duplicate all any archite genes inside the xenogerm.</RS.NotEnoughArchiteCapsulesLoaded>
+	<!-- ================================ Void spike infusion ====================== -->
+	<RS.InfuseDarkArchite>Infuse dark archite</RS.InfuseDarkArchite>
+	<RS.InfuseDarkArchiteWarningDesc>Infusing a void spike will put {PAWN_nameDef} in a coma as the spike's gene integrates itself. On average, this lasts for {COMADURATION}.</RS.InfuseDarkArchiteWarningDesc>
+	<RS.InfuseDarkArchiteWarningNewMetabolism>After infusion, {PAWN_nameDef} will have a metabolism value of {MET} and a food consumption multiplier of {CONSUMPTION}.</RS.InfuseDarkArchiteWarningNewMetabolism>
+	<RS.LetterLabelDarkArchiteOrderedInfused>Voidgene infusion ordered</RS.LetterLabelDarkArchiteOrderedInfused>
+	<RS.LetterDarkArchiteOrderedInfused>You have ordered a void spike to be infused into {PAWN_nameDef}. This procedure requires a medical bed.\n\nYou can cancel this procedure by going to {PAWN_nameDef}'s health -> operations tab.</RS.LetterDarkArchiteOrderedInfused>
+	<RS.OrderInfusionIntoPawn>Order infusion into {PAWN_nameDef}</RS.OrderInfusionIntoPawn>
+	<RS.InfuseDarkArchiteDesc>Infuse this into a person to introduce a dark archite gene into their genetic code.\n\nThis is a surgical operation, so it requires a doctor and medical bed.</RS.InfuseDarkArchiteDesc>
+	<RS.CancelInfusion>Cansel infusion</RS.CancelInfusion>
+	<RS.CancelInfusingDesc>Cancel infusing this void spike into {PAWN_nameDef}.</RS.CancelInfusingDesc>
+	<RS.MessageCannotInfuseInTempFactionMembers>Cannot infuse in temporary faction members.</RS.MessageCannotInfuseInTempFactionMembers>
+
 </LanguageData>

@@ -3,6 +3,7 @@
 	<!-- ================================ Dark Archite Gene - Base ====================== -->
 	<GeneDef Name="RS_DarkArchiteBase" Abstract="True">
 		<displayCategory>RS_DarkArchite</displayCategory>
+		<canGenerateInGeneSet>false</canGenerateInGeneSet>
 		<modExtensions>
 			<li Class="VanillaGenesExpanded.GeneExtension">
 				<backgroundPathXenogenes>UI/Icons/Genes/GeneBackground_DarkArchiteGene</backgroundPathXenogenes>
