@@ -69,8 +69,14 @@
     <Compile Include="Building_GeneCentrifuge.cs" />
     <Compile Include="Building_Processor.cs" />
     <Compile Include="Building_XenogermDuplicator.cs" />
+    <Compile Include="GeneExtension.cs" />
+    <Compile Include="HarmonyPatches\HediffSet_AddDirect_Patch.cs" />
+    <Compile Include="HarmonyPatches\Hediff_PostRemoved_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_ExposeData_Patch.cs" />
     <Compile Include="HotSwappableAttribute.cs" />
     <Compile Include="JobDriver_InsertIntoProcessor.cs" />
+    <Compile Include="HarmonyPatches\Pawn_AbilityTracker_GainAbility_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_AbilityTracker_RemoveAbility_Patch.cs" />
     <Compile Include="ReSpliceCoreMod.cs" />
     <Compile Include="RS_DefOf.cs" />
     <Compile Include="RS_Utils.cs" />

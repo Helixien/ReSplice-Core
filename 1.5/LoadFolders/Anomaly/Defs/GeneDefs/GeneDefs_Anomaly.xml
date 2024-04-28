@@ -371,6 +371,15 @@
 			<li Class="VanillaGenesExpanded.GeneExtension">
 				<backgroundPathXenogenes>UI/Icons/Genes/CorruptedGeneBackground_Xenogene</backgroundPathXenogenes>
 				<backgroundPathEndogenes>UI/Icons/Genes/CorruptedGeneBackground_Endogene</backgroundPathEndogenes>
+				<hediffsToBodyParts>
+					<li>
+						<hediff>Tentacle</hediff>
+						<bodyparts>
+							<li>Shoulder</li>
+							<li>Shoulder</li>
+						</bodyparts>
+					</li>
+				</hediffsToBodyParts>
 			</li>
 		</modExtensions>
 	</GeneDef>
@@ -387,6 +396,15 @@
 			<li Class="VanillaGenesExpanded.GeneExtension">
 				<backgroundPathXenogenes>UI/Icons/Genes/CorruptedGeneBackground_Xenogene</backgroundPathXenogenes>
 				<backgroundPathEndogenes>UI/Icons/Genes/CorruptedGeneBackground_Endogene</backgroundPathEndogenes>
+				<hediffsToBodyParts>
+					<li>
+						<hediff>FleshWhip</hediff>
+						<bodyparts>
+							<li>Shoulder</li>
+							<li>Shoulder</li>
+						</bodyparts>
+					</li>
+				</hediffsToBodyParts>
 			</li>
 		</modExtensions>
 	</GeneDef>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/HediffDef[defName="VoidTouched"]</xpath>
+				<value>
+					<li Class="ReSpliceCore.GeneExtension">
+						<linkedXenogene>RS_VoidTouched</linkedXenogene>
+					</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/AbilityDef[defName="UnnaturalHealing"]</xpath>
+				<value>
+					<li Class="ReSpliceCore.GeneExtension">
+						<linkedXenogene>RS_UnnaturalHealing</linkedXenogene>
+					</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/AbilityDef[defName="TransmuteSteel"]</xpath>
+				<value>
+					<li Class="ReSpliceCore.GeneExtension">
+						<linkedXenogene>RS_TransmuteSteel</linkedXenogene>
+					</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/AbilityDef[defName="ReleaseDeadlifeDust"]</xpath>
+				<value>
+					<li Class="ReSpliceCore.GeneExtension">
+						<linkedXenogene>RS_DeadlifeDust</linkedXenogene>
+					</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/AbilityDef[defName="ShapeFlesh"]</xpath>
+				<value>
+					<li Class="ReSpliceCore.GeneExtension">
+						<linkedXenogene>RS_ShapeFlesh</linkedXenogene>
+					</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/AbilityDef[defName="PsychicSlaughter"]</xpath>
+				<value>
+					<li Class="ReSpliceCore.GeneExtension">
+						<linkedXenogene>RS_PsychicSlaughter</linkedXenogene>
+					</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/HediffDef[defName="Tentacle"]</xpath>
+				<value>
+					<li Class="ReSpliceCore.GeneExtension">
+						<linkedEndogene>RS_Tentacle_Limbs</linkedEndogene>
+					</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/HediffDef[defName="FleshWhip"]</xpath>
+				<value>
+					<li Class="ReSpliceCore.GeneExtension">
+						<linkedEndogene>RS_Tentacle_Whip</linkedEndogene>
+					</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>
