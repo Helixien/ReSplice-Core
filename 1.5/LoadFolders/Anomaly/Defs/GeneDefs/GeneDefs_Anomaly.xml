@@ -344,19 +344,6 @@
 			</suffixSymbols>
 		</symbolPack>
 	</GeneDef>
-	<!-- ================================ Dark Archite Gene - Metabolism ====================== -->
-	<GeneDef ParentName="RS_DarkArchiteBase">
-		<defName>RS_DarkArchiteMetabolism</defName>
-		<label>dark archite metabolism</label>
-		<labelShortAdj>archite-metabolic</labelShortAdj>
-		<description>Carriers of this gene have corrupted archites in their body that construct a complex dark archotech machinery into their stomach. It improves their metabolism to impossible levels, but the cold, pulsating metal leaves them constantly feeling uncomfortable. This drastically improves overall genetic and metabolic quality.</description>
-		<iconPath>UI/Icons/Genes/Gene_DarkArchiteMetabolism</iconPath>
-		<displayOrderInCategory>2</displayOrderInCategory>
-		<marketValueFactor>3</marketValueFactor>
-		<biostatCpx>12</biostatCpx>
-		<biostatMet>12</biostatMet>
-		<biostatArc>0</biostatArc>
-	</GeneDef>
 	<!-- ================================ Gene - Tentacles Limbs ====================== -->
 	<GeneDef ParentName="RS_GeneTentacleBase">
 		<defName>RS_Tentacle_Limbs</defName>
