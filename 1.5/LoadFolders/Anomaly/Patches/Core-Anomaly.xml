@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<!-- ================================ Changes to Void touched Hediff ====================== -->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/HediffDef[defName="VoidTouched"]/description</xpath>
+				<value>
+					<description>This person has seen the depths of the void and drank from its essence. It changed her on a genetic level, living inside them still , guiding their actions and twisting their flesh. From now on, to eternity!</description>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/HediffDef[defName="VoidTouched"]/stages</xpath>
+				<value>
+					<stages>
+						<li>
+							<regeneration>100</regeneration>
+						</li>
+					</stages>
+				</value>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/HediffDef[defName="VoidTouched"]/disablesNeeds</xpath>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/HediffDef[defName="VoidTouched"]/hairColorOverride</xpath>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/HediffDef[defName="VoidTouched"]/comps</xpath>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/HediffDef[defName="VoidTouched"]/renderNodeProperties</xpath>
+			</li>
+		</operations>
+	</Operation>
+</Patch>
