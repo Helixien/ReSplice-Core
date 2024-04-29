@@ -25,12 +25,6 @@ namespace ReSpliceCore
         public override void Start(PsychicRitual psychicRitual, PsychicRitualGraph parent)
         {
             base.Start(psychicRitual, parent);
-
-        }
-
-        public override void End(PsychicRitual psychicRitual, PsychicRitualGraph parent, bool success)
-        {
-            base.End(psychicRitual, parent, success);
             Pawn pawn = psychicRitual.assignments.FirstAssignedPawn(targetRole);
             psychicRitual.ReleaseAllPawnsAndBuildings();
             if (pawn != null)
@@ -50,7 +44,6 @@ namespace ReSpliceCore
                 }
             }
         }
-
 
         private static readonly IntRange MeatPieces = new IntRange(3, 4);
 
