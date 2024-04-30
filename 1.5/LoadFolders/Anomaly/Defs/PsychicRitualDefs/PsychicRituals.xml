@@ -2,7 +2,7 @@
 <Defs>
 	<ReSpliceCore.PsychicRitualDef_CreateVoidSpike>
 		<defName>RS_DarkArchiteHarvesting</defName>
-		<label>ark archite harvesting</label>
+		<label>dark archite harvesting</label>
 		<description>text.todo</description>
 		<iconPath>UI/PsychicRituals/Hex_DarkArchiteHarvest</iconPath>
 		<outcomeDescription>One of the target’s dark archite genes will be harvested.\n\nWith the current ritual quality, chance of a successful harvest is {0}.</outcomeDescription>
