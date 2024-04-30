@@ -25,18 +25,5 @@
 			</li>
 		</comps>
 	</HediffDef>
-	
-	<HediffDef>
-		<defName>RS_DarkArchiteExtraction</defName>
-		<label>dark archite extraction</label>
-		<description>A dark archite was extracted from this person.</description>
-		<hediffClass>ReSpliceCore.Hediff_DarkArchiteExtraction</hediffClass>
-		<initialSeverity>0.001</initialSeverity>
-		<defaultLabelColor>(0.9, 1.0, 0.35)</defaultLabelColor>
-		<comps>
-			<li Class="HediffCompProperties_Disappears">
-				<disappearsAfterTicks>30</disappearsAfterTicks>
-			</li>
-		</comps>
-	</HediffDef>
+
 </Defs>

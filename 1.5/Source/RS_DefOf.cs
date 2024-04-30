@@ -13,7 +13,7 @@ namespace ReSpliceCore
         // Anomaly content
         [MayRequireAnomaly] public static ThingDef RS_DarkArchiteSpike;
         [MayRequireAnomaly] public static GeneCategoryDef RS_DarkArchite;
-        [MayRequireAnomaly] public static HediffDef RS_InfusionComa, RS_DarkArchiteExtraction;
+        [MayRequireAnomaly] public static HediffDef RS_InfusionComa;
         [MayRequireAnomaly] public static RecipeDef RS_InfuseDarkArchite;
 
     }
