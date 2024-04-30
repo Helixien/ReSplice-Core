@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="GeneProcessor"]/graphicData</xpath>
+				<value>
+					<graphicData>
+						<texPath>Things/Building/RS_GeneProcessor</texPath>
+						<graphicClass>Graphic_Random</graphicClass>
+						<drawSize>(2, 2)</drawSize>
+						<shadowData>
+							<volume>(1.5, 0.4, 1.5)</volume>
+						</shadowData>
+					</graphicData>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="GeneBank"]</xpath>
+				<value>
+					<uiOrder>2098</uiOrder>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

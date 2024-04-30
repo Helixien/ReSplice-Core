@@ -11,6 +11,7 @@
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(2, 2)</drawSize>
 		</graphicData>
+		<uiIconScale>0.95</uiIconScale>
 		<size>(2, 2)</size>
 		<defaultPlacingRot>North</defaultPlacingRot>
 		<rotatable>false</rotatable>
@@ -25,12 +26,13 @@
 			<Flammability>0.5</Flammability>
 		</statBases>
 		<building>
-			<!--<soundAmbient>RS_GeneCentrifuge_Ambience</soundAmbient>-->
+			<soundAmbient>RS_GeneCentrifuge_Ambience</soundAmbient>
 			<buildingTags>
 				<li>Biotech</li>
 			</buildingTags>
 		</building>
 		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+		<uiOrder>2097</uiOrder>
 		<researchPrerequisites>
 			<li>GeneProcessor</li>
 		</researchPrerequisites>
@@ -84,6 +86,7 @@
 			</buildingTags>
 		</building>
 		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+		<uiOrder>2099</uiOrder>
 		<researchPrerequisites Inherit="False">
 			<li>Xenogermination</li>
 		</researchPrerequisites>
@@ -93,10 +96,10 @@
 			<ComponentIndustrial>4</ComponentIndustrial>
 		</costList>
 		<tickerType>Rare</tickerType>
-		<passability>PassThroughOnly</passability>	
+		<passability>PassThroughOnly</passability>
 		<castEdgeShadows>true</castEdgeShadows>
 		<fillPercent>0.4</fillPercent>
-		<pathCost>14</pathCost>		
+		<pathCost>14</pathCost>
 		<canOverlapZones>false</canOverlapZones>
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<placeWorkers>
@@ -125,18 +128,19 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>RS_XenoGermDuplicator</defName>
 		<label>xenogerm duplicator</label>
-		<description>A deceptively simple machine that synthesises genetic material in order to mass manufacture an exact copy of an existing xenogerms. This building can duplicate any existing xenogerm, including any present archite genes, as long as it is supplied with the required amount of archite capsules.</description>
 		<thingClass>ReSpliceCore.Building_XenogermDuplicator</thingClass>
-		<tickerType>Normal</tickerType>
-		<passability>PassThroughOnly</passability>
-		<fillPercent>0.4</fillPercent>
-		<pathCost>14</pathCost>
-		<rotatable>false</rotatable>
+		<description>A deceptively simple machine that synthesises genetic material in order to mass manufacture an exact copy of an existing xenogerms. This building can duplicate any existing xenogerm, including any present archite genes, as long as it is supplied with the required amount of archite capsules.</description>
 		<graphicData>
 			<texPath>Things/Building/Misc/XenoGermDuplicator</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(4, 4)</drawSize>
 		</graphicData>
+		<uiIconScale>0.95</uiIconScale>
+		<tickerType>Normal</tickerType>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>0.4</fillPercent>
+		<pathCost>14</pathCost>
+		<rotatable>false</rotatable>
 		<size>(2, 2)</size>
 		<canOverlapZones>false</canOverlapZones>
 		<defaultPlacingRot>North</defaultPlacingRot>
@@ -159,6 +163,7 @@
 			<ComponentIndustrial>5</ComponentIndustrial>
 		</costList>
 		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		<uiOrder>2101</uiOrder>
 		<building>
 			<buildingTags>
 				<li>Biotech</li>
