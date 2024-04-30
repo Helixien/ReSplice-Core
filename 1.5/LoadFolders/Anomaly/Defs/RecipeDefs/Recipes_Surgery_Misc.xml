@@ -9,6 +9,7 @@
     <jobString>infusing dark archite.</jobString>
     <workerClass>ReSpliceCore.Recipe_InfuseDarkArchite</workerClass>
     <workAmount>2000</workAmount>
+	<anesthetize>false</anesthetize>
     <hideBodyPartNames>true</hideBodyPartNames>
     <targetsBodyPart>false</targetsBodyPart>
     <isViolation>true</isViolation>

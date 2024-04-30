@@ -13,6 +13,7 @@ namespace ReSpliceCore
 
         private static readonly CachedTexture InfuseTex = new CachedTexture("UI/Gizmos/InfuseGenes");
 
+        public static readonly CachedTexture VoidSpikeGeneticInfoTex = new CachedTexture("UI/Gizmos/ViewGenesVoidspike");
         private static readonly Texture2D CancelIcon = ContentFinder<Texture2D>.Get("UI/Designators/Cancel");
 
         public override string LabelNoCount
@@ -163,12 +164,29 @@ namespace ReSpliceCore
         {
             foreach (Gizmo gizmo in base.GetGizmos())
             {
+                if (gizmo is Command_Action action && action.defaultLabel == "InspectGenes".Translate() + "...")
+                {
+                    continue;
+                }
                 yield return gizmo;
             }
+
             if (geneSet == null)
             {
                 yield break;
             }
+
+            yield return new Command_Action
+            {
+                defaultLabel = "InspectGenes".Translate() + "...",
+                defaultDesc = InspectGeneDescription,
+                icon = VoidSpikeGeneticInfoTex.Texture,
+                action = delegate
+                {
+                    InspectPaneUtility.OpenTab(typeof(ITab_Genes));
+                }
+            };
+
             if (targetPawn == null)
             {
                 yield return new Command_Action

@@ -76,6 +76,7 @@
     <Compile Include="HarmonyPatches\HediffSet_AddDirect_Patch.cs" />
     <Compile Include="HarmonyPatches\Hediff_PostRemoved_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_ExposeData_Patch.cs" />
+    <Compile Include="Hediff_DarkArchiteExtraction.cs" />
     <Compile Include="HotSwappableAttribute.cs" />
     <Compile Include="JobDriver_InsertIntoProcessor.cs" />
     <Compile Include="HarmonyPatches\Pawn_AbilityTracker_GainAbility_Patch.cs" />

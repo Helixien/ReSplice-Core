@@ -16,21 +16,27 @@ namespace ReSpliceCore
 
         public static void TryAssignDarkArchiteGraphic(this Genepack genepack)
         {
-            bool hasDarkArchiteGenes = genepack.GeneSet.genes.Any(x => x.displayCategory == RS_DefOf.RS_DarkArchite);
-            bool hasDarkArchiteGraphic = genepack.graphicInt?.path == TexPath;
-            if (hasDarkArchiteGraphic is false && hasDarkArchiteGenes)
+            if (ModsConfig.AnomalyActive)
             {
-                var copy = new GraphicData();
-                copy.CopyFrom(genepack.def.graphicData);
-                copy.texPath = TexPath;
-                copy.graphicClass = typeof(Graphic_Single);
-                genepack.graphicInt = copy.GraphicColoredFor(genepack);
-                genepack.Map?.mapDrawer.MapMeshDirty(genepack.Position, MapMeshFlagDefOf.Things);
-            }
-            else if (hasDarkArchiteGraphic && hasDarkArchiteGenes is false)
-            {
-                genepack.graphicInt = null;
-                genepack.Map?.mapDrawer.MapMeshDirty(genepack.Position, MapMeshFlagDefOf.Things);
+                LongEventHandler.ExecuteWhenFinished(delegate
+                {
+                    bool hasDarkArchiteGenes = genepack.GeneSet.genes.Any(x => x.displayCategory == RS_DefOf.RS_DarkArchite);
+                    bool hasDarkArchiteGraphic = genepack.graphicInt?.path == TexPath;
+                    if (hasDarkArchiteGraphic is false && hasDarkArchiteGenes)
+                    {
+                        var copy = new GraphicData();
+                        copy.CopyFrom(genepack.def.graphicData);
+                        copy.texPath = TexPath;
+                        copy.graphicClass = typeof(Graphic_Single);
+                        genepack.graphicInt = copy.GraphicColoredFor(genepack);
+                        genepack.Map?.mapDrawer.MapMeshDirty(genepack.Position, MapMeshFlagDefOf.Things);
+                    }
+                    else if (hasDarkArchiteGraphic && hasDarkArchiteGenes is false)
+                    {
+                        genepack.graphicInt = null;
+                        genepack.Map?.mapDrawer.MapMeshDirty(genepack.Position, MapMeshFlagDefOf.Things);
+                    }
+                });
             }
         }
     }
