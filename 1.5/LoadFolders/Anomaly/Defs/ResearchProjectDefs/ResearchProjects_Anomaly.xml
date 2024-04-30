@@ -4,7 +4,7 @@
 	<ResearchProjectDef>
 		<defName>RS_DarkArchiteHarvesting</defName>
 		<label>dark archite harvesting</label>
-		<description>Perform a psychic ritual that causes a target to explode to harvest its dark archite genes. The harvested genes will can be reimplanted into another person afterwards.</description>
+		<description>Perform a psychic ritual that harvests a targets dark archite genes, ripping them from their body, killing them in the process. The harvested genes will can be reimplanted into another person afterwards.</description>
 		<tab>Anomaly</tab>
 		<prerequisites>
 			<li>AdvancedPsychicRituals</li>

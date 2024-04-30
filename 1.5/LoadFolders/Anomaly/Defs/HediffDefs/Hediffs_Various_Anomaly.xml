@@ -3,7 +3,7 @@
 	<HediffDef>
 		<defName>RS_InfusionComa</defName>
 		<label>infusion coma</label>
-		<description>A dakr achotechnology gene spike was infused into this person. Given the inhuman nature of the process, the body needs time to adjust itself and the modification of the genes to it.\n\nThe duration of this coma can not be reduced by any known means.</description>
+		<description>A voidspike was infused into this person. Given the inhuman nature of the process, the body needs time to adjust itself to it and the modification of its genes.\n\nThe duration of this coma can not be reduced by any known means.</description>
 		<hediffClass>HediffWithComps</hediffClass>
 		<initialSeverity>0.001</initialSeverity>
 		<defaultLabelColor>(0.9, 1.0, 0.35)</defaultLabelColor>

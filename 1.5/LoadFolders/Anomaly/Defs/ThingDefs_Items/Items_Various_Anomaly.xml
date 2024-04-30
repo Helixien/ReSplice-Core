@@ -3,8 +3,8 @@
 	<!-- ================================ Dark Archite Spike ====================== -->
 	<ThingDef ParentName="GeneSetHolderBase">
 		<defName>RS_DarkArchiteSpike</defName>
-		<label>void spike</label>
-		<description>text.todo</description>
+		<label>voidspike</label>
+		<description>A pulsating, crude piece of dark archotechnology containing one or more infuse-able xenogenes.\n\nIt needs to be stabbed into the host’s body for it to infuse its genes, rewriting its genetic code near permanently with psychic manipulation.\n\nAfter the infusion is complete, the spike disintegrates itself and makes a person bedridden for a few days.</description>
 		<graphicData>
 			<texPath>Things/Item/Special/DarkArchiteInfuser</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
