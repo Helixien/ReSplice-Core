@@ -349,6 +349,7 @@
 	<GeneDef ParentName="RS_GeneTentacleBase">
 		<defName>RS_Tentacle_Limbs</defName>
 		<label>tentacle limbs</label>
+		<geneClass>ReSpliceCore.Gene_FleshTentacles</geneClass>
 		<description>Carriers of this gene grow tentacle-like appendages instead of one or two of their arms.</description>
 		<iconPath>UI/Icons/Genes/Gene_TentacleLimbs</iconPath>
 		<iconColor>(0.75, 0.75, 0.75)</iconColor>
@@ -359,21 +360,13 @@
 			<li Class="VanillaGenesExpanded.GeneExtension">
 				<backgroundPathXenogenes>UI/Icons/Genes/CorruptedGeneBackground_Xenogene</backgroundPathXenogenes>
 				<backgroundPathEndogenes>UI/Icons/Genes/CorruptedGeneBackground_Endogene</backgroundPathEndogenes>
-				<hediffsToBodyParts>
-					<li>
-						<hediff>Tentacle</hediff>
-						<bodyparts>
-							<li>Shoulder</li>
-							<li>Shoulder</li>
-						</bodyparts>
-					</li>
-				</hediffsToBodyParts>
 			</li>
 		</modExtensions>
 	</GeneDef>
 	<GeneDef ParentName="RS_GeneTentacleBase">
 		<defName>RS_Tentacle_Whip</defName>
 		<label>flesh whips limbs</label>
+		<geneClass>ReSpliceCore.Gene_FleshWhips</geneClass>
 		<description>Carriers of this gene grow tentacle-like appendages with sharp bone-like spikes made from bioferrite instead of one or two of their arms.</description>
 		<iconPath>UI/Icons/Genes/Gene_WhipLimbs</iconPath>
 		<iconColor>(0.75, 0.75, 0.75)</iconColor>
@@ -384,15 +377,6 @@
 			<li Class="VanillaGenesExpanded.GeneExtension">
 				<backgroundPathXenogenes>UI/Icons/Genes/CorruptedGeneBackground_Xenogene</backgroundPathXenogenes>
 				<backgroundPathEndogenes>UI/Icons/Genes/CorruptedGeneBackground_Endogene</backgroundPathEndogenes>
-				<hediffsToBodyParts>
-					<li>
-						<hediff>FleshWhip</hediff>
-						<bodyparts>
-							<li>Shoulder</li>
-							<li>Shoulder</li>
-						</bodyparts>
-					</li>
-				</hediffsToBodyParts>
 			</li>
 		</modExtensions>
 	</GeneDef>
