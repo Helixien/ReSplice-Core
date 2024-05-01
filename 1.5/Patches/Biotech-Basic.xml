@@ -6,7 +6,7 @@
 				<xpath>Defs/ThingDef[defName="GeneProcessor"]/graphicData</xpath>
 				<value>
 					<graphicData>
-						<texPath>Things/Building/RS_GeneProcessor</texPath>
+						<texPath>Things/Building/Misc/RS_GeneProcessor</texPath>
 						<graphicClass>Graphic_Random</graphicClass>
 						<drawSize>(2, 2)</drawSize>
 						<shadowData>
