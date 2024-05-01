@@ -350,6 +350,7 @@
 		<defName>RS_Tentacle_Limbs</defName>
 		<label>tentacle limbs</label>
 		<description>text.todo</description>
+		<geneClass>ReSpliceCore.Gene_FleshTentacles</geneClass>
 		<iconPath>UI/Icons/Genes/Gene_TentacleLimbs</iconPath>
 		<iconColor>(0.75, 0.75, 0.75)</iconColor>
 		<displayOrderInCategory>1005</displayOrderInCategory>
@@ -359,15 +360,6 @@
 			<li Class="VanillaGenesExpanded.GeneExtension">
 				<backgroundPathXenogenes>UI/Icons/Genes/CorruptedGeneBackground_Xenogene</backgroundPathXenogenes>
 				<backgroundPathEndogenes>UI/Icons/Genes/CorruptedGeneBackground_Endogene</backgroundPathEndogenes>
-				<hediffsToBodyParts>
-					<li>
-						<hediff>Tentacle</hediff>
-						<bodyparts>
-							<li>Shoulder</li>
-							<li>Shoulder</li>
-						</bodyparts>
-					</li>
-				</hediffsToBodyParts>
 			</li>
 		</modExtensions>
 	</GeneDef>
@@ -375,6 +367,7 @@
 		<defName>RS_Tentacle_Whip</defName>
 		<label>flesh whips limbs</label>
 		<description>text.todo</description>
+		<geneClass>ReSpliceCore.Gene_FleshWhips</geneClass>
 		<iconPath>UI/Icons/Genes/Gene_WhipLimbs</iconPath>
 		<iconColor>(0.75, 0.75, 0.75)</iconColor>
 		<displayOrderInCategory>1010</displayOrderInCategory>
@@ -384,15 +377,6 @@
 			<li Class="VanillaGenesExpanded.GeneExtension">
 				<backgroundPathXenogenes>UI/Icons/Genes/CorruptedGeneBackground_Xenogene</backgroundPathXenogenes>
 				<backgroundPathEndogenes>UI/Icons/Genes/CorruptedGeneBackground_Endogene</backgroundPathEndogenes>
-				<hediffsToBodyParts>
-					<li>
-						<hediff>FleshWhip</hediff>
-						<bodyparts>
-							<li>Shoulder</li>
-							<li>Shoulder</li>
-						</bodyparts>
-					</li>
-				</hediffsToBodyParts>
 			</li>
 		</modExtensions>
 	</GeneDef>
