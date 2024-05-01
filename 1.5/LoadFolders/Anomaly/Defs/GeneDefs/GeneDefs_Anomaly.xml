@@ -349,8 +349,8 @@
 	<GeneDef ParentName="RS_GeneTentacleBase">
 		<defName>RS_Tentacle_Limbs</defName>
 		<label>tentacle limbs</label>
-		<description>text.todo</description>
 		<geneClass>ReSpliceCore.Gene_FleshTentacles</geneClass>
+		<description>Carriers of this gene grow tentacle-like appendages instead of one or two of their arms.</description>
 		<iconPath>UI/Icons/Genes/Gene_TentacleLimbs</iconPath>
 		<iconColor>(0.75, 0.75, 0.75)</iconColor>
 		<displayOrderInCategory>1005</displayOrderInCategory>
@@ -366,8 +366,8 @@
 	<GeneDef ParentName="RS_GeneTentacleBase">
 		<defName>RS_Tentacle_Whip</defName>
 		<label>flesh whips limbs</label>
-		<description>text.todo</description>
 		<geneClass>ReSpliceCore.Gene_FleshWhips</geneClass>
+		<description>Carriers of this gene grow tentacle-like appendages with sharp bone-like spikes made from bioferrite instead of one or two of their arms.</description>
 		<iconPath>UI/Icons/Genes/Gene_WhipLimbs</iconPath>
 		<iconColor>(0.75, 0.75, 0.75)</iconColor>
 		<displayOrderInCategory>1010</displayOrderInCategory>

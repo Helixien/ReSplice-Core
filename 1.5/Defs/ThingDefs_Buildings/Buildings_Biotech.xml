@@ -88,7 +88,7 @@
 		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 		<uiOrder>2099</uiOrder>
 		<researchPrerequisites Inherit="False">
-			<li>Xenogermination</li>
+			<li>GeneProcessor</li>
 		</researchPrerequisites>
 		<costList>
 			<Steel>200</Steel>
