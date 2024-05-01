@@ -21,6 +21,34 @@
 					<uiOrder>2098</uiOrder>
 				</value>
 			</li>
+			<!-- ================================ Effected by additions ====================== -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="GeneAssembler"]/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+				<value>
+					<li>RS_GeneVault</li>
+				</value>
+			</li>
+			<!-- ================================ Add Hyperlinks ====================== -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="GeneBank" or defName="GeneAssembler"]/descriptionHyperlinks</xpath>
+				<value>
+					<ThingDef>RS_GeneVault</ThingDef>
+					<ThingDef>RS_GeneCentrifuge</ThingDef>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="Xenogerm"]/descriptionHyperlinks</xpath>
+				<value>
+					<ThingDef>RS_XenoGermDuplicator</ThingDef>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="Genepack"]/descriptionHyperlinks</xpath>
+				<value>
+					<ThingDef>RS_GeneCentrifuge</ThingDef>
+					<ThingDef>RS_GeneVault</ThingDef>
+				</value>
+			</li>
 		</operations>
 	</Operation>
 </Patch>
