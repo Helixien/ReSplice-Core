@@ -3,7 +3,7 @@
 	<!-- ================ Enable Dark Archite in Xenotype creator ================ -->
 	<Operation Class="ModSettingsFramework.PatchOperationModOption">
 		<defaultValue>False</defaultValue>
-		<label>Show dark archite genes in xenotype editor</label>
+		<label>Allow archite genes in xenotype editor</label>
 		<tooltip>Allows you to use dark archite genes in the xenotype editor. (Default: False)</tooltip>
 		<id>RS_DarkArchiteEditor</id>
 		<category>RS_Anomaly</category>
@@ -14,6 +14,22 @@
 				<value>
 					<hideGene>False</hideGene>
 				</value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="ModSettingsFramework.PatchOperationModOption">
+		<defaultValue>False</defaultValue>
+		<label>Disable voidspike degrading</label>
+		<tooltip>When enabled voidspikes will not degrading. (Default: False)</tooltip>
+		<id>RS_VoidspikeDegradation</id>
+		<category>RS_Anomaly</category>
+		<order>5</order>
+		<operations>
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/GeneDef[defName="RS_DarkArchiteSpike"]/deteriorateFromEnvironmentalEffects/DeteriorationRate</xpath>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/GeneDef[defName="RS_DarkArchiteSpike"]/statBases</xpath>
 			</li>
 		</operations>
 	</Operation>

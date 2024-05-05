@@ -355,7 +355,7 @@
 		<iconColor>(0.75, 0.75, 0.75)</iconColor>
 		<displayOrderInCategory>1005</displayOrderInCategory>
 		<biostatCpx>1</biostatCpx>
-		<biostatMet>-1</biostatMet>
+		<biostatMet>0</biostatMet>
 		<modExtensions Inherit="false">
 			<li Class="VanillaGenesExpanded.GeneExtension">
 				<backgroundPathXenogenes>UI/Icons/Genes/CorruptedGeneBackground_Xenogene</backgroundPathXenogenes>
@@ -372,7 +372,7 @@
 		<iconColor>(0.75, 0.75, 0.75)</iconColor>
 		<displayOrderInCategory>1010</displayOrderInCategory>
 		<biostatCpx>1</biostatCpx>
-		<biostatMet>-2</biostatMet>
+		<biostatMet>-1</biostatMet>
 		<modExtensions Inherit="false">
 			<li Class="VanillaGenesExpanded.GeneExtension">
 				<backgroundPathXenogenes>UI/Icons/Genes/CorruptedGeneBackground_Xenogene</backgroundPathXenogenes>

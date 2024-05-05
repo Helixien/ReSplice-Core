@@ -13,7 +13,7 @@
 		<tickerType>Rare</tickerType>
 		<useHitPoints>true</useHitPoints>
 		<stackLimit>1</stackLimit>
-		<canDeteriorateUnspawned>true</canDeteriorateUnspawned>
+		<canDeteriorateUnspawned>false</canDeteriorateUnspawned>
 		<deteriorateFromEnvironmentalEffects>false</deteriorateFromEnvironmentalEffects>
 		<statBases>
 			<MarketValue>500</MarketValue>
