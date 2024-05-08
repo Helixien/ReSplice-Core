@@ -18,7 +18,7 @@
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/ThingDef[defName="GeneBank"]</xpath>
 				<value>
-					<uiOrder>2098</uiOrder>
+					<uiOrder>2097</uiOrder>
 				</value>
 			</li>
 			<!-- ================================ Effected by additions ====================== -->
@@ -26,6 +26,7 @@
 				<xpath>/Defs/ThingDef[defName="GeneAssembler"]/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
 				<value>
 					<li>RS_GeneVault</li>
+					<li>RS_GeneRepository</li>
 				</value>
 			</li>
 			<!-- ================================ Add Hyperlinks ====================== -->
@@ -33,6 +34,7 @@
 				<xpath>/Defs/ThingDef[defName="GeneBank" or defName="GeneAssembler"]/descriptionHyperlinks</xpath>
 				<value>
 					<ThingDef>RS_GeneVault</ThingDef>
+					<ThingDef>RS_GeneRepository</ThingDef>
 					<ThingDef>RS_GeneCentrifuge</ThingDef>
 				</value>
 			</li>
@@ -46,6 +48,7 @@
 				<xpath>/Defs/ThingDef[defName="Genepack"]/descriptionHyperlinks</xpath>
 				<value>
 					<ThingDef>RS_GeneCentrifuge</ThingDef>
+					<ThingDef>RS_GeneRepository </ThingDef>
 					<ThingDef>RS_GeneVault</ThingDef>
 				</value>
 			</li>

@@ -71,6 +71,7 @@
 			<ThingDef>Genepack</ThingDef>
 			<ThingDef>GeneBank</ThingDef>
 			<ThingDef>GeneAssembler</ThingDef>
+			<ThingDef>RS_GeneCentrifuge</ThingDef>
 		</descriptionHyperlinks>
 		<designationCategory>Biotech</designationCategory>
 		<statBases>
@@ -86,7 +87,7 @@
 			</buildingTags>
 		</building>
 		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
-		<uiOrder>2099</uiOrder>
+		<uiOrder>2098</uiOrder>
 		<researchPrerequisites Inherit="False">
 			<li>GeneProcessor</li>
 		</researchPrerequisites>
@@ -120,6 +121,75 @@
 			<li Class="CompProperties_Facility">
 				<maxSimultaneous>50</maxSimultaneous>
 				<maxDistance>10.9</maxDistance>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+		</comps>
+	</ThingDef>
+	<!-- ================================ Gene registert ====================== -->
+	<ThingDef ParentName="GeneBuildingBase">
+		<defName>RS_GeneRepository</defName>
+		<label>gene repository</label>
+		<description>This building can store an huge amount of genepacks and make them usable to create new xenogerms, when placed near a gene assembler. Large gene libraries can be made more space efficient with gene registers.\n\nWhen powered, gene registers prevent genepacks from deteriorating and will slowly repair deterioration.</description>
+		<graphicData>
+			<texPath>Things/Building/Misc/GeneRepository/GeneRepository</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3, 2)</drawSize>
+		</graphicData>
+		<size>(3, 2)</size>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<descriptionHyperlinks>
+			<ThingDef>Genepack</ThingDef>
+			<ThingDef>GeneBank</ThingDef>
+			<ThingDef>RS_GeneVault</ThingDef>
+			<ThingDef>RS_GeneCentrifuge</ThingDef>
+		</descriptionHyperlinks>
+		<designationCategory>Biotech</designationCategory>
+		<statBases>
+			<MaxHitPoints>1000</MaxHitPoints>
+			<WorkToBuild>16750</WorkToBuild>
+			<Mass>95</Mass>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<building>
+			<buildingTags>
+				<li>Biotech</li>
+			</buildingTags>
+		</building>
+		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+		<uiOrder>2099</uiOrder>
+		<researchPrerequisites Inherit="False">
+			<li>GeneProcessor</li>
+		</researchPrerequisites>
+		<costList>
+			<Steel>250</Steel>
+			<Plasteel>85</Plasteel>
+			<ComponentIndustrial>6</ComponentIndustrial>
+		</costList>
+		<tickerType>Rare</tickerType>
+		<passability>PassThroughOnly</passability>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>0.5</fillPercent>
+		<pathCost>14</pathCost>
+		<canOverlapZones>false</canOverlapZones>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+		</placeWorkers>
+		<inspectorTabs>
+			<li>ITab_ContentsGenepackHolder</li>
+		</inspectorTabs>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>325</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_GenepackContainer">
+				<maxCapacity>32</maxCapacity>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Facility">
+				<maxSimultaneous>10</maxSimultaneous>
+				<maxDistance>7.9</maxDistance>
 			</li>
 			<li Class="CompProperties_Flickable"/>
 		</comps>
