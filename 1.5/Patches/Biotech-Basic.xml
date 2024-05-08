@@ -31,10 +31,16 @@
 			</li>
 			<!-- ================================ Add Hyperlinks ====================== -->
 			<li Class="PatchOperationAdd">
-				<xpath>/Defs/ThingDef[defName="GeneBank" or defName="GeneAssembler"]/descriptionHyperlinks</xpath>
+				<xpath>/Defs/ThingDef[defName="GeneAssembler"]/descriptionHyperlinks</xpath>
 				<value>
 					<ThingDef>RS_GeneVault</ThingDef>
 					<ThingDef>RS_GeneRepository</ThingDef>
+					<ThingDef>RS_GeneCentrifuge</ThingDef>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="GeneBank"]/descriptionHyperlinks</xpath>
+				<value>
 					<ThingDef>RS_GeneCentrifuge</ThingDef>
 				</value>
 			</li>
@@ -48,7 +54,6 @@
 				<xpath>/Defs/ThingDef[defName="Genepack"]/descriptionHyperlinks</xpath>
 				<value>
 					<ThingDef>RS_GeneCentrifuge</ThingDef>
-					<ThingDef>RS_GeneRepository </ThingDef>
 					<ThingDef>RS_GeneVault</ThingDef>
 				</value>
 			</li>

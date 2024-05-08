@@ -14,9 +14,7 @@
 		<defaultPlacingRot>South</defaultPlacingRot>
 		<descriptionHyperlinks>
 			<ThingDef>Genepack</ThingDef>
-			<ThingDef>GeneBank</ThingDef>
 			<ThingDef>GeneAssembler</ThingDef>
-			<ThingDef>RS_GeneRepository</ThingDef>
 			<ThingDef>RS_GeneCentrifuge</ThingDef>
 		</descriptionHyperlinks>
 		<designationCategory>Biotech</designationCategory>
@@ -85,8 +83,7 @@
 		<defaultPlacingRot>South</defaultPlacingRot>
 		<descriptionHyperlinks>
 			<ThingDef>Genepack</ThingDef>
-			<ThingDef>GeneBank</ThingDef>
-			<ThingDef>RS_GeneVault</ThingDef>
+			<ThingDef>GeneAssembler</ThingDef>
 			<ThingDef>RS_GeneCentrifuge</ThingDef>
 		</descriptionHyperlinks>
 		<designationCategory>Biotech</designationCategory>
