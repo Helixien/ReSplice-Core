@@ -57,7 +57,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.5.*">
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.5.4085">
     </PackageReference>
     <PackageReference Include="Lib.Harmony" Version="2.3.*">
       <ExcludeAssets>runtime</ExcludeAssets>
@@ -77,6 +77,8 @@
     <Compile Include="HarmonyPatches\HediffSet_AddDirect_Patch.cs" />
     <Compile Include="HarmonyPatches\Hediff_PostRemoved_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_ExposeData_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_TraderTracker_ColonyThingsWillingToBuy_Patch.cs" />
+    <Compile Include="HarmonyPatches\TradeUtility_AllLaunchableThingsForTrade_Patch.cs" />
     <Compile Include="HotSwappableAttribute.cs" />
     <Compile Include="JobDriver_InsertIntoProcessor.cs" />
     <Compile Include="HarmonyPatches\Pawn_AbilityTracker_GainAbility_Patch.cs" />

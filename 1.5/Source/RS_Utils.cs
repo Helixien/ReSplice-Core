@@ -9,6 +9,7 @@ namespace ReSpliceCore
     public static class RS_Utils
     {
         public static List<ThingDef> allGenepacks = new List<ThingDef>();
+        public static List<ThingDef> allGeneBanks = new List<ThingDef>();
         static RS_Utils()
         {
             foreach (var def in DefDatabase<ThingDef>.AllDefs)
@@ -16,6 +17,10 @@ namespace ReSpliceCore
                 if (def.thingClass != null && typeof(Genepack).IsAssignableFrom(def.thingClass))
                 {
                     allGenepacks.Add(def);
+                }
+                if (def.HasComp(typeof(CompGenepackContainer)))
+                {
+                    allGeneBanks.Add(def);
                 }
             }
         }

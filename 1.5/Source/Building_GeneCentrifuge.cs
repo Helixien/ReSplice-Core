@@ -36,7 +36,17 @@ namespace ReSpliceCore
                     action = delegate
                     {
                         var allGenePacks = RS_Utils.allGenepacks.SelectMany(def => this.Map.listerThings.ThingsOfDef(def)
-                            .Cast<Genepack>().Where(x => x.GeneSet.GenesListForReading.Count > 1));
+                            .Cast<Genepack>().Where(x => x.GeneSet.GenesListForReading.Count > 1)).ToList();
+                        foreach (var bank in RS_Utils.allGeneBanks.SelectMany(def => this.Map.listerThings.ThingsOfDef(def)))
+                        {
+                            var comp = bank.TryGetComp<CompGenepackContainer>();
+                            var genes = comp.ContainedGenepacks.Where(x => x.GeneSet.GenesListForReading.Count > 1).ToList();
+                            if (genes.Any())
+                            {
+                                allGenePacks.AddRange(genes);
+                            }
+                        }
+
                         var floatList = new List<FloatMenuOption>();
                         foreach (var genepack in allGenePacks)
                         {
