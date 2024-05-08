@@ -1,60 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-	<!-- ================================ Gene Centrifuge ====================== -->
-	<ThingDef ParentName="BuildingBase">
-		<defName>RS_GeneCentrifuge</defName>
-		<label>gene centrifuge</label>
-		<description>A complex centrifugal system capable of separating desirable genetic elements by exploiting minute molecular differences. In effect, this building can separate a desired gene from the rest of a genepack. After the process, two gene packs will be spawned, with the selected gene in one and the remaining genes in the other.</description>
-		<thingClass>ReSpliceCore.Building_GeneCentrifuge</thingClass>
-		<graphicData>
-			<texPath>Things/Building/Misc/GeneCentrifuge</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>(2, 2)</drawSize>
-		</graphicData>
-		<uiIconScale>0.95</uiIconScale>
-		<size>(2, 2)</size>
-		<defaultPlacingRot>North</defaultPlacingRot>
-		<rotatable>false</rotatable>
-		<descriptionHyperlinks>
-			<ThingDef>Genepack</ThingDef>
-		</descriptionHyperlinks>
-		<designationCategory>Biotech</designationCategory>
-		<statBases>
-			<MaxHitPoints>350</MaxHitPoints>
-			<WorkToBuild>9000</WorkToBuild>
-			<Mass>85</Mass>
-			<Flammability>0.5</Flammability>
-		</statBases>
-		<building>
-			<soundAmbient>RS_GeneCentrifuge_Ambience</soundAmbient>
-			<buildingTags>
-				<li>Biotech</li>
-			</buildingTags>
-		</building>
-		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
-		<uiOrder>2097</uiOrder>
-		<researchPrerequisites>
-			<li>GeneProcessor</li>
-		</researchPrerequisites>
-		<costList>
-			<Steel>100</Steel>
-			<Plasteel>25</Plasteel>
-			<ComponentIndustrial>2</ComponentIndustrial>
-		</costList>
-		<tickerType>Normal</tickerType>
-		<passability>PassThroughOnly</passability>
-		<fillPercent>0.4</fillPercent>
-		<pathCost>14</pathCost>
-		<canOverlapZones>false</canOverlapZones>
-		<comps>
-			<li Class="CompProperties_Power">
-				<compClass>CompPowerTrader</compClass>
-				<basePowerConsumption>200</basePowerConsumption>
-				<idlePowerDraw>25</idlePowerDraw>
-			</li>
-			<li Class="CompProperties_Flickable"/>
-		</comps>
-	</ThingDef>
 	<!-- ================================ Gene Vault ====================== -->
 	<ThingDef ParentName="GeneBuildingBase">
 		<defName>RS_GeneVault</defName>
@@ -71,6 +16,7 @@
 			<ThingDef>Genepack</ThingDef>
 			<ThingDef>GeneBank</ThingDef>
 			<ThingDef>GeneAssembler</ThingDef>
+			<ThingDef>RS_GeneRepository</ThingDef>
 			<ThingDef>RS_GeneCentrifuge</ThingDef>
 		</descriptionHyperlinks>
 		<designationCategory>Biotech</designationCategory>
@@ -125,7 +71,7 @@
 			<li Class="CompProperties_Flickable"/>
 		</comps>
 	</ThingDef>
-	<!-- ================================ Gene registert ====================== -->
+	<!-- ================================ Gene repository ====================== -->
 	<ThingDef ParentName="GeneBuildingBase">
 		<defName>RS_GeneRepository</defName>
 		<label>gene repository</label>
@@ -190,6 +136,61 @@
 			<li Class="CompProperties_Facility">
 				<maxSimultaneous>10</maxSimultaneous>
 				<maxDistance>7.9</maxDistance>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+		</comps>
+	</ThingDef>
+	<!-- ================================ Gene Centrifuge ====================== -->
+	<ThingDef ParentName="BuildingBase">
+		<defName>RS_GeneCentrifuge</defName>
+		<label>gene centrifuge</label>
+		<description>A complex centrifugal system capable of separating desirable genetic elements by exploiting minute molecular differences. In effect, this building can separate a desired gene from the rest of a genepack. After the process, two gene packs will be spawned, with the selected gene in one and the remaining genes in the other.</description>
+		<thingClass>ReSpliceCore.Building_GeneCentrifuge</thingClass>
+		<graphicData>
+			<texPath>Things/Building/Misc/GeneCentrifuge</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(2, 2)</drawSize>
+		</graphicData>
+		<uiIconScale>0.95</uiIconScale>
+		<size>(2, 2)</size>
+		<defaultPlacingRot>North</defaultPlacingRot>
+		<rotatable>false</rotatable>
+		<descriptionHyperlinks>
+			<ThingDef>Genepack</ThingDef>
+		</descriptionHyperlinks>
+		<designationCategory>Biotech</designationCategory>
+		<statBases>
+			<MaxHitPoints>350</MaxHitPoints>
+			<WorkToBuild>9000</WorkToBuild>
+			<Mass>85</Mass>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<building>
+			<soundAmbient>RS_GeneCentrifuge_Ambience</soundAmbient>
+			<buildingTags>
+				<li>Biotech</li>
+			</buildingTags>
+		</building>
+		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+		<uiOrder>2097</uiOrder>
+		<researchPrerequisites>
+			<li>GeneProcessor</li>
+		</researchPrerequisites>
+		<costList>
+			<Steel>100</Steel>
+			<Plasteel>25</Plasteel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+		</costList>
+		<tickerType>Normal</tickerType>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>0.4</fillPercent>
+		<pathCost>14</pathCost>
+		<canOverlapZones>false</canOverlapZones>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>200</basePowerConsumption>
+				<idlePowerDraw>25</idlePowerDraw>
 			</li>
 			<li Class="CompProperties_Flickable"/>
 		</comps>
