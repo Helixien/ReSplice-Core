@@ -69,7 +69,7 @@
 			<li Class="CompProperties_Flickable"/>
 		</comps>
 	</ThingDef>
-	<!-- ================================ Gene repository ====================== -->
+	<!-- ================================ Gene Repository ====================== -->
 	<ThingDef ParentName="GeneBuildingBase">
 		<defName>RS_GeneRepository</defName>
 		<label>gene repository</label>
