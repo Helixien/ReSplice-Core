@@ -54,6 +54,12 @@ namespace ReSpliceCore
 
         public void SetTargetPawn(Pawn newTarget)
         {
+            var gene = this.GeneSet.GenesListForReading.First();
+            if (newTarget.genes.HasGene(gene))
+            {
+                Messages.Message("RS.CannotInfuseAlreadyHasDarkGene".Translate(newTarget.Named("PAWN"), gene.label), newTarget, MessageTypeDefOf.RejectInput);
+                return;
+            }
             int trueMax = RS_DefOf.RS_InfusionComa.CompProps<HediffCompProperties_Disappears>().disappearsAfterTicks.TrueMax;
             TaggedString text = "RS.InfuseDarkArchiteWarningDesc".Translate(newTarget.Named("PAWN"), trueMax.ToStringTicksToPeriod().Named("COMADURATION"));
             int num = GeneUtility.MetabolismAfterImplanting(newTarget, geneSet);
@@ -132,7 +138,7 @@ namespace ReSpliceCore
                 yield return new FloatMenuOption("CannotGenericWorkCustom".Translate((string)("RS.OrderInfusionIntoPawn".Translate(selPawn.Named("PAWN")).Resolve().UncapitalizeFirst() + ": " + "ResultingMetTooLow".Translate() + " (") + num + ")"), null);
                 yield break;
             }
-            if (PawnIdeoDisallowsInfuseing(selPawn))
+            if (PawnIdeoDisallowsInfusing(selPawn))
             {
                 yield return new FloatMenuOption("CannotGenericWorkCustom".Translate("RS.OrderInfusionIntoPawn".Translate(selPawn.Named("PAWN")).Resolve().UncapitalizeFirst() + ": " + "IdeoligionForbids".Translate()), null);
                 yield break;
@@ -143,7 +149,7 @@ namespace ReSpliceCore
             });
         }
 
-        public bool PawnIdeoDisallowsInfuseing(Pawn selPawn)
+        public bool PawnIdeoDisallowsInfusing(Pawn selPawn)
         {
             if (!ModsConfig.BiotechActive || !ModsConfig.IdeologyActive)
             {
@@ -207,7 +213,7 @@ namespace ReSpliceCore
                                 {
                                     list.Add(new FloatMenuOption((string)(pawn.LabelShortCap + ": " + "ResultingMetTooLow".Translate() + " (") + num + ")", null, pawn, Color.white));
                                 }
-                                else if (PawnIdeoDisallowsInfuseing(pawn))
+                                else if (PawnIdeoDisallowsInfusing(pawn))
                                 {
                                     list.Add(new FloatMenuOption(pawn.LabelShortCap + ": " + "IdeoligionForbids".Translate(), null, pawn, Color.white));
                                 }

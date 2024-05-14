@@ -30,9 +30,9 @@ namespace ReSpliceCore
                 var positionHeld = pawn.PositionHeld;
                 var mapHeld = pawn.MapHeld;
                 Explode(pawn, positionHeld, mapHeld);
-                if (Rand.Chance(psychicRitual.PowerPercent))
+                if (Rand.Chance(psychicRitual.PowerPercent) && pawn.genes.GenesListForReading
+                    .Where(x => x.def.displayCategory == RS_DefOf.RS_DarkArchite).TryRandomElement(out var darkGene))
                 {
-                    var darkGene = pawn.genes.GenesListForReading.Where(x => x.def.displayCategory == RS_DefOf.RS_DarkArchite).RandomElement();
                     var voidSpike = ThingMaker.MakeThing(RS_DefOf.RS_DarkArchiteSpike) as DarkArchiteSpike;
                     voidSpike.geneSet = new GeneSet();
                     voidSpike.geneSet.AddGene(darkGene.def);

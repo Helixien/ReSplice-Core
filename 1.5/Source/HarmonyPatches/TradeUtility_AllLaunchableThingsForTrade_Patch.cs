@@ -9,6 +9,7 @@ namespace ReSpliceCore
     [HarmonyPatch(typeof(TradeUtility), "AllLaunchableThingsForTrade")]
     public static class TradeUtility_AllLaunchableThingsForTrade_Patch
     {
+        [HarmonyPriority(int.MinValue)]
         public static IEnumerable<Thing> Postfix(IEnumerable<Thing> result, Map map, ITrader trader = null)
         {
             foreach (Thing thing in result)
@@ -29,7 +30,7 @@ namespace ReSpliceCore
                             var comp = t.TryGetComp<CompGenepackContainer>();
                             foreach (var item2 in comp.ContainedGenepacks)
                             {
-                                if (!yieldedThings.Contains(item2))
+                                if (!yieldedThings.Contains(item2) && result.Contains(item2) is false)
                                 {
                                     yieldedThings.Add(item2);
                                     yield return item2;

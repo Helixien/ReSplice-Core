@@ -9,6 +9,7 @@ namespace ReSpliceCore
     [HarmonyPatch(typeof(Pawn_TraderTracker), "ColonyThingsWillingToBuy")]
     public static class Pawn_TraderTracker_ColonyThingsWillingToBuy_Patch
     {
+        [HarmonyPriority(int.MinValue)]
         public static IEnumerable<Thing> Postfix(IEnumerable<Thing> result, Pawn_TraderTracker __instance)
         {
             foreach (var thing in result)
@@ -24,7 +25,10 @@ namespace ReSpliceCore
                         var comp = geneVault.TryGetComp<CompGenepackContainer>();
                         foreach (var genepack in comp.ContainedGenepacks)
                         {
-                            yield return genepack;
+                            if (result.Contains(genepack) is false)
+                            {
+                                yield return genepack;
+                            }
                         }
                     }
                 }

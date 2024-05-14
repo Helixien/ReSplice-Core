@@ -38,4 +38,5 @@
 	<RS.CancelInfusingDesc>Cancel infusing this voidspike into {PAWN_nameDef}.</RS.CancelInfusingDesc>
 	<RS.MessageCannotInfuseInTempFactionMembers>Cannot infuse in temporary faction members.</RS.MessageCannotInfuseInTempFactionMembers>
 	<RS.TargetMustHaveAtLeastOneDarkGene>Target must have at least one dark archite gene.</RS.TargetMustHaveAtLeastOneDarkGene>
+	<RS.CannotInfuseAlreadyHasDarkGene>Cannot infuse {1}, {PAWN_nameDef} already has the dark gene.</RS.CannotInfuseAlreadyHasDarkGene>
 </LanguageData>
