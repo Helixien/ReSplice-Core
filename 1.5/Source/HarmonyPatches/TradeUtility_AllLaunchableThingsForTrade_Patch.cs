@@ -28,7 +28,7 @@ namespace ReSpliceCore
                         if (t.def != ThingDefOf.GeneBank && RS_Utils.allGeneBanks.Contains(t.def))
                         {
                             var comp = t.TryGetComp<CompGenepackContainer>();
-                            foreach (var item2 in comp.ContainedGenepacks)
+                            foreach (var item2 in comp.ContainedGenepacks.ToList())
                             {
                                 if (!yieldedThings.Contains(item2) && result.Contains(item2) is false)
                                 {

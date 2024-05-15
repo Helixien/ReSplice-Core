@@ -16,14 +16,14 @@ namespace ReSpliceCore
             {
                 yield return thing;
             }
-            foreach (var genebank in RS_Utils.allGeneBanks.Where(x => x != ThingDefOf.GeneBank))
+            foreach (var genebank in RS_Utils.allGeneBanks.Where(x => x != ThingDefOf.GeneBank).ToList())
             {
-                foreach (var geneVault in __instance.pawn.Map.listerBuildings.AllBuildingsColonistOfDef(genebank))
+                foreach (var geneVault in __instance.pawn.Map.listerBuildings.AllBuildingsColonistOfDef(genebank).ToList())
                 {
                     if (__instance.ReachableForTrade(geneVault))
                     {
                         var comp = geneVault.TryGetComp<CompGenepackContainer>();
-                        foreach (var genepack in comp.ContainedGenepacks)
+                        foreach (var genepack in comp.ContainedGenepacks.ToList())
                         {
                             if (result.Contains(genepack) is false)
                             {
