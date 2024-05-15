@@ -12,11 +12,12 @@ namespace ReSpliceCore
         [HarmonyPriority(int.MinValue)]
         public static IEnumerable<Thing> Postfix(IEnumerable<Thing> result, Map map, ITrader trader = null)
         {
+            HashSet<Thing> yieldedThings = new HashSet<Thing>();
             foreach (Thing thing in result)
             {
+                yieldedThings.Add(thing);
                 yield return thing;
             }
-            HashSet<Thing> yieldedThings = new HashSet<Thing>();
             foreach (Building_OrbitalTradeBeacon item in Building_OrbitalTradeBeacon.AllPowered(map))
             {
                 foreach (IntVec3 tradeableCell in item.TradeableCells)
@@ -30,7 +31,7 @@ namespace ReSpliceCore
                             var comp = t.TryGetComp<CompGenepackContainer>();
                             foreach (var item2 in comp.ContainedGenepacks.ToList())
                             {
-                                if (!yieldedThings.Contains(item2) && result.Contains(item2) is false)
+                                if (!yieldedThings.Contains(item2))
                                 {
                                     yieldedThings.Add(item2);
                                     yield return item2;
