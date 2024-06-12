@@ -25,11 +25,14 @@
 		<category>RS_Anomaly</category>
 		<order>5</order>
 		<operations>
-			<li Class="PatchOperationRemove">
-				<xpath>Defs/GeneDef[defName="RS_DarkArchiteSpike"]/deteriorateFromEnvironmentalEffects/DeteriorationRate</xpath>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="RS_DarkArchiteSpike"]/deteriorateFromEnvironmentalEffects</xpath>
+				<value>
+					<deteriorateFromEnvironmentalEffects>true</deteriorateFromEnvironmentalEffects>
+				</value>
 			</li>
 			<li Class="PatchOperationRemove">
-				<xpath>Defs/GeneDef[defName="RS_DarkArchiteSpike"]/statBases</xpath>
+				<xpath>Defs/ThingDef[defName="RS_DarkArchiteSpike"]/statBases/DeteriorationRate</xpath>
 			</li>
 		</operations>
 	</Operation>
