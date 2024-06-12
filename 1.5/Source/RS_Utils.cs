@@ -25,6 +25,16 @@ namespace ReSpliceCore
             }
         }
 
+        public static IEnumerable<GeneDef> AllDarkArchiteGenes()
+        {
+            return DefDatabase<GeneDef>.AllDefsListForReading.Where(IsDarkArchite);
+        }
+
+        public static bool IsDarkArchite(this GeneDef x)
+        {
+            return x.displayCategory == RS_DefOf.RS_DarkArchite;
+        }
+
         public static List<List<T>> ChunkBy<T>(this List<T> source, int chunkSize)
         {
             return source

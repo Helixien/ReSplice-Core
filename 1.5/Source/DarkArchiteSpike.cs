@@ -37,7 +37,7 @@ namespace ReSpliceCore
             {
                 Rand.PushState(seed.Value);
             }
-            var gene = DefDatabase<GeneDef>.AllDefsListForReading.Where(x => x.displayCategory == RS_DefOf.RS_DarkArchite).RandomElement();
+            var gene = RS_Utils.AllDarkArchiteGenes().RandomElement();
             geneSet.AddGene(gene);
             geneSet.GenerateName();
             if (seed.HasValue)

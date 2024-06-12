@@ -27,7 +27,7 @@ namespace ReSpliceCore
                 var pawn = assignments.FirstAssignedPawn(TargetRole);
                 if (pawn != null)
                 {
-                    if (pawn.genes?.GenesListForReading.Any(x => x.def.displayCategory == RS_DefOf.RS_DarkArchite) is false)
+                    if (pawn.genes?.GenesListForReading.Any(x => x.def.IsDarkArchite()) is false)
                     {
                         yield return "RS.TargetMustHaveAtLeastOneDarkGene".Translate();
                     }

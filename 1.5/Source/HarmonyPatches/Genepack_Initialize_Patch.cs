@@ -20,7 +20,7 @@ namespace ReSpliceCore
             {
                 LongEventHandler.ExecuteWhenFinished(delegate
                 {
-                    bool hasDarkArchiteGenes = genepack.GeneSet.genes.Any(x => x.displayCategory == RS_DefOf.RS_DarkArchite);
+                    bool hasDarkArchiteGenes = genepack.GeneSet.genes.Any(x => x.IsDarkArchite());
                     bool hasDarkArchiteGraphic = genepack.graphicInt?.path == TexPath;
                     if (hasDarkArchiteGraphic is false && hasDarkArchiteGenes)
                     {

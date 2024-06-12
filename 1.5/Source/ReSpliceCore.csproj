@@ -77,6 +77,7 @@
     <Compile Include="HarmonyPatches\HediffSet_AddDirect_Patch.cs" />
     <Compile Include="HarmonyPatches\Hediff_PostRemoved_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_ExposeData_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_GeneTracker_ClearXenogenes_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_TraderTracker_ColonyThingsWillingToBuy_Patch.cs" />
     <Compile Include="HarmonyPatches\TradeUtility_AllLaunchableThingsForTrade_Patch.cs" />
     <Compile Include="HotSwappableAttribute.cs" />
