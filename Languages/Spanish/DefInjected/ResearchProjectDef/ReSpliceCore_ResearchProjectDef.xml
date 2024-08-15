@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+<RS_DarkArchiteHarvesting.label>recolección de arquita oculta</RS_DarkArchiteHarvesting.label>
+<RS_DarkArchiteHarvesting.description>Permite realizar un ritual psíquico que recolecta los genes de arquita oculta de un objetivo, arrancándolos de su cuerpo y matándolo en el proceso. Los genes recolectados se almacenarán en una espina del vacío y podrán ser reimplantados en otra persona más adelante.</RS_DarkArchiteHarvesting.description>
+<RS_DarkArchiteHarvesting.generalRules.rulesStrings>
+    <li>subject->la recolección de arquita oculta</li>
+    <li>subject->los genes corrompidos arrancados</li>
+    <li>subject_story->ha investigado sobre los genes de arquita oculta</li>
+    <li>subject_story->ha recogido relatos de genes de arquita corrompidos</li>
+    <li>subject_story->ha recopilado historias de genetistas locos</li>			
+    <li>subject_story->ha clasificado las historias de corrupción del vacío</li>						
+    <li>subject_story->ha reunido leyendas sobre la recolección de genes</li>						
+    <li>subject_gerund->realización de un ritual para recolectar genes</li>
+    <li>subject_gerund->arrancar genes de un cuerpo</li>
+</RS_DarkArchiteHarvesting.generalRules.rulesStrings>
+
+</LanguageData>

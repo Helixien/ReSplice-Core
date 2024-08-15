@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+<!-- ================================ Gene Centrifuge ====================== -->
+<RS.SeparateGene>Separar genes</RS.SeparateGene>
+<RS.SeparateGeneDesc>Seleccionar un pack de genes a partir del cual se separarán los genes.</RS.SeparateGeneDesc>
+<RS.SeparatingGenes>Separación de genes</RS.SeparatingGenes>
+<RS.SelectGene>Seleccionar un gen</RS.SelectGene>
+<RS.SelectGeneExplanation>El gen seleccionado se separará del resto del pack de genes.</RS.SelectGeneExplanation>
+<RS.SeparateGeneExplanation>Tras una separación exitosa, se crearán dos packs de genes. Uno contendrá únicamente el gen seleccionado, y el otro el resto. Este proceso no es perfecto y existe un bajo riesgo de destrucción de uno de los packs de genes.</RS.SeparateGeneExplanation>
+<RS.StartSeparating>Iniciar la separación</RS.StartSeparating>
+<RS.FinishedSeparatingMessage>¡La centrifugadora de genes ha terminado de separar los packs de genes!</RS.FinishedSeparatingMessage>
+<RS.FinishedSeparatingDestroyedMessage>¡La centrifugadora de genes ha terminado de separar los packs de genes! {0} ha sido destruido durante el proceso.</RS.FinishedSeparatingDestroyedMessage>
+<RS.SeparatingProgress>Separación: {0}</RS.SeparatingProgress>
+<RS.CentrigureWorking>En funcionamiento.</RS.CentrigureWorking>
+<RS.CancelGeneSeparating>Cancelar la separación</RS.CancelGeneSeparating>
+<RS.CancelGeneSeparatingDesc>Cancela la separación de genes.</RS.CancelGeneSeparatingDesc>
+<RS.ContainsGenepack>Contiene: {0}</RS.ContainsGenepack>
+<RS.SelectAGeneToSeparate>Selecciona el gen a separar.</RS.SelectAGeneToSeparate>
+<!-- ================================ Xenogerm duplicator ====================== -->
+<RS.DuplicateXenogerm>Duplicar xenogermen</RS.DuplicateXenogerm>
+<RS.DuplicateXenogermDesc>Selecciona un xenogermen para duplicar. Los xenogérmenes con genes arquitas requieren la carga de cápsulas arquitas.</RS.DuplicateXenogermDesc>
+<RS.DuplicatorWorking>En funcionamiento.</RS.DuplicatorWorking>
+<RS.CancelXenogermDuplication>Cancelar la duplicación</RS.CancelXenogermDuplication>
+<RS.CancelXenogermDuplicationDesc>Cancelación de la duplicación del xenogermen.</RS.CancelXenogermDuplicationDesc>
+<RS.DuplicationProgress>Duplicación: {0}</RS.DuplicationProgress>
+<RS.ContainsXenogerm>Contiene: {0}</RS.ContainsXenogerm>
+<RS.FinishedXenogermDuplicationMessage>¡El duplicador de xenogérmenes ha terminado de duplicar el xenogermen!</RS.FinishedXenogermDuplicationMessage>
+<RS.NotEnoughArchiteCapsulesLoaded>¿Deseas realmente duplicar el xenogermen? El número de cápsulas de arquita no es suficiente para duplicar todos los genes arquitas dentro del xenogermen.</RS.NotEnoughArchiteCapsulesLoaded>
+<!-- ================================ Void spike infusion ====================== -->
+<RS.InfuseDarkArchite>Inyectar</RS.InfuseDarkArchite>
+<RS.InfuseDarkArchiteWarningDesc>La inyección de una espina del vacío sumergirá a {PAWN_nameDef} en un coma de corta duración, mientras el gen de la espina se integra. En promedio, dura {COMADURATION}.</RS.InfuseDarkArchiteWarningDesc>
+<RS.InfuseDarkArchiteWarningNewMetabolism>Tras la inyección, {PAWN_nameDef} tendrá una eficiencia metabólica del {MET} y un nivel de hambre del {CONSUMPTION}.</RS.InfuseDarkArchiteWarningNewMetabolism>
+<RS.LetterLabelDarkArchiteOrderedInfused>Inyección de espina del vacío ordenada</RS.LetterLabelDarkArchiteOrderedInfused>
+<RS.LetterDarkArchiteOrderedInfused>Has ordenado la inyección de una espina del vacío en {PAWN_nameDef}. Este procedimiento requiere una cama médica.\n\nPuedes cancelar esta inyección haciendo clic en {PAWN_nameDef}, en la pestaña "Salud" y en "Operaciones".</RS.LetterDarkArchiteOrderedInfused>
+<RS.OrderInfusionIntoPawn>Ordenar la inyección en {PAWN_nameDef}</RS.OrderInfusionIntoPawn>
+<RS.InfuseDarkArchiteDesc>La inyección en una persona permite introducir un gen arquita oculto en su código genético.\n\nSe trata de una operación quirúrgica, por lo que se necesita un médico y una cama médica.</RS.InfuseDarkArchiteDesc>
+<RS.CancelInfusion>Cancelar la inyección</RS.CancelInfusion>
+<RS.CancelInfusingDesc>Cancela la inyección de la espina del vacío en {PAWN_nameDef}.</RS.CancelInfusingDesc>
+<RS.MessageCannotInfuseInTempFactionMembers>No se puede inyectar en los miembros temporales de tu facción.</RS.MessageCannotInfuseInTempFactionMembers>
+<RS.TargetMustHaveAtLeastOneDarkGene>El objetivo debe poseer al menos un gen arquita oculto.</RS.TargetMustHaveAtLeastOneDarkGene>
+<RS.CannotInfuseAlreadyHasDarkGene>No se puede inyectar {1}, {PAWN_nameDef} ya posee un gen de arquita oculto.</RS.CannotInfuseAlreadyHasDarkGene>
+
+</LanguageData>

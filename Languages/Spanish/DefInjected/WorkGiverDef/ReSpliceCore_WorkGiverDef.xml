@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+<RS_InsertGenepack.label>insertar un pack de genes en la centrifugadora</RS_InsertGenepack.label>
+<RS_InsertGenepack.gerund>inserción del</RS_InsertGenepack.gerund>
+<RS_InsertGenepack.verb>insertar el pack de genes en la</RS_InsertGenepack.verb>
+
+<RS_InsertXenogerm.label>insertar un xenogermen en el duplicador</RS_InsertXenogerm.label>
+<RS_InsertXenogerm.gerund>inserción del</RS_InsertXenogerm.gerund>
+<RS_InsertXenogerm.verb>insertar el xenogermen en el</RS_InsertXenogerm.verb>
+
+</LanguageData>

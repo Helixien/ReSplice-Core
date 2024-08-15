@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+<RS_DarkArchiteSpike.label>espina del vacío</RS_DarkArchiteSpike.label>
+<RS_DarkArchiteSpike.description>Una pieza de arqueotecnología oculta, grosera y pulsante, que contiene uno o varios xenogérmenes inyectables.\n\nDebe ser implantada en el cuerpo del huésped para inyectar sus genes, reescribiendo su código genético de manera casi permanente mediante una manipulación psíquica.\n\nUna vez completada la inyección, la espina se desintegra y deja a la persona postrada durante unos días.</RS_DarkArchiteSpike.description>
+
+<RS_GeneCentrifuge.label>centrífuga de genes</RS_GeneCentrifuge.label>
+<RS_GeneCentrifuge.description>Un sistema centrifugador complejo capaz de separar los elementos genéticos deseados aprovechando mínimas diferencias moleculares. En la práctica, este edificio puede separar un gen deseado del resto de un pack de genes. Al final del proceso, se crearán dos packs de genes, con el gen seleccionado en uno y los genes restantes en el otro.</RS_GeneCentrifuge.description>
+
+<RS_GeneVault.label>bóveda de genes</RS_GeneVault.label>
+<RS_GeneVault.description>Un procesador de genes combinado con dos bancos de genes avanzados. Este edificio, colocado cerca de un ensamblador de genes, aumenta la complejidad genética máxima de los xenogérmenes que puedes ensamblar, así como el acceso a una plétora de packs de genes almacenados durante su creación.\n\nCuando están alimentadas, las bóvedas de genes evitan la deterioración de los packs de genes y ralentizan el deterioro de las reparaciones.</RS_GeneVault.description>
+
+<RS_XenoGermDuplicator.label>duplicador de xenogérmenes</RS_XenoGermDuplicator.label>
+<RS_XenoGermDuplicator.description>Una máquina de simplicidad engañosa que sintetiza material genético para fabricar en masa una copia exacta de un xenogermen existente. Este edificio puede duplicar cualquier xenogermen existente, incluidos los genes arquitas, siempre que esté provisto con la cantidad necesaria de cápsulas de arquitas.</RS_XenoGermDuplicator.description>
+<RS_XenoGermDuplicator.comps.CompRefuelable.fuelGizmoLabel>Cápsulas de arquitas</RS_XenoGermDuplicator.comps.CompRefuelable.fuelGizmoLabel>
+<RS_XenoGermDuplicator.comps.CompRefuelable.fuelLabel>Cápsulas de arquitas</RS_XenoGermDuplicator.comps.CompRefuelable.fuelLabel>
+
+<RS_GeneRepository.label>almacén de genes</RS_GeneRepository.label>
+<RS_GeneRepository.description>Este edificio puede almacenar una gran cantidad de packs de genes y hacerlos utilizables para crear nuevos xenogérmenes, cuando se coloca cerca de un ensamblador de genes. Los almacenes de genes permiten optimizar el espacio en grandes bibliotecas de genes.\n\nCuando están alimentados, los almacenes de genes previenen la deterioración de los packs de genes y los reparan lentamente.</RS_GeneRepository.description>
+
+</LanguageData>

@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+<RS_VoidTouched.label>tocado por el vacío</RS_VoidTouched.label>
+<RS_VoidTouched.description>Los portadores de este gen han visto las profundidades del vacío y han bebido su esencia. Esta sigue viva en ellos, guiando sus acciones y deformando su carne. Ha vuelto su cabello quebradizo y blanco. Ya no necesitan dormir ni confort. El vacío se encarga de eso.</RS_VoidTouched.description>
+<RS_VoidTouched.customEffectDescriptions.0>Confiere el estado de salud tocado por el vacío.</RS_VoidTouched.customEffectDescriptions.0>
+<RS_VoidTouched.labelShortAdj>tocado por el vacío</RS_VoidTouched.labelShortAdj>
+<RS_VoidTouched.symbolPack.prefixSymbols.0.symbol>vacío</RS_VoidTouched.symbolPack.prefixSymbols.0.symbol>
+<RS_VoidTouched.symbolPack.prefixSymbols.1.symbol>tocado</RS_VoidTouched.symbolPack.prefixSymbols.1.symbol>
+<RS_VoidTouched.symbolPack.prefixSymbols.2.symbol>abrazo</RS_VoidTouched.symbolPack.prefixSymbols.2.symbol>
+<RS_VoidTouched.symbolPack.prefixSymbols.3.symbol>corrompido</RS_VoidTouched.symbolPack.prefixSymbols.3.symbol>
+<RS_VoidTouched.symbolPack.suffixSymbols.0.symbol>oscuro</RS_VoidTouched.symbolPack.suffixSymbols.0.symbol>
+<RS_VoidTouched.symbolPack.suffixSymbols.1.symbol>vacío</RS_VoidTouched.symbolPack.suffixSymbols.1.symbol>
+<RS_VoidTouched.symbolPack.suffixSymbols.2.symbol>corrompido</RS_VoidTouched.symbolPack.suffixSymbols.2.symbol>
+<RS_VoidTouched.symbolPack.suffixSymbols.3.symbol>blanco</RS_VoidTouched.symbolPack.suffixSymbols.3.symbol>
+<RS_VoidTouched.symbolPack.wholeNameSymbols.0.symbol>abrazador</RS_VoidTouched.symbolPack.wholeNameSymbols.0.symbol>
+<RS_VoidTouched.symbolPack.wholeNameSymbols.1.symbol>bebedor</RS_VoidTouched.symbolPack.wholeNameSymbols.1.symbol>
+
+<RS_UnnaturalHealing.label>sanación antinatural</RS_UnnaturalHealing.label>
+<RS_UnnaturalHealing.description>Los portadores pueden utilizar la influencia psíquica de las tinieblas para sanar a alguien. Este proceso detiene hemorragias, restaura la pérdida de sangre e incluso puede curar heridas graves. Sin embargo, también puede tener efectos secundarios inesperados.</RS_UnnaturalHealing.description>
+<RS_UnnaturalHealing.symbolPack.prefixSymbols.0.symbol>antinatural</RS_UnnaturalHealing.symbolPack.prefixSymbols.0.symbol>
+<RS_UnnaturalHealing.symbolPack.prefixSymbols.1.symbol>sanar</RS_UnnaturalHealing.symbolPack.prefixSymbols.1.symbol>
+<RS_UnnaturalHealing.symbolPack.prefixSymbols.2.symbol>oscuro</RS_UnnaturalHealing.symbolPack.prefixSymbols.2.symbol>
+<RS_UnnaturalHealing.symbolPack.prefixSymbols.3.symbol>psíquico</RS_UnnaturalHealing.symbolPack.prefixSymbols.3.symbol>
+<RS_UnnaturalHealing.symbolPack.suffixSymbols.0.symbol>sanador</RS_UnnaturalHealing.symbolPack.suffixSymbols.0.symbol>
+<RS_UnnaturalHealing.symbolPack.wholeNameSymbols.0.symbol>sanador</RS_UnnaturalHealing.symbolPack.wholeNameSymbols.0.symbol>
+
+<RS_TransmuteSteel.label>transmutar acero</RS_TransmuteSteel.label>
+<RS_TransmuteSteel.description>Los portadores pueden reconfigurar el acero a nivel atómico, transformándolo en un material de valor aleatorio. Puede afectar a una pila de acero o a un trozo de chatarra de acero.</RS_TransmuteSteel.description>
+<RS_TransmuteSteel.symbolPack.prefixSymbols.0.symbol>transmutar</RS_TransmuteSteel.symbolPack.prefixSymbols.0.symbol>
+<RS_TransmuteSteel.symbolPack.prefixSymbols.1.symbol>reconfigurar</RS_TransmuteSteel.symbolPack.prefixSymbols.1.symbol>
+<RS_TransmuteSteel.symbolPack.prefixSymbols.2.symbol>atómico</RS_TransmuteSteel.symbolPack.prefixSymbols.2.symbol>
+<RS_TransmuteSteel.symbolPack.prefixSymbols.3.symbol>material</RS_TransmuteSteel.symbolPack.prefixSymbols.3.symbol>
+<RS_TransmuteSteel.symbolPack.suffixSymbols.0.symbol>transmutador</RS_TransmuteSteel.symbolPack.suffixSymbols.0.symbol>
+<RS_TransmuteSteel.symbolPack.wholeNameSymbols.0.symbol>transmutador</RS_TransmuteSteel.symbolPack.wholeNameSymbols.0.symbol>
+
+<RS_DeadlifeDust.label>polvo de resurrección</RS_DeadlifeDust.label>
+<RS_DeadlifeDust.description>Los portadores pueden liberar una nube de una sustancia similar a polvo que se deposita sobre los cadáveres cercanos y los transforma en zombis. Estos solo atacan a tus enemigos. El polvo de resurrección está compuesto esencialmente por nano-arquitas que penetran y reaniman los tejidos muertos a nivel celular.</RS_DeadlifeDust.description>
+<RS_DeadlifeDust.symbolPack.prefixSymbols.0.symbol>resurrección</RS_DeadlifeDust.symbolPack.prefixSymbols.0.symbol>
+<RS_DeadlifeDust.symbolPack.prefixSymbols.1.symbol>muerte</RS_DeadlifeDust.symbolPack.prefixSymbols.1.symbol>
+<RS_DeadlifeDust.symbolPack.prefixSymbols.2.symbol>vida</RS_DeadlifeDust.symbolPack.prefixSymbols.2.symbol>
+<RS_DeadlifeDust.symbolPack.prefixSymbols.3.symbol>zombis</RS_DeadlifeDust.symbolPack.prefixSymbols.3.symbol>
+<RS_DeadlifeDust.symbolPack.suffixSymbols.0.symbol>colector</RS_DeadlifeDust.symbolPack.suffixSymbols.0.symbol>
+<RS_DeadlifeDust.symbolPack.wholeNameSymbols.0.symbol>colector</RS_DeadlifeDust.symbolPack.wholeNameSymbols.0.symbol>
+
+<RS_ShapeFlesh.label>moldear carne</RS_ShapeFlesh.label>
+<RS_ShapeFlesh.description>Los portadores ordenan a un arqueotec oculto transformar un cadáver en una abominación de carne grotesca hostil a todos los humanos, incluyendo a su creador.</RS_ShapeFlesh.description>
+<RS_ShapeFlesh.symbolPack.prefixSymbols.0.symbol>transformar</RS_ShapeFlesh.symbolPack.prefixSymbols.0.symbol>
+<RS_ShapeFlesh.symbolPack.prefixSymbols.1.symbol>forma</RS_ShapeFlesh.symbolPack.prefixSymbols.1.symbol>
+<RS_ShapeFlesh.symbolPack.prefixSymbols.2.symbol>reconfigurar</RS_ShapeFlesh.symbolPack.prefixSymbols.2.symbol>
+<RS_ShapeFlesh.symbolPack.prefixSymbols.3.symbol>horrible</RS_ShapeFlesh.symbolPack.prefixSymbols.3.symbol>
+<RS_ShapeFlesh.symbolPack.suffixSymbols.0.symbol>moldeador</RS_ShapeFlesh.symbolPack.suffixSymbols.0.symbol>
+<RS_ShapeFlesh.symbolPack.wholeNameSymbols.0.symbol>moldeador</RS_ShapeFlesh.symbolPack.wholeNameSymbols.0.symbol>
+
+<RS_PsychicSlaughter.label>masacre psíquica</RS_PsychicSlaughter.label>
+<RS_PsychicSlaughter.description>Los portadores utilizan el poder psíquico oculto para provocar la reconfiguración caótica de la carne. Esta habilidad convierte en cuestión de segundos una criatura de carne en un montón de carne sin forma.</RS_PsychicSlaughter.description>
+<RS_PsychicSlaughter.symbolPack.prefixSymbols.0.symbol>masacre</RS_PsychicSlaughter.symbolPack.prefixSymbols.0.symbol>
+<RS_PsychicSlaughter.symbolPack.prefixSymbols.1.symbol>barrido</RS_PsychicSlaughter.symbolPack.prefixSymbols.1.symbol>
+<RS_PsychicSlaughter.symbolPack.prefixSymbols.2.symbol>torcido</RS_PsychicSlaughter.symbolPack.prefixSymbols.2.symbol>
+<RS_PsychicSlaughter.symbolPack.prefixSymbols.3.symbol>horrible</RS_PsychicSlaughter.symbolPack.prefixSymbols.3.symbol>
+<RS_PsychicSlaughter.symbolPack.suffixSymbols.0.symbol>carnicero</RS_PsychicSlaughter.symbolPack.suffixSymbols.0.symbol>
+<RS_PsychicSlaughter.symbolPack.wholeNameSymbols.0.symbol>carnicero</RS_PsychicSlaughter.symbolPack.wholeNameSymbols.0.symbol>
+
+<RS_Tentacle_Limbs.label>miembros tentaculares</RS_Tentacle_Limbs.label>
+<RS_Tentacle_Limbs.description>Los portadores de este gen desarrollan apéndices en forma de tentáculos en lugar de uno o dos de sus brazos.</RS_Tentacle_Limbs.description>
+
+<RS_Tentacle_Whip.label>membro látigo de carne</RS_Tentacle_Whip.label>
+<RS_Tentacle_Whip.description>Los portadores de este gen desarrollan apéndices en forma de tentáculos con puntas óseas afiladas en bioferrita en lugar de uno o dos de sus brazos.</RS_Tentacle_Whip.description>
+
+<RS_Hair_OrangeReddish.label>pelo rojizo</RS_Hair_OrangeReddish.label>
+<RS_Hair_OrangeReddish.description>Los portadores de este gen tienen el color de pelo rojizo. Con varios genes de color de pelo, se selecciona un gen al azar.</RS_Hair_OrangeReddish.description>
+
+<RS_Hair_Purple.label>pelo morado oscuro</RS_Hair_Purple.label>
+<RS_Hair_Purple.description>Los portadores de este gen tienen el color de pelo morado oscuro. Con varios genes de color de pelo, se selecciona un gen al azar.</RS_Hair_Purple.description>
+
+</LanguageData>
