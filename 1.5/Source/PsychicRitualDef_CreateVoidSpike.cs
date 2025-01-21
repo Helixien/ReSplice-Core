@@ -25,9 +25,9 @@ namespace ReSpliceCore
             using (new ProfilerBlock("PsychicRitualDef.BlockingIssues"))
             {
                 var pawn = assignments.FirstAssignedPawn(TargetRole);
-                if (pawn != null)
+                if (pawn?.genes != null)
                 {
-                    if (pawn.genes?.GenesListForReading.Any(x => x.def.IsDarkArchite()) is false)
+                    if (pawn.genes.GenesListForReading.Any(x => x.def.IsDarkArchite()) is false)
                     {
                         yield return "RS.TargetMustHaveAtLeastOneDarkGene".Translate();
                     }

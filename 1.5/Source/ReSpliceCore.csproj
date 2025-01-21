@@ -73,6 +73,7 @@
     <Compile Include="DarkArchiteSpike.cs" />
     <Compile Include="GeneExtension.cs" />
     <Compile Include="Gene_Tentacles.cs" />
+    <Compile Include="HarmonyPatches\Building_GeneExtractor_SelectionWeight_Patch.cs" />
     <Compile Include="HarmonyPatches\Genepack_Initialize_Patch.cs" />
     <Compile Include="HarmonyPatches\HediffSet_AddDirect_Patch.cs" />
     <Compile Include="HarmonyPatches\Hediff_PostRemoved_Patch.cs" />
