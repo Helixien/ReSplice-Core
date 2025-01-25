@@ -20,7 +20,7 @@
 	<Operation Class="ModSettingsFramework.PatchOperationModOption">
 		<defaultValue>False</defaultValue>
 		<label>Disable voidspike degrading</label>
-		<tooltip>When enabled voidspikes will not degrading. (Default: False)</tooltip>
+		<tooltip>When enabled voidspikes will not degrade. (Default: False)</tooltip>
 		<id>RS_VoidspikeDegradation</id>
 		<category>RS_Anomaly</category>
 		<order>5</order>
