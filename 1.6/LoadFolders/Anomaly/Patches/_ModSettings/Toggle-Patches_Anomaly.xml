@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- ================ Enable Dark Archite in Xenotype creator ================ -->
+	<Operation Class="ModSettingsFramework.PatchOperationModOption">
+		<defaultValue>False</defaultValue>
+		<label>Allow archite genes in xenotype editor</label>
+		<tooltip>Allows you to use dark archite genes in the xenotype editor. (Default: False)</tooltip>
+		<id>RS_DarkArchiteEditor</id>
+		<category>RS_Anomaly</category>
+		<order>0</order>
+		<operations>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/GeneDef[@Name="RS_DarkArchiteBase"]/modExtensions/li[@Class="VEF.Genes.GeneExtension"]/hideGene</xpath>
+				<value>
+					<hideGene>False</hideGene>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	<Operation Class="ModSettingsFramework.PatchOperationModOption">
+		<defaultValue>False</defaultValue>
+		<label>Disable voidspike degrading</label>
+		<tooltip>When enabled voidspikes will not degrade. (Default: False)</tooltip>
+		<id>RS_VoidspikeDegradation</id>
+		<category>RS_Anomaly</category>
+		<order>5</order>
+		<operations>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="RS_DarkArchiteSpike"]/deteriorateFromEnvironmentalEffects</xpath>
+				<value>
+					<deteriorateFromEnvironmentalEffects>true</deteriorateFromEnvironmentalEffects>
+				</value>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/ThingDef[defName="RS_DarkArchiteSpike"]/statBases/DeteriorationRate</xpath>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

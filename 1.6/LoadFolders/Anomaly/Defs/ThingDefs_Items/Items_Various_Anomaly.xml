@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- ================================ Dark Archite Spike ====================== -->
+	<ThingDef ParentName="GeneSetHolderBase">
+		<defName>RS_DarkArchiteSpike</defName>
+		<label>voidspike</label>
+		<description>A pulsating, crude piece of dark archotechnology containing one or more infuse-able xenogenes.\n\nIt needs to be stabbed into the host’s body for it to infuse its genes, rewriting its genetic code near permanently with psychic manipulation.\n\nAfter the infusion is complete, the spike disintegrates itself and makes a person bedridden for a few days.</description>
+		<graphicData>
+			<texPath>Things/Item/Special/DarkArchiteInfuser</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<thingClass>ReSpliceCore.DarkArchiteSpike</thingClass>
+		<tickerType>Rare</tickerType>
+		<useHitPoints>true</useHitPoints>
+		<stackLimit>1</stackLimit>
+		<canDeteriorateUnspawned>false</canDeteriorateUnspawned>
+		<deteriorateFromEnvironmentalEffects>false</deteriorateFromEnvironmentalEffects>
+		<statBases>
+			<MarketValue>500</MarketValue>
+			<DeteriorationRate>20</DeteriorationRate>
+		</statBases>
+		<thingSetMakerTags>
+			<li>RewardStandardLowFreq</li>
+		</thingSetMakerTags>
+		<inspectorTabs>
+			<li>ITab_Genes</li>
+		</inspectorTabs>
+	</ThingDef>
+</Defs>

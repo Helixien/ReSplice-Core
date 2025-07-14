@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="GeneProcessor"]/graphicData</xpath>
+				<value>
+					<graphicData>
+						<texPath>Things/Building/Misc/RS_GeneProcessor</texPath>
+						<graphicClass>Graphic_Random</graphicClass>
+						<drawSize>(2, 2)</drawSize>
+						<shadowData>
+							<volume>(1.5, 0.4, 1.5)</volume>
+						</shadowData>
+					</graphicData>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="GeneBank"]</xpath>
+				<value>
+					<uiOrder>2097</uiOrder>
+				</value>
+			</li>
+			<!-- ================================ Effected by additions ====================== -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="GeneAssembler"]/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+				<value>
+					<li>RS_GeneVault</li>
+					<li>RS_GeneRepository</li>
+				</value>
+			</li>
+			<!-- ================================ Add Hyperlinks ====================== -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="GeneAssembler"]/descriptionHyperlinks</xpath>
+				<value>
+					<ThingDef>RS_GeneVault</ThingDef>
+					<ThingDef>RS_GeneRepository</ThingDef>
+					<ThingDef>RS_GeneCentrifuge</ThingDef>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="GeneBank"]/descriptionHyperlinks</xpath>
+				<value>
+					<ThingDef>RS_GeneCentrifuge</ThingDef>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="Xenogerm"]/descriptionHyperlinks</xpath>
+				<value>
+					<ThingDef>RS_XenoGermDuplicator</ThingDef>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="Genepack"]/descriptionHyperlinks</xpath>
+				<value>
+					<ThingDef>RS_GeneCentrifuge</ThingDef>
+					<ThingDef>RS_GeneVault</ThingDef>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

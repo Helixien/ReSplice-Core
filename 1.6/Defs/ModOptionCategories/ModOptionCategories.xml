@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ModSettingsFramework.ModOptionCategoryDef Name="RS_ModOptionsBase" Abstract="True">
+		<modSettingsName>ReSplice</modSettingsName>
+		<modPackageSettingsID>ReSplice.XOTR.Core</modPackageSettingsID>
+	</ModSettingsFramework.ModOptionCategoryDef>
+	<ModSettingsFramework.ModOptionCategoryDef ParentName="RS_ModOptionsBase">
+		<defName>RS_Core</defName>
+		<label>General</label>
+		<order>0</order>
+	</ModSettingsFramework.ModOptionCategoryDef>
+</Defs>

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- ================================ Gene Vault ====================== -->
+	<ThingDef ParentName="GeneBuildingBase">
+		<defName>RS_GeneVault</defName>
+		<label>gene vault</label>
+		<description>A combination gene processor combined with two advanced gene banks. This building, when placed near a gene assembler, increases the maximum genetic complexity of the xenogerms you can assemble, as well as access a plethora of stored genepacks during their creation.\n\nWhen powered, gene vaults prevent genepacks from deteriorating and will slow repair deterioration.</description>
+		<graphicData>
+			<texPath>Things/Building/Misc/GeneVault/GeneVault</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3, 2)</drawSize>
+		</graphicData>
+		<size>(3, 2)</size>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<descriptionHyperlinks>
+			<ThingDef>Genepack</ThingDef>
+			<ThingDef>GeneAssembler</ThingDef>
+			<ThingDef>RS_GeneCentrifuge</ThingDef>
+		</descriptionHyperlinks>
+		<designationCategory>Biotech</designationCategory>
+		<statBases>
+			<MaxHitPoints>800</MaxHitPoints>
+			<WorkToBuild>15000</WorkToBuild>
+			<Mass>85</Mass>
+			<Flammability>0.5</Flammability>
+			<GeneticComplexityIncrease>2</GeneticComplexityIncrease>
+		</statBases>
+		<building>
+			<buildingTags>
+				<li>Biotech</li>
+			</buildingTags>
+		</building>
+		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+		<uiOrder>2098</uiOrder>
+		<researchPrerequisites Inherit="False">
+			<li>GeneProcessor</li>
+		</researchPrerequisites>
+		<costList>
+			<Steel>200</Steel>
+			<Plasteel>50</Plasteel>
+			<ComponentIndustrial>4</ComponentIndustrial>
+		</costList>
+		<tickerType>Rare</tickerType>
+		<passability>PassThroughOnly</passability>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>0.4</fillPercent>
+		<pathCost>14</pathCost>
+		<canOverlapZones>false</canOverlapZones>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+		</placeWorkers>
+		<inspectorTabs>
+			<li>ITab_ContentsGenepackHolder</li>
+		</inspectorTabs>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>150</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_GenepackContainer">
+				<maxCapacity>14</maxCapacity>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Facility">
+				<maxSimultaneous>50</maxSimultaneous>
+				<maxDistance>10.9</maxDistance>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+		</comps>
+	</ThingDef>
+	<!-- ================================ Gene Repository ====================== -->
+	<ThingDef ParentName="GeneBuildingBase">
+		<defName>RS_GeneRepository</defName>
+		<label>gene repository</label>
+		<description>This building can store an huge amount of genepacks and make them usable to create new xenogerms, when placed near a gene assembler. Large gene libraries can be made more space efficient with gene registers.\n\nWhen powered, gene registers prevent genepacks from deteriorating and will slowly repair deterioration.</description>
+		<graphicData>
+			<texPath>Things/Building/Misc/GeneRepository/GeneRepository</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3, 2)</drawSize>
+		</graphicData>
+		<size>(3, 2)</size>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<descriptionHyperlinks>
+			<ThingDef>Genepack</ThingDef>
+			<ThingDef>GeneAssembler</ThingDef>
+			<ThingDef>RS_GeneCentrifuge</ThingDef>
+		</descriptionHyperlinks>
+		<designationCategory>Biotech</designationCategory>
+		<statBases>
+			<MaxHitPoints>1000</MaxHitPoints>
+			<WorkToBuild>16750</WorkToBuild>
+			<Mass>95</Mass>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<building>
+			<buildingTags>
+				<li>Biotech</li>
+			</buildingTags>
+		</building>
+		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+		<uiOrder>2099</uiOrder>
+		<researchPrerequisites Inherit="False">
+			<li>GeneProcessor</li>
+		</researchPrerequisites>
+		<costList>
+			<Steel>250</Steel>
+			<Plasteel>85</Plasteel>
+			<ComponentIndustrial>6</ComponentIndustrial>
+		</costList>
+		<tickerType>Rare</tickerType>
+		<passability>PassThroughOnly</passability>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>0.5</fillPercent>
+		<pathCost>14</pathCost>
+		<canOverlapZones>false</canOverlapZones>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+		</placeWorkers>
+		<inspectorTabs>
+			<li>ITab_ContentsGenepackHolder</li>
+		</inspectorTabs>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>325</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_GenepackContainer">
+				<maxCapacity>32</maxCapacity>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Facility">
+				<maxSimultaneous>10</maxSimultaneous>
+				<maxDistance>7.9</maxDistance>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+		</comps>
+	</ThingDef>
+	<!-- ================================ Gene Centrifuge ====================== -->
+	<ThingDef ParentName="BuildingBase">
+		<defName>RS_GeneCentrifuge</defName>
+		<label>gene centrifuge</label>
+		<description>A complex centrifugal system capable of separating desirable genetic elements by exploiting minute molecular differences. In effect, this building can separate a desired gene from the rest of a genepack. After the process, two gene packs will be spawned, with the selected gene in one and the remaining genes in the other.</description>
+		<thingClass>ReSpliceCore.Building_GeneCentrifuge</thingClass>
+		<graphicData>
+			<texPath>Things/Building/Misc/GeneCentrifuge</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(2, 2)</drawSize>
+		</graphicData>
+		<uiIconScale>0.95</uiIconScale>
+		<size>(2, 2)</size>
+		<defaultPlacingRot>North</defaultPlacingRot>
+		<rotatable>false</rotatable>
+		<descriptionHyperlinks>
+			<ThingDef>Genepack</ThingDef>
+		</descriptionHyperlinks>
+		<designationCategory>Biotech</designationCategory>
+		<statBases>
+			<MaxHitPoints>350</MaxHitPoints>
+			<WorkToBuild>9000</WorkToBuild>
+			<Mass>85</Mass>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<building>
+			<buildingTags>
+				<li>Biotech</li>
+			</buildingTags>
+		</building>
+		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+		<uiOrder>2097</uiOrder>
+		<researchPrerequisites>
+			<li>GeneProcessor</li>
+		</researchPrerequisites>
+		<costList>
+			<Steel>100</Steel>
+			<Plasteel>25</Plasteel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+		</costList>
+		<tickerType>Normal</tickerType>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>0.4</fillPercent>
+		<pathCost>14</pathCost>
+		<canOverlapZones>false</canOverlapZones>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>200</basePowerConsumption>
+				<idlePowerDraw>25</idlePowerDraw>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_AmbientSound">
+				<sound>RS_GeneCentrifuge_Ambience</sound>
+			</li>
+		</comps>
+	</ThingDef>
+	<!-- ================================ Xenogerm Duplicator ====================== -->
+	<ThingDef ParentName="BuildingBase">
+		<defName>RS_XenoGermDuplicator</defName>
+		<label>xenogerm duplicator</label>
+		<thingClass>ReSpliceCore.Building_XenogermDuplicator</thingClass>
+		<description>A deceptively simple machine that synthesises genetic material in order to mass manufacture an exact copy of an existing xenogerms. This building can duplicate any existing xenogerm, including any present archite genes, as long as it is supplied with the required amount of archite capsules.</description>
+		<graphicData>
+			<texPath>Things/Building/Misc/XenoGermDuplicator</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(4, 4)</drawSize>
+		</graphicData>
+		<uiIconScale>0.95</uiIconScale>
+		<tickerType>Normal</tickerType>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>0.4</fillPercent>
+		<pathCost>14</pathCost>
+		<rotatable>false</rotatable>
+		<size>(2, 2)</size>
+		<canOverlapZones>false</canOverlapZones>
+		<defaultPlacingRot>North</defaultPlacingRot>
+		<designationCategory>Biotech</designationCategory>
+		<researchPrerequisites Inherit="False">
+			<li>GeneProcessor</li>
+		</researchPrerequisites>
+		<descriptionHyperlinks>
+			<ThingDef>Xenogerm</ThingDef>
+		</descriptionHyperlinks>
+		<statBases>
+			<MaxHitPoints>350</MaxHitPoints>
+			<WorkToBuild>9000</WorkToBuild>
+			<Mass>85</Mass>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<costList>
+			<Steel>120</Steel>
+			<Plasteel>45</Plasteel>
+			<ComponentIndustrial>5</ComponentIndustrial>
+		</costList>
+		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+		<uiOrder>2101</uiOrder>
+		<building>
+			<buildingTags>
+				<li>Biotech</li>
+			</buildingTags>
+		</building>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>200</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelLabel>Archite capsules</fuelLabel>
+				<fuelGizmoLabel>Archite capsules</fuelGizmoLabel>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<targetFuelLevelConfigurable>false</targetFuelLevelConfigurable>
+				<fuelCapacity>25</fuelCapacity>
+				<fuelFilter>
+					<thingDefs>
+						<li>ArchiteCapsule</li>
+					</thingDefs>
+				</fuelFilter>
+				<initialFuelPercent>0</initialFuelPercent>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+				<showFuelGizmo>true</showFuelGizmo>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+		</comps>
+	</ThingDef>
+</Defs>

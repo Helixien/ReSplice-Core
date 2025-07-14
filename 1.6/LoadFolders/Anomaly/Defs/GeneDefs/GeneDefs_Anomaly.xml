@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- ================================ Dark Archite Gene - Base ====================== -->
+	<GeneDef Name="RS_DarkArchiteBase" Abstract="True">
+		<displayCategory>RS_DarkArchite</displayCategory>
+		<canGenerateInGeneSet>false</canGenerateInGeneSet>
+		<modExtensions>
+			<li Class="VEF.Genes.GeneExtension">
+				<backgroundPathXenogenes>UI/Icons/Genes/GeneBackground_DarkArchiteGene</backgroundPathXenogenes>
+				<backgroundPathEndogenes>UI/Icons/Genes/GeneBackground_DarkArchiteGene</backgroundPathEndogenes>
+				<hideGene>true</hideGene>
+			</li>
+		</modExtensions>
+	</GeneDef>
+	<!-- ================================ Dark Archite Gene - Void Touched ====================== -->
+	<GeneDef ParentName="RS_DarkArchiteBase">
+		<defName>RS_VoidTouched</defName>
+		<label>void touched</label>
+		<labelShortAdj>void-touched</labelShortAdj>
+		<description>Carriers of this gene have seen the depths of the void and drank from its essence. It lives inside them still, guiding their actions and twisting their flesh. It has turned their hair brittle and white. They no longer need sleep or comfort. The void provides for them.</description>
+		<iconPath>UI/Icons/Genes/Gene_VoidTouched</iconPath>
+		<displayOrderInCategory>0</displayOrderInCategory>
+		<selectionWeight>0</selectionWeight>
+		<biostatCpx>0</biostatCpx>
+		<biostatArc>0</biostatArc>
+		<marketValueFactor>2.5</marketValueFactor>
+		<hairColorOverride>(250, 250, 250)</hairColorOverride>
+		<statFactors>
+			<StudyEfficiency>2</StudyEfficiency>
+			<PsychicSensitivity>2</PsychicSensitivity>
+		</statFactors>
+		<disablesNeeds>
+			<li>Rest</li>
+			<li>Comfort</li>
+		</disablesNeeds>
+		<customEffectDescriptions>
+			<li>Gives the void touched hediff!</li>
+		</customEffectDescriptions>
+		<abilities>
+			<li>VoidTerror</li>
+		</abilities>
+		<descriptionHyperlinks>
+			<HediffDef>VoidTouched</HediffDef>
+			<AbilityDef>VoidTerror</AbilityDef>
+		</descriptionHyperlinks>
+		<symbolPack>
+			<wholeNameSymbols>
+				<li>
+					<symbol>embracer</symbol>
+				</li>
+				<li>
+					<symbol>drinker</symbol>
+				</li>
+			</wholeNameSymbols>
+			<prefixSymbols>
+				<li>
+					<symbol>void</symbol>
+				</li>
+				<li>
+					<symbol>touch</symbol>
+				</li>
+				<li>
+					<symbol>embrace</symbol>
+				</li>
+				<li>
+					<symbol>corrupted</symbol>
+				</li>
+			</prefixSymbols>
+			<suffixSymbols>
+				<li>
+					<symbol>dark</symbol>
+				</li>
+				<li>
+					<symbol>void</symbol>
+				</li>
+				<li>
+					<symbol>corrupt</symbol>
+				</li>
+				<li>
+					<symbol>white</symbol>
+				</li>
+			</suffixSymbols>
+		</symbolPack>
+		<renderNodeProperties>
+			<li Class="PawnRenderNodeProperties_Eye">
+				<texPath>Things/Pawn/Humanlike/HeadAttachments/GrayEyes/Male/GrayEyes_Male</texPath>
+				<texPathFemale>Things/Pawn/Humanlike/HeadAttachments/GrayEyes/Female/GrayEyes_Female</texPathFemale>
+				<parentTagDef>Head</parentTagDef>
+				<anchorTag>RightEye</anchorTag>
+				<rotDrawMode>Fresh, Rotting</rotDrawMode>
+				<drawSize>0.2</drawSize>
+				<side>Right</side>
+				<drawData>
+					<defaultData>
+						<layer>54</layer>
+						<offset>(0, 0, -0.25)</offset>
+					</defaultData>
+				</drawData>
+			</li>
+			<li Class="PawnRenderNodeProperties_Eye">
+				<texPath>Things/Pawn/Humanlike/HeadAttachments/GrayEyes/Male/GrayEyes_Male</texPath>
+				<texPathFemale>Things/Pawn/Humanlike/HeadAttachments/GrayEyes/Female/GrayEyes_Female</texPathFemale>
+				<parentTagDef>Head</parentTagDef>
+				<anchorTag>LeftEye</anchorTag>
+				<rotDrawMode>Fresh, Rotting</rotDrawMode>
+				<drawSize>0.2</drawSize>
+				<side>Left</side>
+				<drawData>
+					<defaultData>
+						<layer>54</layer>
+						<offset>(0, 0, -0.25)</offset>
+						<flip>true</flip>
+					</defaultData>
+					<dataWest>
+						<flip>false</flip>
+					</dataWest>
+				</drawData>
+			</li>
+		</renderNodeProperties>
+		<exclusionTags>
+			<li>HairColor</li>
+			<li>EyeColor</li>
+		</exclusionTags>
+		<modExtensions Inherit="false">
+			<li Class="VEF.Genes.GeneExtension">
+				<backgroundPathXenogenes>UI/Icons/Genes/GeneBackground_DarkArchiteGene</backgroundPathXenogenes>
+				<backgroundPathEndogenes>UI/Icons/Genes/GeneBackground_DarkArchiteGene</backgroundPathEndogenes>
+				<hideGene>true</hideGene>
+				<hediffToWholeBody>VoidTouched</hediffToWholeBody>
+			</li>
+		</modExtensions>
+	</GeneDef>
+	<!-- ================================ Dark Archite Gene - Unnatural Healing ====================== -->
+	<GeneDef ParentName="RS_DarkArchiteBase">
+		<defName>RS_UnnaturalHealing</defName>
+		<label>unnatural healing</label>
+		<description>Carriers can use dark psychic influence to heal someone. The process will stop bleeding, restore blood loss, and can even heal significant injuries. However, it may also have unexpected side effects.</description>
+		<iconPath>UI/Icons/Genes/Gene_UnnaturalHealing</iconPath>
+		<displayOrderInCategory>5</displayOrderInCategory>
+		<selectionWeight>0</selectionWeight>
+		<biostatCpx>6</biostatCpx>
+		<biostatArc>0</biostatArc>
+		<abilities>
+			<li>UnnaturalHealing</li>
+		</abilities>
+		<descriptionHyperlinks>
+			<AbilityDef>UnnaturalHealing</AbilityDef>
+		</descriptionHyperlinks>
+		<symbolPack>
+			<wholeNameSymbols>
+				<li>
+					<symbol>healer</symbol>
+				</li>
+			</wholeNameSymbols>
+			<prefixSymbols>
+				<li>
+					<symbol>unnatural</symbol>
+				</li>
+				<li>
+					<symbol>heal</symbol>
+				</li>
+				<li>
+					<symbol>dark</symbol>
+				</li>
+				<li>
+					<symbol>psychic</symbol>
+				</li>
+			</prefixSymbols>
+			<suffixSymbols>
+				<li>
+					<symbol>healer</symbol>
+				</li>
+			</suffixSymbols>
+		</symbolPack>
+	</GeneDef>
+	<!-- ================================ Dark Archite Gene - Transmute Steel ====================== -->
+	<GeneDef ParentName="RS_DarkArchiteBase">
+		<defName>RS_TransmuteSteel</defName>
+		<label>transmute steel</label>
+		<description>Carriers can reconfigure steel at the atomic level, turning it into a random valuable material. Can target a stack of steel or a steel slag chunk.</description>
+		<iconPath>UI/Icons/Genes/Gene_TransmuteSteel</iconPath>
+		<displayOrderInCategory>10</displayOrderInCategory>
+		<selectionWeight>0</selectionWeight>
+		<biostatCpx>3</biostatCpx>
+		<biostatArc>0</biostatArc>
+		<abilities>
+			<li>TransmuteSteel</li>
+		</abilities>
+		<descriptionHyperlinks>
+			<AbilityDef>TransmuteSteel</AbilityDef>
+		</descriptionHyperlinks>
+		<symbolPack>
+			<wholeNameSymbols>
+				<li>
+					<symbol>transmuter</symbol>
+				</li>
+			</wholeNameSymbols>
+			<prefixSymbols>
+				<li>
+					<symbol>transmute</symbol>
+				</li>
+				<li>
+					<symbol>reconfigure</symbol>
+				</li>
+				<li>
+					<symbol>atomic</symbol>
+				</li>
+				<li>
+					<symbol>material</symbol>
+				</li>
+			</prefixSymbols>
+			<suffixSymbols>
+				<li>
+					<symbol>transmuter</symbol>
+				</li>
+			</suffixSymbols>
+		</symbolPack>
+	</GeneDef>
+	<!-- ================================ Dark Archite Gene - Transmute Steel ====================== -->
+	<GeneDef ParentName="RS_DarkArchiteBase">
+		<defName>RS_DeadlifeDust</defName>
+		<label>deadlife dust</label>
+		<description>Carriers can release a cloud of dust-like substance that will settle on nearby corpses and raise them as shamblers. The shamblers will only attack your enemies. Deadlife dust is made of nano-scale archites that penetrate and reanimate dead tissue at the cellular level.</description>
+		<iconPath>UI/Icons/Genes/Gene_DeadlifeDust</iconPath>
+		<displayOrderInCategory>15</displayOrderInCategory>
+		<selectionWeight>0</selectionWeight>
+		<biostatCpx>4</biostatCpx>
+		<biostatArc>0</biostatArc>
+		<abilities>
+			<li>ReleaseDeadlifeDust</li>
+		</abilities>
+		<descriptionHyperlinks>
+			<AbilityDef>ReleaseDeadlifeDust</AbilityDef>
+		</descriptionHyperlinks>
+		<symbolPack>
+			<wholeNameSymbols>
+				<li>
+					<symbol>raiser</symbol>
+				</li>
+			</wholeNameSymbols>
+			<prefixSymbols>
+				<li>
+					<symbol>deadlife</symbol>
+				</li>
+				<li>
+					<symbol>dead</symbol>
+				</li>
+				<li>
+					<symbol>life</symbol>
+				</li>
+				<li>
+					<symbol>shamblers</symbol>
+				</li>
+			</prefixSymbols>
+			<suffixSymbols>
+				<li>
+					<symbol>raiser</symbol>
+				</li>
+			</suffixSymbols>
+		</symbolPack>
+	</GeneDef>
+	<!-- ================================ Dark Archite Gene - Shape Flesh ====================== -->
+	<GeneDef ParentName="RS_DarkArchiteBase">
+		<defName>RS_ShapeFlesh</defName>
+		<label>shape flesh</label>
+		<description>Carriers can induce a dark archotech to reconfigure a corpse into a horrendous fleshbeast. The fleshbeast will be hostile to all humans, including the one who created it.</description>
+		<iconPath>UI/Icons/Genes/Gene_ShapeFlesh</iconPath>
+		<displayOrderInCategory>20</displayOrderInCategory>
+		<selectionWeight>0</selectionWeight>
+		<biostatCpx>4</biostatCpx>
+		<biostatArc>0</biostatArc>
+		<abilities>
+			<li>ShapeFlesh</li>
+		</abilities>
+		<descriptionHyperlinks>
+			<AbilityDef>ShapeFlesh</AbilityDef>
+		</descriptionHyperlinks>
+		<symbolPack>
+			<wholeNameSymbols>
+				<li>
+					<symbol>shaper</symbol>
+				</li>
+			</wholeNameSymbols>
+			<prefixSymbols>
+				<li>
+					<symbol>transform</symbol>
+				</li>
+				<li>
+					<symbol>shape</symbol>
+				</li>
+				<li>
+					<symbol>reconfigure</symbol>
+				</li>
+				<li>
+					<symbol>horrendous</symbol>
+				</li>
+			</prefixSymbols>
+			<suffixSymbols>
+				<li>
+					<symbol>shaper</symbol>
+				</li>
+			</suffixSymbols>
+		</symbolPack>
+	</GeneDef>
+	<!-- ================================ Dark Archite Gene - Shape Flesh ====================== -->
+	<GeneDef ParentName="RS_DarkArchiteBase">
+		<defName>RS_PsychicSlaughter</defName>
+		<label>psychic slaughter</label>
+		<description>Carriers can use dark psychic power to induce chaotic reconfiguration of flesh. This kills a flesh creature in seconds and converts its body into a pile of twisted flesh.</description>
+		<iconPath>UI/Icons/Genes/Gene_Slaughter</iconPath>
+		<displayOrderInCategory>25</displayOrderInCategory>
+		<selectionWeight>0</selectionWeight>
+		<biostatCpx>5</biostatCpx>
+		<biostatArc>0</biostatArc>
+		<abilities>
+			<li>PsychicSlaughter</li>
+		</abilities>
+		<descriptionHyperlinks>
+			<AbilityDef>PsychicSlaughter</AbilityDef>
+		</descriptionHyperlinks>
+		<symbolPack>
+			<wholeNameSymbols>
+				<li>
+					<symbol>butcher</symbol>
+				</li>
+			</wholeNameSymbols>
+			<prefixSymbols>
+				<li>
+					<symbol>slaughter</symbol>
+				</li>
+				<li>
+					<symbol>butcher</symbol>
+				</li>
+				<li>
+					<symbol>twisted</symbol>
+				</li>
+				<li>
+					<symbol>horrendous</symbol>
+				</li>
+			</prefixSymbols>
+			<suffixSymbols>
+				<li>
+					<symbol>butcher</symbol>
+				</li>
+			</suffixSymbols>
+		</symbolPack>
+	</GeneDef>
+	<!-- ================================ Gene - Tentacles Limbs ====================== -->
+	<GeneDef ParentName="RS_GeneTentacleBase">
+		<defName>RS_Tentacle_Limbs</defName>
+		<label>tentacle limbs</label>
+		<geneClass>ReSpliceCore.Gene_FleshTentacles</geneClass>
+		<description>Carriers of this gene grow tentacle-like appendages instead of one or two of their arms.</description>
+		<iconPath>UI/Icons/Genes/Gene_TentacleLimbs</iconPath>
+		<iconColor>(0.75, 0.75, 0.75)</iconColor>
+		<displayOrderInCategory>1005</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>0</biostatMet>
+		<modExtensions Inherit="false">
+			<li Class="VEF.Genes.GeneExtension">
+				<backgroundPathXenogenes>UI/Icons/Genes/CorruptedGeneBackground_Xenogene</backgroundPathXenogenes>
+				<backgroundPathEndogenes>UI/Icons/Genes/CorruptedGeneBackground_Endogene</backgroundPathEndogenes>
+			</li>
+		</modExtensions>
+	</GeneDef>
+	<GeneDef ParentName="RS_GeneTentacleBase">
+		<defName>RS_Tentacle_Whip</defName>
+		<label>flesh whips limbs</label>
+		<geneClass>ReSpliceCore.Gene_FleshWhips</geneClass>
+		<description>Carriers of this gene grow tentacle-like appendages with sharp bone-like spikes made from bioferrite instead of one or two of their arms.</description>
+		<iconPath>UI/Icons/Genes/Gene_WhipLimbs</iconPath>
+		<iconColor>(0.75, 0.75, 0.75)</iconColor>
+		<displayOrderInCategory>1010</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-1</biostatMet>
+		<modExtensions Inherit="false">
+			<li Class="VEF.Genes.GeneExtension">
+				<backgroundPathXenogenes>UI/Icons/Genes/CorruptedGeneBackground_Xenogene</backgroundPathXenogenes>
+				<backgroundPathEndogenes>UI/Icons/Genes/CorruptedGeneBackground_Endogene</backgroundPathEndogenes>
+			</li>
+		</modExtensions>
+	</GeneDef>
+</Defs>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- ================================ Dark Archite Category ====================== -->
+	<GeneCategoryDef>
+		<defName>RS_DarkArchite</defName>
+		<label>dark archite</label>
+		<displayPriorityInXenotype>999</displayPriorityInXenotype>
+	</GeneCategoryDef>
+</Defs>

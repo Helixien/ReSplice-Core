@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ModSettingsFramework.ModOptionCategoryDef ParentName="RS_ModOptionsBase">
+		<defName>RS_Anomaly</defName>
+		<label>Anomaly</label>
+		<order>10</order>
+	</ModSettingsFramework.ModOptionCategoryDef>
+</Defs>

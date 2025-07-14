@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- ================================ Harvest Dark Archite ====================== -->
+	<ResearchProjectDef>
+		<defName>RS_DarkArchiteHarvesting</defName>
+		<label>dark archite harvesting</label>
+		<description>Perform a psychic ritual that harvests a targets dark archite genes, ripping them from their body, killing them in the process. The harvested genes will be stored in a voidspike and can be reimplanted into another person afterwards.</description>
+		<tab>Anomaly</tab>
+		<prerequisites>
+			<li>AdvancedPsychicRituals</li>
+		</prerequisites>
+		<knowledgeCost>120</knowledgeCost>
+		<knowledgeCategory>Advanced</knowledgeCategory>
+		<researchViewX>6.50</researchViewX>
+		<researchViewY>1.80</researchViewY>
+		<generalRules>
+			<rulesStrings>
+				<li>subject->dark archite hervesting</li>
+				<li>subject->ripping corrupted genes</li>
+				<li>subject_story->researched dark archite genes</li>
+				<li>subject_story->gathered tales of corrupted archite genes</li>
+				<li>subject_story->gathered stories of mad geneticists</li>			
+				<li>subject_story->curated stories of void corruption</li>						
+				<li>subject_story->aggregated legends of harvesting genes</li>						
+				<li>subject_gerund->performing a ritual to harvest genes</li>
+				<li>subject_gerund->ripping genes out of a body</li>
+			</rulesStrings>
+		</generalRules>
+	</ResearchProjectDef>
+</Defs>

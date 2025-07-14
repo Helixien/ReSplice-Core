@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ReSpliceCore.PsychicRitualDef_CreateVoidSpike>
+		<defName>RS_DarkArchiteHarvesting</defName>
+		<label>dark archite harvesting</label>
+		<description>text.todo</description>
+		<iconPath>UI/PsychicRituals/Hex_DarkArchiteHarvest</iconPath>
+		<outcomeDescription>One of the target’s dark archite genes will be harvested.\n\nWith the current ritual quality, chance of a successful harvest is {0}.</outcomeDescription>
+		<researchPrerequisite>RS_DarkArchiteHarvesting</researchPrerequisite>
+		<hoursUntilOutcome>8</hoursUntilOutcome>
+		<targetRole>RS_HarvestTarget</targetRole>
+		<castableOnPocketMaps>false</castableOnPocketMaps>
+		<requiredOffering>
+			<filter>
+				<thingDefs>
+					<li>Shard</li>
+				</thingDefs>
+			</filter>
+			<count>3</count>
+		</requiredOffering>
+		<cooldownHours>1280</cooldownHours>
+		<chanterRole>ChanterAdvanced</chanterRole>
+		<defenderRole>Defender</defenderRole>
+	</ReSpliceCore.PsychicRitualDef_CreateVoidSpike>
+</Defs>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- ================================ Inserting genepack ====================== -->
+	<WorkGiverDef>
+		<defName>RS_InsertGenepack</defName>
+		<label>insert genepack into centrifuge</label>
+		<giverClass>ReSpliceCore.WorkGiver_InsertGenepack</giverClass>
+		<workType>Hauling</workType>
+		<verb>insert into gene centrifuge</verb>
+		<gerund>inserting into gene centrifuge</gerund>
+		<priorityInType>1000</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</WorkGiverDef>
+	<!-- ================================ Inserting xenogerm ====================== -->
+	<WorkGiverDef>
+		<defName>RS_InsertXenogerm</defName>
+		<label>insert xenogerm into duplicator</label>
+		<giverClass>ReSpliceCore.WorkGiver_InsertXenogerm</giverClass>
+		<workType>Hauling</workType>
+		<verb>insert into xenogerm duplicator</verb>
+		<gerund>inserting into xenogerm duplicator</gerund>
+		<priorityInType>1000</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</WorkGiverDef>
+</Defs>
