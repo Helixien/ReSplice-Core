@@ -5,7 +5,7 @@
 		<displayCategory>RS_DarkArchite</displayCategory>
 		<canGenerateInGeneSet>false</canGenerateInGeneSet>
 		<modExtensions>
-			<li Class="VEF.Genes.GeneExtension">
+			<li Class="VEF.Genes">
 				<backgroundPathXenogenes>UI/Icons/Genes/GeneBackground_DarkArchiteGene</backgroundPathXenogenes>
 				<backgroundPathEndogenes>UI/Icons/Genes/GeneBackground_DarkArchiteGene</backgroundPathEndogenes>
 				<hideGene>true</hideGene>
@@ -122,7 +122,7 @@
 			<li>EyeColor</li>
 		</exclusionTags>
 		<modExtensions Inherit="false">
-			<li Class="VEF.Genes.GeneExtension">
+			<li Class="VEF.Genes">
 				<backgroundPathXenogenes>UI/Icons/Genes/GeneBackground_DarkArchiteGene</backgroundPathXenogenes>
 				<backgroundPathEndogenes>UI/Icons/Genes/GeneBackground_DarkArchiteGene</backgroundPathEndogenes>
 				<hideGene>true</hideGene>
@@ -357,7 +357,7 @@
 		<biostatCpx>1</biostatCpx>
 		<biostatMet>0</biostatMet>
 		<modExtensions Inherit="false">
-			<li Class="VEF.Genes.GeneExtension">
+			<li Class="VEF.Genes">
 				<backgroundPathXenogenes>UI/Icons/Genes/CorruptedGeneBackground_Xenogene</backgroundPathXenogenes>
 				<backgroundPathEndogenes>UI/Icons/Genes/CorruptedGeneBackground_Endogene</backgroundPathEndogenes>
 			</li>
@@ -374,7 +374,7 @@
 		<biostatCpx>1</biostatCpx>
 		<biostatMet>-1</biostatMet>
 		<modExtensions Inherit="false">
-			<li Class="VEF.Genes.GeneExtension">
+			<li Class="VEF.Genes">
 				<backgroundPathXenogenes>UI/Icons/Genes/CorruptedGeneBackground_Xenogene</backgroundPathXenogenes>
 				<backgroundPathEndogenes>UI/Icons/Genes/CorruptedGeneBackground_Endogene</backgroundPathEndogenes>
 			</li>
