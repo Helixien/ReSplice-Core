@@ -159,10 +159,6 @@ namespace ReSpliceCore
             {
                 return true;
             }
-            if (!IdeoUtility.DoerWillingToDo(HistoryEventDefOf.BecomeNonPreferredXenotype, selPawn))
-            {
-                return true;
-            }
             return false;
         }
 
