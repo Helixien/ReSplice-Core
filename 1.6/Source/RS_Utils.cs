@@ -32,7 +32,7 @@ namespace ReSpliceCore
 
         public static bool IsDarkArchite(this GeneDef x)
         {
-            return x.displayCategory == RS_DefOf.RS_DarkArchite;
+            return x != null && x.displayCategory == RS_DefOf.RS_DarkArchite;
         }
 
         public static List<List<T>> ChunkBy<T>(this List<T> source, int chunkSize)
