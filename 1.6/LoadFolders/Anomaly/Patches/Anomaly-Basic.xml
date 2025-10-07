@@ -25,9 +25,12 @@
 			<li Class="PatchOperationRemove">
 				<xpath>Defs/HediffDef[defName="VoidTouched"]/comps</xpath>
 			</li>
-			<li Class="PatchOperationRemove">
-				<xpath>Defs/HediffDef[defName="VoidTouched"]/renderNodeProperties</xpath>
-			</li>
+      <li Class="PatchOperationConditional">
+        <xpath>Defs/HediffDef[defName="VoidTouched"]/renderNodeProperties</xpath>
+        <match Class="PatchOperationRemove">
+          <xpath>Defs/HediffDef[defName="VoidTouched"]/renderNodeProperties</xpath>
+        </match>
+      </li>
 		</operations>
 	</Operation>
 	<Operation Class="PatchOperationSequence">
