@@ -242,7 +242,8 @@
 		<comps>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
-				<basePowerConsumption>200</basePowerConsumption>
+        <basePowerConsumption>200</basePowerConsumption>
+        <idlePowerDraw>25</idlePowerDraw>
 			</li>
 			<li Class="CompProperties_Refuelable">
         <compClass>ReSpliceCore.CompArchiteRefuelable</compClass>
