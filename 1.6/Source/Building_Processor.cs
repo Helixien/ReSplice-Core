@@ -48,6 +48,14 @@ namespace ReSpliceCore
             base.Destroy(mode);
         }
 
+        public override void TickInterval(int delta)
+        {
+            base.TickInterval(delta);
+        
+            if (this.IsHashIntervalTick(GenTicks.TickRareInterval, delta) && !Mathf.Approximately(compPower.Props.idlePowerDraw, -1))
+                compPower.PowerOutput = ticksDone != 0 ? -compPower.Props.PowerConsumption : -compPower.Props.idlePowerDraw;
+        }
+
         public bool Powered => this.compPower.PowerOn;
         public bool HasAnyContents
         {
