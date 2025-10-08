@@ -52,7 +52,10 @@ namespace ReSpliceCore
                         {
                             floatList.Add(new FloatMenuOption(genepack.LabelCap, delegate
                             {
-                                Find.WindowStack.Add(new Window_SeparateGene(this, genepack));
+                                if (genepack.GeneSet.GenesListForReading.Count <= 2)
+                                    SelectGenepackToProcess(genepack, genepack.GeneSet.GenesListForReading.FirstOrDefault());
+                                else
+                                    Find.WindowStack.Add(new Window_SeparateGene(this, genepack));
                             }));
                         }
                         if (floatList.Any() is false)
@@ -206,6 +209,19 @@ namespace ReSpliceCore
         public override void StartJob()
         {
             genepackToStore = null;
+        }
+
+        public void SelectGenepackToProcess(Genepack genepack, GeneDef chosenGene)
+        {
+            if (chosenGene != null && genepack.GeneSet.GenesListForReading.Contains(chosenGene))
+            {
+                genepackToStore = genepack;
+                geneToSeparate = chosenGene;
+            }
+            else
+            {
+                Log.Error($"Attempting to extract a {chosenGene} gene from a genepack which doesn't contain it.");
+            }
         }
     }
 }

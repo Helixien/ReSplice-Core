@@ -88,8 +88,7 @@ namespace ReSpliceCore
             {
                 if (chosenGene != null)
                 {
-                    this.centrifuge.genepackToStore = genepack;
-                    this.centrifuge.geneToSeparate = chosenGene;
+                    this.centrifuge.SelectGenepackToProcess(genepack, chosenGene);
                     this.Close();
                 }
                 else
