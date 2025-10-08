@@ -245,10 +245,11 @@
 				<basePowerConsumption>200</basePowerConsumption>
 			</li>
 			<li Class="CompProperties_Refuelable">
+        <compClass>ReSpliceCore.CompArchiteRefuelable</compClass>
 				<fuelLabel>Archite capsules</fuelLabel>
 				<fuelGizmoLabel>Archite capsules</fuelGizmoLabel>
 				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
-				<targetFuelLevelConfigurable>false</targetFuelLevelConfigurable>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
 				<fuelCapacity>25</fuelCapacity>
 				<fuelFilter>
 					<thingDefs>

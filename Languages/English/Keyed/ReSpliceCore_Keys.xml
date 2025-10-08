@@ -26,7 +26,10 @@
 	<RS.ContainsXenogerm>Contains: {0}</RS.ContainsXenogerm>
 	<RS.FinishedXenogermDuplicationMessage>Xenogerm duplicator finished duplicating xenogerm!</RS.FinishedXenogermDuplicationMessage>
 	<RS.NotEnoughArchiteCapsulesLoaded>Do you really want to duplicate the xenogerm? Not enough archite capsules are loaded to duplicate all any archite genes inside the xenogerm.</RS.NotEnoughArchiteCapsulesLoaded>
-	<!-- ================================ Void spike infusion ====================== -->
+  <RS.EjectArchites>Eject archite capsules</RS.EjectArchites>
+  <RS.EjectArchitesDesc>Eject all contained archite capsules onto the ground.</RS.EjectArchitesDesc>
+  <RS.TargetArchiteCapsuleLevel>Target archite capsule amount: {0}</RS.TargetArchiteCapsuleLevel>
+  <!-- ================================ Void spike infusion ====================== -->
 	<RS.InfuseDarkArchite>Infuse voidspike</RS.InfuseDarkArchite>
 	<RS.InfuseDarkArchiteWarningDesc>Infusing a voidspike will put {PAWN_nameDef} in a short coma as the spike's gene integrates itself. On average, this lasts for {COMADURATION}.</RS.InfuseDarkArchiteWarningDesc>
 	<RS.InfuseDarkArchiteWarningNewMetabolism>After infusion, {PAWN_nameDef} will have a metabolism value of {MET} and a food consumption multiplier of {CONSUMPTION}.</RS.InfuseDarkArchiteWarningNewMetabolism>
