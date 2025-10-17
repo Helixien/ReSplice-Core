@@ -8,7 +8,7 @@
     </supportedVersions>
 	<packageId>ReSplice.XOTR.Core</packageId>
 	<url/>
-	<modVersion IgnoreIfNoMatchingField="True">1.0.2-Shelley-rev1</modVersion>
+	<modVersion IgnoreIfNoMatchingField="True">1.0.2-Shelley-rev2</modVersion>
 	<modIconPath IgnoreIfNoMatchingField="True">UI/RS_ModIcon</modIconPath>
 	<description>ReSplice is a mod deeply influenced by the philosophy of the Vanilla Expanded Series and my desire to make rimworld feel more immersive. As well as the fact I love xenotypes and the gene system added by Biotech. Everything added was made to fit or mirror vanilla. From a simple UI texture to a new more complex system,being as performance and vanilla friendly as possible is the main objective we have.
 
