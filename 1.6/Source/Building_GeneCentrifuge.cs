@@ -146,6 +146,13 @@ namespace ReSpliceCore
         protected override void FinishJob()
         {
             var storedGenepack = StoredGenepack;
+            innerContainer.Remove(storedGenepack);
+            if (geneToSeparate is null)
+            {
+                GenPlace.TryPlaceThing(storedGenepack, Position, Map, ThingPlaceMode.Near, extraValidator: (IntVec3 x) => x.GetFirstThing<Building_GeneCentrifuge>(this.Map) is null);
+                Log.Error(this + " finished separating gene, but there was no specified gene to separate. Perhaps it was removed from the game? Spawning the full genepack instead.");
+                return;
+            }
             var newGenepack = (Genepack)ThingMaker.MakeThing(storedGenepack.def);
             storedGenepack.GeneSet.genes.Remove(geneToSeparate);
             storedGenepack.GeneSet.DirtyCache();
@@ -153,7 +160,6 @@ namespace ReSpliceCore
                     {
                         geneToSeparate
                     });
-            var removed = innerContainer.Remove(storedGenepack);
             if (Rand.Chance(0.1f))
             {
                 if (Rand.Bool)
