@@ -1,3 +1,7 @@
 {
-    "dotnet.defaultSolution": "1.6/Source/ReSpliceCore.sln"
+    "dotnet.preferCSharpExtension": true,
+    "dotnet.defaultSolution": "1.6/Source/ReSpliceCore.sln",
+    "files.exclude": {
+        "**/1.5/": true
+    }
 }

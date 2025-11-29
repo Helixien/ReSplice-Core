@@ -16,6 +16,17 @@
 	<RS.CancelGeneSeparatingDesc>Cancel separating genes.</RS.CancelGeneSeparatingDesc>
 	<RS.ContainsGenepack>Contains: {0}</RS.ContainsGenepack>
 	<RS.SelectAGeneToSeparate>Select a gene to separate.</RS.SelectAGeneToSeparate>
+	<RS.CombineGenepacks>Combine genepacks</RS.CombineGenepacks>
+	<RS.CombineGenepacksDesc>Select two genepacks to combine into one.</RS.CombineGenepacksDesc>
+	<RS.Combine>Combine</RS.Combine>
+	<RS.SelectTwoGenepacks>Select two genepacks to combine.</RS.SelectTwoGenepacks>
+	<RS.CancelGeneCombining>Cancel gene combining</RS.CancelGeneCombining>
+	<RS.CancelGeneCombiningDesc>Cancel combining genes.</RS.CancelGeneCombiningDesc>
+	<RS.CombiningProgress>Combining: {0}</RS.CombiningProgress>
+	<RS.SelectedGenepacks>Selected genepacks</RS.SelectedGenepacks>
+	<RS.AvailableGenepacks>Available genepacks</RS.AvailableGenepacks>
+	<RS.CombiningDuration>Combining duration: {0}</RS.CombiningDuration>
+	<RS.CombiningDurationDesc>Time required to combine the selected genepacks. The duration is based on the genes in the packs - normal genes take about 2 days each to process, archite genes take about 6 days each.</RS.CombiningDurationDesc>
 	<!-- ================================ Xenogerm duplicator ====================== -->
 	<RS.DuplicateXenogerm>Duplicate xenogerm</RS.DuplicateXenogerm>
 	<RS.DuplicateXenogermDesc>Select a xenogerm to duplicate. Xenogerms with archite genes require archite capsules to be loaded.</RS.DuplicateXenogermDesc>
@@ -26,10 +37,10 @@
 	<RS.ContainsXenogerm>Contains: {0}</RS.ContainsXenogerm>
 	<RS.FinishedXenogermDuplicationMessage>Xenogerm duplicator finished duplicating xenogerm!</RS.FinishedXenogermDuplicationMessage>
 	<RS.NotEnoughArchiteCapsulesLoaded>Do you really want to duplicate the xenogerm? Not enough archite capsules are loaded to duplicate all any archite genes inside the xenogerm.</RS.NotEnoughArchiteCapsulesLoaded>
-  <RS.EjectArchites>Eject archite capsules</RS.EjectArchites>
-  <RS.EjectArchitesDesc>Eject all contained archite capsules onto the ground.</RS.EjectArchitesDesc>
-  <RS.TargetArchiteCapsuleLevel>Target archite capsule amount: {0}</RS.TargetArchiteCapsuleLevel>
-  <!-- ================================ Void spike infusion ====================== -->
+	<RS.EjectArchites>Eject archite capsules</RS.EjectArchites>
+	<RS.EjectArchitesDesc>Eject all contained archite capsules onto the ground.</RS.EjectArchitesDesc>
+	<RS.TargetArchiteCapsuleLevel>Target archite capsule amount: {0}</RS.TargetArchiteCapsuleLevel>
+	<!-- ================================ Void spike infusion ====================== -->
 	<RS.InfuseDarkArchite>Infuse voidspike</RS.InfuseDarkArchite>
 	<RS.InfuseDarkArchiteWarningDesc>Infusing a voidspike will put {PAWN_nameDef} in a short coma as the spike's gene integrates itself. On average, this lasts for {COMADURATION}.</RS.InfuseDarkArchiteWarningDesc>
 	<RS.InfuseDarkArchiteWarningNewMetabolism>After infusion, {PAWN_nameDef} will have a metabolism value of {MET} and a food consumption multiplier of {CONSUMPTION}.</RS.InfuseDarkArchiteWarningNewMetabolism>

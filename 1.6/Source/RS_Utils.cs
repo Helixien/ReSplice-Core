@@ -43,5 +43,28 @@ namespace ReSpliceCore
                 .Select(x => x.Select(v => v.Value).ToList())
                 .ToList();
         }
+
+        public static List<Genepack> GetAllGenepacks(Map map, int minGeneCount = 0)
+        {
+            var allPacks = new List<Genepack>();
+            foreach (var def in allGenepacks)
+            {
+                allPacks.AddRange(map.listerThings.ThingsOfDef(def).Cast<Genepack>()
+                    .Where(x => x.GeneSet.GenesListForReading.Count >= minGeneCount));
+            }
+            foreach (var def in allGeneBanks)
+            {
+                var banks = map.listerThings.ThingsOfDef(def);
+                foreach (var bank in banks)
+                {
+                    var comp = bank.TryGetComp<CompGenepackContainer>();
+                    if (comp != null)
+                    {
+                        allPacks.AddRange(comp.ContainedGenepacks.Where(x => x.GeneSet.GenesListForReading.Count >= minGeneCount));
+                    }
+                }
+            }
+            return allPacks.Distinct().ToList();
+        }
     }
 }

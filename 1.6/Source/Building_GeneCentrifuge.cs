@@ -12,11 +12,17 @@ namespace ReSpliceCore
     public class Building_GeneCentrifuge : Building_Processor
     {
         public static Texture2D InsertGenePack = ContentFinder<Texture2D>.Get("UI/Gizmos/InsertGenePack");
+        public static Texture2D CombineIcon = ContentFinder<Texture2D>.Get("UI/Gizmos/MergeGenePack");
 
         public Genepack genepackToStore;
+        public Genepack firstGenepackToCombine;
+        public Genepack secondGenepackToCombine;
 
         public GeneDef geneToSeparate;
-        public Genepack StoredGenepack => this.innerContainer.OfType<Genepack>().FirstOrDefault();
+        
+        public bool IsSeparating => genepackToStore != null && innerContainer.Contains(genepackToStore);
+        
+        public bool IsCombining => firstGenepackToCombine != null && secondGenepackToCombine != null && innerContainer.Contains(firstGenepackToCombine) && innerContainer.Contains(secondGenepackToCombine);
 
         public override SoundDef SustainerDef => RS_DefOf.RS_GeneCentrifuge_Ambience;
 
@@ -35,18 +41,7 @@ namespace ReSpliceCore
                     icon = InsertGenePack,
                     action = delegate
                     {
-                        var allGenePacks = RS_Utils.allGenepacks.SelectMany(def => this.Map.listerThings.ThingsOfDef(def)
-                            .Cast<Genepack>().Where(x => x.GeneSet.GenesListForReading.Count > 1)).ToList();
-                        foreach (var bank in RS_Utils.allGeneBanks.SelectMany(def => this.Map.listerThings.ThingsOfDef(def)))
-                        {
-                            var comp = bank.TryGetComp<CompGenepackContainer>();
-                            var genes = comp.ContainedGenepacks.Where(x => x.GeneSet.GenesListForReading.Count > 1).ToList();
-                            if (genes.Any())
-                            {
-                                allGenePacks.AddRange(genes);
-                            }
-                        }
-
+                        var allGenePacks = RS_Utils.GetAllGenepacks(this.Map, 1);
                         var floatList = new List<FloatMenuOption>();
                         foreach (var genepack in allGenePacks)
                         {
@@ -65,7 +60,7 @@ namespace ReSpliceCore
                         Find.WindowStack.Add(new FloatMenu(floatList));
                     }
                 };
-                if (StoredGenepack != null)
+                if (IsSeparating)
                 {
                     separateGene.Disable("RS.CentrigureWorking".Translate());
                 }
@@ -75,7 +70,7 @@ namespace ReSpliceCore
                 }
                 yield return separateGene;
 
-                if (StoredGenepack != null || genepackToStore != null)
+                if (IsSeparating)
                 {
                     yield return new Command_Action
                     {
@@ -86,7 +81,7 @@ namespace ReSpliceCore
                         action = delegate ()
                         {
                             JobCleanup();
-                            if (StoredGenepack != null)
+                            if (IsSeparating)
                             {
                                 this.EjectContents();
                             }
@@ -94,14 +89,68 @@ namespace ReSpliceCore
                     };
                 }
 
-                if (Prefs.DevMode && StoredGenepack != null)
+                if (Prefs.DevMode && IsSeparating)
                 {
                     Command_Action command_Action = new Command_Action
                     {
                         defaultLabel = "Debug: Finish separation",
                         action = delegate
                         {
-                            ticksDone = ExtractionDuration(StoredGenepack);
+                            ticksDone = ExtractionDuration(genepackToStore);
+                            FinishJob();
+                        }
+                    };
+                    yield return command_Action;
+                }
+
+                var combineGene = new Command_Action
+                {
+                    defaultLabel = "RS.CombineGenepacks".Translate(),
+                    defaultDesc = "RS.CombineGenepacksDesc".Translate(),
+                    icon = CombineIcon,
+                    action = delegate
+                    {
+                        Find.WindowStack.Add(new Window_CombineGene(this));
+                    }
+                };
+
+                if (IsSeparating)
+                {
+                    combineGene.Disable("RS.CentrigureWorking".Translate());
+                }
+                if (Powered is false)
+                {
+                    combineGene.Disable("NoPower".Translate());
+                }
+                yield return combineGene;
+
+                if (firstGenepackToCombine != null || secondGenepackToCombine != null || IsCombining)
+                {
+                    yield return new Command_Action
+                    {
+                        defaultLabel = "RS.CancelGeneCombining".Translate(),
+                        defaultDesc = "RS.CancelGeneCombiningDesc".Translate(),
+                        activateSound = SoundDefOf.Tick_Tiny,
+                        icon = CancelIcon,
+                        action = delegate ()
+                        {
+                            JobCleanup();
+                            if (IsCombining)
+                            {
+                                EjectContents();
+                            }
+                        }
+                    };
+                }
+
+                if (Prefs.DevMode && IsCombining)
+                {
+                    Command_Action command_Action = new Command_Action
+                    {
+                        defaultLabel = "Debug: Finish combining",
+                        action = delegate
+                        {
+                            ticksDone = CombinationDuration();
                             FinishJob();
                         }
                     };
@@ -112,22 +161,29 @@ namespace ReSpliceCore
 
         public override bool Accepts(Thing thing)
         {
-            return base.Accepts(thing) && genepackToStore == thing;
+            return base.Accepts(thing) && (genepackToStore == thing || firstGenepackToCombine == thing || secondGenepackToCombine == thing);
         }
         public override void ExposeData()
         {
             base.ExposeData();
             Scribe_References.Look(ref genepackToStore, "xenogermToDuplicate");
+            Scribe_References.Look(ref firstGenepackToCombine, "firstGenepackToCombine");
+            Scribe_References.Look(ref secondGenepackToCombine, "secondGenepackToCombine");
             Scribe_Defs.Look(ref geneToSeparate, "geneToSeparate");
         }
         public override string GetInspectString()
         {
             var sb = new StringBuilder();
-            if (StoredGenepack != null)
+            if (IsCombining)
             {
-                var progress = ticksDone / (float)ExtractionDuration(StoredGenepack);
+                var progress = ticksDone / (float)CombinationDuration();
+                sb.AppendLine("RS.CombiningProgress".Translate(progress.ToStringPercent()));
+            }
+            else if (IsSeparating)
+            {
+                var progress = ticksDone / (float)ExtractionDuration(genepackToStore);
                 sb.AppendLine("RS.SeparatingProgress".Translate(progress.ToStringPercent()));
-                sb.AppendLine("RS.ContainsGenepack".Translate(StoredGenepack.Label));
+                sb.AppendLine("RS.ContainsGenepack".Translate(genepackToStore.Label));
             }
             sb.Append(base.GetInspectString());
             return sb.ToString();
@@ -136,23 +192,40 @@ namespace ReSpliceCore
         public override void Tick()
         {
             base.Tick();
-            if (Powered && StoredGenepack != null)
+            if (Powered && IsSeparating)
             {
-                var durationTicks = ExtractionDuration(StoredGenepack);
+                var durationTicks = ExtractionDuration(genepackToStore);
+                DoWork(durationTicks);
+            }
+            else if (Powered && IsCombining)
+            {
+                var durationTicks = CombinationDuration();
                 DoWork(durationTicks);
             }
         }
 
         protected override void FinishJob()
         {
-            var storedGenepack = StoredGenepack;
-            innerContainer.Remove(storedGenepack);
-            if (geneToSeparate is null)
+            if (IsSeparating)
             {
-                GenPlace.TryPlaceThing(storedGenepack, Position, Map, ThingPlaceMode.Near, extraValidator: (IntVec3 x) => x.GetFirstThing<Building_GeneCentrifuge>(this.Map) is null);
-                Log.Error(this + " finished separating gene, but there was no specified gene to separate. Perhaps it was removed from the game? Spawning the full genepack instead.");
-                return;
+                if (geneToSeparate is null)
+                {
+                    GenPlace.TryPlaceThing(genepackToStore, Position, Map, ThingPlaceMode.Near, extraValidator: (IntVec3 x) => x.GetFirstThing<Building_GeneCentrifuge>(this.Map) is null);
+                    Log.Error(this + " finished separating gene, but there was no specified gene to separate. Perhaps it was removed from the game? Spawning the full genepack instead.");
+                    return;
+                }
+                SeparateGenepack(genepackToStore);
             }
+            else if (IsCombining)
+            {
+                FinishCombination();
+            }
+            JobCleanup();
+        }
+
+        private void SeparateGenepack(Genepack storedGenepack)
+        {
+            innerContainer.Remove(storedGenepack);
             var newGenepack = (Genepack)ThingMaker.MakeThing(storedGenepack.def);
             storedGenepack.GeneSet.genes.Remove(geneToSeparate);
             storedGenepack.GeneSet.DirtyCache();
@@ -194,13 +267,15 @@ namespace ReSpliceCore
                             storedGenepack, newGenepack
                         }, MessageTypeDefOf.CautionInput);
             }
-            JobCleanup();
         }
+
         protected override void JobCleanup()
         {
             base.JobCleanup();
             geneToSeparate = null;
             genepackToStore = null;
+            firstGenepackToCombine = null;
+            secondGenepackToCombine = null;
         }
 
         public int ExtractionDuration(Genepack genepack)
@@ -210,6 +285,20 @@ namespace ReSpliceCore
                 return 360000;
             }
             return 120000;
+        }
+
+        public int CombinationDuration(List<Genepack> genepacks = null)
+        {
+            var duration = 0;
+            var packs = genepacks ?? innerContainer.OfType<Genepack>().ToList();
+            foreach (var pack in packs)
+            {
+                foreach (var gene in pack.GeneSet.GenesListForReading)
+                {
+                    duration += gene.biostatArc > 0 ? 360000 : 120000;
+                }
+            }
+            return duration;
         }
 
         public override void StartJob()
@@ -228,6 +317,37 @@ namespace ReSpliceCore
             {
                 Log.Error($"Attempting to extract a {chosenGene} gene from a genepack which doesn't contain it.");
             }
+        }
+
+        public void SelectGenepacksToCombine(Genepack first, Genepack second)
+        {
+            firstGenepackToCombine = first;
+            secondGenepackToCombine = second;
+        }
+
+        public void FinishCombination()
+        {
+            var packsInMachine = innerContainer.ToList();
+            var firstPack = packsInMachine[0] as Genepack;
+            var secondPack = packsInMachine[1] as Genepack;
+
+            var newGeneSet = new GeneSet();
+            foreach (var gene in firstPack.GeneSet.GenesListForReading)
+            {
+                newGeneSet.AddGene(gene);
+            }
+            foreach (var gene in secondPack.GeneSet.GenesListForReading)
+            {
+                newGeneSet.AddGene(gene);
+            }
+
+            var newGenepack = (Genepack)ThingMaker.MakeThing(firstPack.def);
+            newGenepack.Initialize(newGeneSet.GenesListForReading);
+            GenPlace.TryPlaceThing(newGenepack, Position, Map, ThingPlaceMode.Near);
+
+            EjectContents();
+            firstPack.Destroy();
+            secondPack.Destroy();
         }
     }
 }
