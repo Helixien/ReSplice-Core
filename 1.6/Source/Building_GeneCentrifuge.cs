@@ -41,7 +41,7 @@ namespace ReSpliceCore
                     icon = InsertGenePack,
                     action = delegate
                     {
-                        var allGenePacks = RS_Utils.GetAllGenepacks(this.Map, 1);
+                        var allGenePacks = RS_Utils.GetAllGenepacks(this.Map, 2);
                         var floatList = new List<FloatMenuOption>();
                         foreach (var genepack in allGenePacks)
                         {
@@ -295,7 +295,7 @@ namespace ReSpliceCore
             {
                 foreach (var gene in pack.GeneSet.GenesListForReading)
                 {
-                    duration += gene.biostatArc > 0 ? 360000 : 120000;
+                    duration += gene.biostatArc > 0 ? 180000 : 60000;
                 }
             }
             return duration;
@@ -303,7 +303,6 @@ namespace ReSpliceCore
 
         public override void StartJob()
         {
-            genepackToStore = null;
         }
 
         public void SelectGenepackToProcess(Genepack genepack, GeneDef chosenGene)

@@ -26,7 +26,7 @@
 	<RS.SelectedGenepacks>Selected genepacks</RS.SelectedGenepacks>
 	<RS.AvailableGenepacks>Available genepacks</RS.AvailableGenepacks>
 	<RS.CombiningDuration>Combining duration: {0}</RS.CombiningDuration>
-	<RS.CombiningDurationDesc>Time required to combine the selected genepacks. The duration is based on the genes in the packs - normal genes take about 2 days each to process, archite genes take about 6 days each.</RS.CombiningDurationDesc>
+	<RS.CombiningDurationDesc>Time required to combine the selected genepacks. The duration is based on the genes in the packs - normal genes take about 1 day each to process, archite genes take about 3 days each.</RS.CombiningDurationDesc>
 	<!-- ================================ Xenogerm duplicator ====================== -->
 	<RS.DuplicateXenogerm>Duplicate xenogerm</RS.DuplicateXenogerm>
 	<RS.DuplicateXenogermDesc>Select a xenogerm to duplicate. Xenogerms with archite genes require archite capsules to be loaded.</RS.DuplicateXenogermDesc>
