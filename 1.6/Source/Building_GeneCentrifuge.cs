@@ -60,7 +60,7 @@ namespace ReSpliceCore
                         Find.WindowStack.Add(new FloatMenu(floatList));
                     }
                 };
-                if (IsSeparating)
+                if (IsSeparating || IsCombining)
                 {
                     separateGene.Disable("RS.CentrigureWorking".Translate());
                 }
@@ -70,7 +70,7 @@ namespace ReSpliceCore
                 }
                 yield return separateGene;
 
-                if (IsSeparating)
+                if (genepackToStore != null)
                 {
                     yield return new Command_Action
                     {
@@ -78,13 +78,10 @@ namespace ReSpliceCore
                         defaultDesc = "RS.CancelGeneSeparatingDesc".Translate(),
                         activateSound = SoundDefOf.Tick_Tiny,
                         icon = CancelIcon,
-                        action = delegate ()
+                        action = delegate
                         {
+                            EjectContents();
                             JobCleanup();
-                            if (IsSeparating)
-                            {
-                                this.EjectContents();
-                            }
                         }
                     };
                 }
@@ -114,7 +111,7 @@ namespace ReSpliceCore
                     }
                 };
 
-                if (IsSeparating)
+                if (IsSeparating || IsCombining)
                 {
                     combineGene.Disable("RS.CentrigureWorking".Translate());
                 }
@@ -124,7 +121,7 @@ namespace ReSpliceCore
                 }
                 yield return combineGene;
 
-                if (firstGenepackToCombine != null || secondGenepackToCombine != null || IsCombining)
+                if (firstGenepackToCombine != null || secondGenepackToCombine != null)
                 {
                     yield return new Command_Action
                     {
@@ -132,13 +129,10 @@ namespace ReSpliceCore
                         defaultDesc = "RS.CancelGeneCombiningDesc".Translate(),
                         activateSound = SoundDefOf.Tick_Tiny,
                         icon = CancelIcon,
-                        action = delegate ()
+                        action = delegate
                         {
+                            EjectContents();
                             JobCleanup();
-                            if (IsCombining)
-                            {
-                                EjectContents();
-                            }
                         }
                     };
                 }
@@ -170,6 +164,19 @@ namespace ReSpliceCore
             Scribe_References.Look(ref firstGenepackToCombine, "firstGenepackToCombine");
             Scribe_References.Look(ref secondGenepackToCombine, "secondGenepackToCombine");
             Scribe_Defs.Look(ref geneToSeparate, "geneToSeparate");
+            if (Scribe.mode == LoadSaveMode.PostLoadInit && genepackToStore is null && firstGenepackToCombine is null && secondGenepackToCombine is null)
+            {
+                var packs = innerContainer.OfType<Genepack>().ToList();
+                if (packs.Count == 1)
+                {
+                    genepackToStore = packs[0];
+                }
+                else if (packs.Count == 2)
+                {
+                    firstGenepackToCombine = packs[0];
+                    secondGenepackToCombine = packs[1];
+                }
+            }
         }
         public override string GetInspectString()
         {
@@ -326,27 +333,23 @@ namespace ReSpliceCore
 
         public void FinishCombination()
         {
-            var packsInMachine = innerContainer.ToList();
-            var firstPack = packsInMachine[0] as Genepack;
-            var secondPack = packsInMachine[1] as Genepack;
-
             var newGeneSet = new GeneSet();
-            foreach (var gene in firstPack.GeneSet.GenesListForReading)
+            foreach (var gene in firstGenepackToCombine.GeneSet.GenesListForReading)
             {
                 newGeneSet.AddGene(gene);
             }
-            foreach (var gene in secondPack.GeneSet.GenesListForReading)
+            foreach (var gene in secondGenepackToCombine.GeneSet.GenesListForReading)
             {
                 newGeneSet.AddGene(gene);
             }
 
-            var newGenepack = (Genepack)ThingMaker.MakeThing(firstPack.def);
+            var newGenepack = (Genepack)ThingMaker.MakeThing(firstGenepackToCombine.def);
             newGenepack.Initialize(newGeneSet.GenesListForReading);
             GenPlace.TryPlaceThing(newGenepack, Position, Map, ThingPlaceMode.Near);
 
             EjectContents();
-            firstPack.Destroy();
-            secondPack.Destroy();
+            firstGenepackToCombine.Destroy();
+            secondGenepackToCombine.Destroy();
         }
     }
 }
