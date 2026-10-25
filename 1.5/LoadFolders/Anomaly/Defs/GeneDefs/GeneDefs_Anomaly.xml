@@ -17,7 +17,7 @@
 		<defName>RS_VoidTouched</defName>
 		<label>void touched</label>
 		<labelShortAdj>void-touched</labelShortAdj>
-		<description>Carriers of this gene have seen the depths of the void and drank from its essence. It lives inside them still, guiding their actions and twisting their flesh. It has turned their hair brittle and white. They no longer need sleep or comfort. The void provides for them.</description>
+		<description>Carriers of this gene have seen the depths of the void and drunk from its essence. It lives inside them still, guiding their actions and twisting their flesh. It has turned their hair brittle and white. They no longer need sleep or comfort. The void provides for them.</description>
 		<iconPath>UI/Icons/Genes/Gene_VoidTouched</iconPath>
 		<displayOrderInCategory>0</displayOrderInCategory>
 		<selectionWeight>0</selectionWeight>
@@ -365,7 +365,7 @@
 	</GeneDef>
 	<GeneDef ParentName="RS_GeneTentacleBase">
 		<defName>RS_Tentacle_Whip</defName>
-		<label>flesh whips limbs</label>
+		<label>flesh whips</label>
 		<geneClass>ReSpliceCore.Gene_FleshWhips</geneClass>
 		<description>Carriers of this gene grow tentacle-like appendages with sharp bone-like spikes made from bioferrite instead of one or two of their arms.</description>
 		<iconPath>UI/Icons/Genes/Gene_WhipLimbs</iconPath>

@@ -4,7 +4,7 @@
 	<ResearchProjectDef>
 		<defName>RS_DarkArchiteHarvesting</defName>
 		<label>dark archite harvesting</label>
-		<description>Perform a psychic ritual that harvests a targets dark archite genes, ripping them from their body, killing them in the process. The harvested genes will be stored in a voidspike and can be reimplanted into another person afterwards.</description>
+		<description>Perform a psychic ritual that harvests a target's dark archite genes, ripping them from their body, killing them in the process. The harvested genes will be stored in a voidspike and can be reimplanted into another person afterwards.</description>
 		<tab>Anomaly</tab>
 		<prerequisites>
 			<li>AdvancedPsychicRituals</li>
@@ -15,7 +15,7 @@
 		<researchViewY>1.80</researchViewY>
 		<generalRules>
 			<rulesStrings>
-				<li>subject->dark archite hervesting</li>
+				<li>subject->dark archite harvesting</li>
 				<li>subject->ripping corrupted genes</li>
 				<li>subject_story->researched dark archite genes</li>
 				<li>subject_story->gathered tales of corrupted archite genes</li>

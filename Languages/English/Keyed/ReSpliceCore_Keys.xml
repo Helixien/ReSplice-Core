@@ -2,12 +2,12 @@
 <LanguageData>
 	<!-- ================================ Gene Centrifuge ====================== -->
 	<RS.SeparateGene>Separate gene</RS.SeparateGene>
-	<RS.SeparateGeneDesc>Select a genepack from which to separate a gene from.</RS.SeparateGeneDesc>
+	<RS.SeparateGeneDesc>Select a genepack from which to separate a gene.</RS.SeparateGeneDesc>
 	<RS.SeparatingGenes>Separating Genes</RS.SeparatingGenes>
 	<RS.SelectGene>Select gene</RS.SelectGene>
 	<RS.SelectGeneExplanation>The selected gene will be separated from the rest of the gene pack.</RS.SelectGeneExplanation>
 	<RS.SeparateGeneExplanation>After successful separation two genepacks will be spawned. One only with the selected gene, the other one with the rest. This process is not perfect and there is a small chance of one of the gene packs being destroyed.</RS.SeparateGeneExplanation>
-	<RS.StartSeparating>Start gene separating</RS.StartSeparating>
+	<RS.StartSeparating>Start gene separation</RS.StartSeparating>
 	<RS.FinishedSeparatingMessage>Gene centrifuge finished separating genepacks!</RS.FinishedSeparatingMessage>
 	<RS.FinishedSeparatingDestroyedMessage>Gene centrifuge finished separating genepacks! {0} was destroyed during the process.</RS.FinishedSeparatingDestroyedMessage>
 	<RS.SeparatingProgress>Separating: {0}</RS.SeparatingProgress>
@@ -36,7 +36,7 @@
 	<RS.DuplicationProgress>Duplicating: {0}</RS.DuplicationProgress>
 	<RS.ContainsXenogerm>Contains: {0}</RS.ContainsXenogerm>
 	<RS.FinishedXenogermDuplicationMessage>Xenogerm duplicator finished duplicating xenogerm!</RS.FinishedXenogermDuplicationMessage>
-	<RS.NotEnoughArchiteCapsulesLoaded>Do you really want to duplicate the xenogerm? Not enough archite capsules are loaded to duplicate all any archite genes inside the xenogerm.</RS.NotEnoughArchiteCapsulesLoaded>
+	<RS.NotEnoughArchiteCapsulesLoaded>Do you really want to duplicate the xenogerm? Not enough archite capsules are loaded to duplicate all archite genes inside the xenogerm.</RS.NotEnoughArchiteCapsulesLoaded>
 	<RS.EjectArchites>Eject archite capsules</RS.EjectArchites>
 	<RS.EjectArchitesDesc>Eject all contained archite capsules onto the ground.</RS.EjectArchitesDesc>
 	<RS.TargetArchiteCapsuleLevel>Target archite capsule amount: {0}</RS.TargetArchiteCapsuleLevel>
@@ -48,7 +48,7 @@
 	<RS.LetterDarkArchiteOrderedInfused>You have ordered a voidspike to be infused into {PAWN_nameDef}. This procedure requires a medical bed.\n\nYou can cancel this procedure by going to {PAWN_nameDef}'s health -> operations tab.</RS.LetterDarkArchiteOrderedInfused>
 	<RS.OrderInfusionIntoPawn>Order infusion into {PAWN_nameDef}</RS.OrderInfusionIntoPawn>
 	<RS.InfuseDarkArchiteDesc>Infuse this into a person to introduce a dark archite gene into their genetic code.\n\nThis is a surgical operation, so it requires a doctor and medical bed.</RS.InfuseDarkArchiteDesc>
-	<RS.CancelInfusion>Cansel infusion</RS.CancelInfusion>
+	<RS.CancelInfusion>Cancel infusion</RS.CancelInfusion>
 	<RS.CancelInfusingDesc>Cancel infusing this voidspike into {PAWN_nameDef}.</RS.CancelInfusingDesc>
 	<RS.MessageCannotInfuseInTempFactionMembers>Cannot infuse in temporary faction members.</RS.MessageCannotInfuseInTempFactionMembers>
 	<RS.TargetMustHaveAtLeastOneDarkGene>Target must have at least one dark archite gene.</RS.TargetMustHaveAtLeastOneDarkGene>

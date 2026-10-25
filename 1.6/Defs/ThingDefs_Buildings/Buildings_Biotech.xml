@@ -4,7 +4,7 @@
 	<ThingDef ParentName="GeneBuildingBase">
 		<defName>RS_GeneVault</defName>
 		<label>gene vault</label>
-		<description>A combination gene processor combined with two advanced gene banks. This building, when placed near a gene assembler, increases the maximum genetic complexity of the xenogerms you can assemble, as well as access a plethora of stored genepacks during their creation.\n\nWhen powered, gene vaults prevent genepacks from deteriorating and will slow repair deterioration.</description>
+		<description>A combination gene processor combined with two advanced gene banks. This building, when placed near a gene assembler, increases the maximum genetic complexity of the xenogerms you can assemble, as well as access a plethora of stored genepacks during their creation.\n\nWhen powered, gene vaults prevent genepacks from deteriorating and will slowly repair deterioration.</description>
 		<graphicData>
 			<texPath>Things/Building/Misc/GeneVault/GeneVault</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -73,7 +73,7 @@
 	<ThingDef ParentName="GeneBuildingBase">
 		<defName>RS_GeneRepository</defName>
 		<label>gene repository</label>
-		<description>This building can store an huge amount of genepacks and make them usable to create new xenogerms, when placed near a gene assembler. Large gene libraries can be made more space efficient with gene registers.\n\nWhen powered, gene registers prevent genepacks from deteriorating and will slowly repair deterioration.</description>
+		<description>This building can store a huge amount of genepacks and make them usable to create new xenogerms, when placed near a gene assembler. Large gene libraries can be made more space efficient with gene repositories.\n\nWhen powered, gene repositories prevent genepacks from deteriorating and will slowly repair deterioration.</description>
 		<graphicData>
 			<texPath>Things/Building/Misc/GeneRepository/GeneRepository</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -141,7 +141,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>RS_GeneCentrifuge</defName>
 		<label>gene centrifuge</label>
-		<description>A complex centrifugal system capable of separating desirable genetic elements by exploiting minute molecular differences. In effect, this building can separate a desired gene from the rest of a genepack. After the process, two gene packs will be spawned, with the selected gene in one and the remaining genes in the other.</description>
+		<description>A complex centrifugal system capable of separating desirable genetic elements by exploiting minute molecular differences. In effect, this building can separate a desired gene from the rest of a genepack. After the process, two gene packs will be spawned, with the selected gene in one and the remaining genes in the other.\n\nIt can also combine two genepacks into a single genepack containing their genes.</description>
 		<thingClass>ReSpliceCore.Building_GeneCentrifuge</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Misc/GeneCentrifuge</texPath>
@@ -199,7 +199,7 @@
 		<defName>RS_XenoGermDuplicator</defName>
 		<label>xenogerm duplicator</label>
 		<thingClass>ReSpliceCore.Building_XenogermDuplicator</thingClass>
-		<description>A deceptively simple machine that synthesises genetic material in order to mass manufacture an exact copy of an existing xenogerms. This building can duplicate any existing xenogerm, including any present archite genes, as long as it is supplied with the required amount of archite capsules.</description>
+		<description>A deceptively simple machine that synthesises genetic material in order to mass manufacture an exact copy of an existing xenogerm. This building can duplicate any existing xenogerm, including any present archite genes, as long as it is supplied with the required amount of archite capsules.</description>
 		<graphicData>
 			<texPath>Things/Building/Misc/XenoGermDuplicator</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
