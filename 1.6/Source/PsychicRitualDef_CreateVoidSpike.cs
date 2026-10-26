@@ -24,6 +24,10 @@ namespace ReSpliceCore
         {
             using (new ProfilerBlock("PsychicRitualDef.BlockingIssues"))
             {
+                foreach (var issue in base.BlockingIssues(assignments, map))
+                {
+                    yield return issue;
+                }
                 var pawn = assignments.FirstAssignedPawn(TargetRole);
                 if (pawn?.genes != null)
                 {

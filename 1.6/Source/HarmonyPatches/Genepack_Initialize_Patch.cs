@@ -54,15 +54,6 @@ namespace ReSpliceCore
         }
     }
 
-    [HarmonyPatch(typeof(Genepack), "TickRare")]
-    public static class Genepack_TickRare_Patch
-    {
-        public static void Postfix(Genepack __instance)
-        {
-            __instance.TryAssignDarkArchiteGraphic();
-        }
-    }
-
     [HarmonyPatch(typeof(Genepack), "PostMake")]
     public static class Genepack_PostMake_Patch
     {

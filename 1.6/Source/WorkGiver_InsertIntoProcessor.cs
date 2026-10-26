@@ -30,21 +30,29 @@ namespace ReSpliceCore
 
         public override IEnumerable<Thing> PotentialWorkThingsGlobal(Pawn pawn)
         {
-            var things = new List<Thing>();
-            var genebanks = RS_Utils.allGeneBanks.SelectMany(x => pawn.Map.listerThings.ThingsOfDef(x)).Where(x => pawn.CanReserveAndReach(x, PathEndMode.Touch, Danger.Deadly)).ToList();
-            foreach (var thing in TargetThings)
+            var pending = pawn.Map.listerThings.ThingsOfDef(ProcessorDef).Cast<Building_Processor>().Where(x => x.HasPendingOrder).ToList();
+            if (pending.Count == 0)
             {
-                things.AddRange(pawn.Map.listerThings.ThingsOfDef(thing)
-                .Where(x => pawn.CanReserveAndReach(x, PathEndMode.Touch, Danger.Deadly)));
+                yield break;
             }
-            foreach (var thing in genebanks)
+            foreach (var def in TargetThings)
             {
-                if (pawn.CanReserveAndReach(thing, PathEndMode.Touch, Danger.Deadly))
+                foreach (var thing in pawn.Map.listerThings.ThingsOfDef(def))
                 {
-                    things.Add(thing);
+                    if (pending.Any(x => x.Accepts(thing)) && pawn.CanReserveAndReach(thing, PathEndMode.Touch, Danger.Deadly))
+                    {
+                        yield return thing;
+                    }
                 }
             }
-            return things;
+            foreach (var bank in RS_Utils.allGeneBanks.SelectMany(x => pawn.Map.listerThings.ThingsOfDef(x)))
+            {
+                var comp = bank.TryGetComp<CompGenepackContainer>();
+                if (comp.ContainedGenepacks.Any(gene => pending.Any(x => x.Accepts(gene))) && pawn.CanReserveAndReach(bank, PathEndMode.Touch, Danger.Deadly))
+                {
+                    yield return bank;
+                }
+            }
         }
 
         public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false)

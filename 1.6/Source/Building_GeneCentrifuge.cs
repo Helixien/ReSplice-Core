@@ -24,6 +24,10 @@ namespace ReSpliceCore
         
         public bool IsCombining => firstGenepackToCombine != null && secondGenepackToCombine != null && innerContainer.Contains(firstGenepackToCombine) && innerContainer.Contains(secondGenepackToCombine);
 
+        public bool Busy => genepackToStore is not null || firstGenepackToCombine is not null || secondGenepackToCombine is not null || innerContainer.Count > 0;
+
+        public override bool HasPendingOrder => genepackToStore is not null || firstGenepackToCombine is not null || secondGenepackToCombine is not null;
+
         public override SoundDef SustainerDef => RS_DefOf.RS_GeneCentrifuge_Ambience;
 
         public override IEnumerable<Gizmo> GetGizmos()
@@ -60,7 +64,7 @@ namespace ReSpliceCore
                         Find.WindowStack.Add(new FloatMenu(floatList));
                     }
                 };
-                if (IsSeparating || IsCombining)
+                if (Busy)
                 {
                     separateGene.Disable("RS.CentrigureWorking".Translate());
                 }
@@ -111,7 +115,7 @@ namespace ReSpliceCore
                     }
                 };
 
-                if (IsSeparating || IsCombining)
+                if (Busy)
                 {
                     combineGene.Disable("RS.CentrigureWorking".Translate());
                 }
@@ -175,6 +179,7 @@ namespace ReSpliceCore
                 {
                     firstGenepackToCombine = packs[0];
                     secondGenepackToCombine = packs[1];
+                    cachedCombinationDuration = -1;
                 }
             }
         }
@@ -219,6 +224,8 @@ namespace ReSpliceCore
                 {
                     GenPlace.TryPlaceThing(genepackToStore, Position, Map, ThingPlaceMode.Near, extraValidator: (IntVec3 x) => x.GetFirstThing<Building_GeneCentrifuge>(this.Map) is null);
                     Log.Error(this + " finished separating gene, but there was no specified gene to separate. Perhaps it was removed from the game? Spawning the full genepack instead.");
+                    EjectContents();
+                    JobCleanup();
                     return;
                 }
                 SeparateGenepack(genepackToStore);
@@ -236,6 +243,7 @@ namespace ReSpliceCore
             var newGenepack = (Genepack)ThingMaker.MakeThing(storedGenepack.def);
             storedGenepack.GeneSet.genes.Remove(geneToSeparate);
             storedGenepack.GeneSet.DirtyCache();
+            storedGenepack.TryAssignDarkArchiteGraphic();
             newGenepack.Initialize(new List<GeneDef>
                     {
                         geneToSeparate
@@ -283,6 +291,7 @@ namespace ReSpliceCore
             genepackToStore = null;
             firstGenepackToCombine = null;
             secondGenepackToCombine = null;
+            cachedCombinationDuration = -1;
         }
 
         public int ExtractionDuration(Genepack genepack)
@@ -294,10 +303,24 @@ namespace ReSpliceCore
             return 120000;
         }
 
+        private int cachedCombinationDuration = -1;
+
         public int CombinationDuration(List<Genepack> genepacks = null)
         {
+            if (genepacks is not null)
+            {
+                return CombinationDurationUnchecked(genepacks);
+            }
+            if (cachedCombinationDuration < 0)
+            {
+                cachedCombinationDuration = CombinationDurationUnchecked(innerContainer.OfType<Genepack>().ToList());
+            }
+            return cachedCombinationDuration;
+        }
+
+        private int CombinationDurationUnchecked(List<Genepack> packs)
+        {
             var duration = 0;
-            var packs = genepacks ?? innerContainer.OfType<Genepack>().ToList();
             foreach (var pack in packs)
             {
                 foreach (var gene in pack.GeneSet.GenesListForReading)
@@ -329,6 +352,7 @@ namespace ReSpliceCore
         {
             firstGenepackToCombine = first;
             secondGenepackToCombine = second;
+            cachedCombinationDuration = -1;
         }
 
         public void FinishCombination()

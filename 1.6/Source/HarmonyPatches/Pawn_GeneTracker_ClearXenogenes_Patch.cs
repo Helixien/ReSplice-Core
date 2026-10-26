@@ -24,6 +24,8 @@ namespace ReSpliceCore
             {
                 __instance.xenogenes.Add(gene);
             }
+            __instance.cachedGenes = null;
+            __instance.CheckForOverrides();
         }
     }
 }

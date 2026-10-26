@@ -14,7 +14,8 @@ namespace ReSpliceCore
         public Genepack genepack;
         private static Vector2 scrollPosition;
         public GeneDef chosenGene;
-        public List<List<GeneDef>> GeneChunks => genepack.GeneSet.GenesListForReading.ChunkBy(3);
+        private List<List<GeneDef>> geneChunksCached;
+        public List<List<GeneDef>> GeneChunks => geneChunksCached ??= genepack.GeneSet.GenesListForReading.ChunkBy(3);
         public override Vector2 InitialSize => new Vector2(600, GeneChunks.Count == 1 ? 500 : 675);
         public Window_SeparateGene(Building_GeneCentrifuge centrifuge, Genepack genepack)
         {
@@ -84,7 +85,7 @@ namespace ReSpliceCore
                 this.Close();
             }
             var acceptButtonRect = new Rect(inRect.width - 30 - buttonWidth, cancelButtonRect.y, buttonWidth, 32);
-            if (Widgets.ButtonText(acceptButtonRect, "RS.StartSeparating".Translate()))
+            if (Widgets.ButtonText(acceptButtonRect, "RS.StartSeparating".Translate(), active: centrifuge.Busy is false))
             {
                 if (chosenGene != null)
                 {

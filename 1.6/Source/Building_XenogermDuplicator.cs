@@ -15,6 +15,8 @@ namespace ReSpliceCore
 
         public Xenogerm xenogermToDuplicate;
         public Xenogerm StoredXenogerm => this.innerContainer.OfType<Xenogerm>().FirstOrDefault();
+
+        public override bool HasPendingOrder => xenogermToDuplicate is not null;
         public override SoundDef SustainerDef => RS_DefOf.RS_XenoGermDuplicator_Ambience;
 
         public CompRefuelable compRefuelable;
@@ -46,8 +48,7 @@ namespace ReSpliceCore
                         {
                             floatList.Add(new FloatMenuOption(xenogerm.LabelCap, delegate
                             {
-                                var architeGenes = xenogerm.GeneSet.ArchitesTotal;
-                                if (this.compRefuelable.Fuel < architeGenes)
+                                if (xenogerm.GeneSet.ArchitesTotal > 0 && compRefuelable.Fuel < 1)
                                 {
                                     Find.WindowStack.Add(new Dialog_MessageBox("RS.NotEnoughArchiteCapsulesLoaded".Translate(),
                                         "Confirm".Translate(), delegate
@@ -86,13 +87,10 @@ namespace ReSpliceCore
                         defaultDesc = "RS.CancelXenogermDuplicationDesc".Translate(),
                         activateSound = SoundDefOf.Tick_Tiny,
                         icon = CancelIcon,
-                        action = delegate ()
+                        action = () =>
                         {
+                            EjectContents();
                             JobCleanup();
-                            if (StoredXenogerm != null)
-                            {
-                                this.EjectContents();
-                            }
                         }
                     };
                 }

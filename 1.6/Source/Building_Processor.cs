@@ -91,6 +91,8 @@ namespace ReSpliceCore
             return this.innerContainer.CanAcceptAnyOf(thing, true);
         }
 
+        public virtual bool HasPendingOrder => false;
+
         public bool TryAcceptThing(Thing thing, bool allowSpecialEffects = true)
         {
             if (!this.Accepts(thing))
@@ -99,7 +101,7 @@ namespace ReSpliceCore
             }
             if (thing.holdingOwner != null)
             {
-                thing.holdingOwner.TryTransferToContainer(thing, this.innerContainer, thing.stackCount, true);
+                return thing.holdingOwner.TryTransferToContainer(thing, innerContainer, thing.stackCount) > 0;
             }
             else if (this.innerContainer.TryAdd(thing, true))
             {

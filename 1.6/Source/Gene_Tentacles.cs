@@ -13,18 +13,13 @@ namespace ReSpliceCore
             if (pawn.health.hediffSet.GetFirstHediffOfDef(TentacleDef) is null)
             {
                 var countToAdd = Rand.RangeInclusive(1, 2);
-                var bodyParts = pawn.RaceProps.body.GetPartsWithDef(TentacleDef.defaultInstallPart).InRandomOrder().ToList();
-                if (bodyParts.Count >= countToAdd)
+                var bodyParts = pawn.RaceProps.body.GetPartsWithDef(TentacleDef.defaultInstallPart)
+                    .Where(part => pawn.health.hediffSet.PartIsMissing(part) is false
+                        && pawn.health.hediffSet.HasDirectlyAddedPartFor(part) is false)
+                    .InRandomOrder().ToList();
+                for (var i = 0; i < countToAdd && i < bodyParts.Count; i++)
                 {
-                    for (var i = 0; i < countToAdd; i++)
-                    {
-                        var part = bodyParts[i];
-                        if (pawn.health.hediffSet.PartIsMissing(part) is false
-                            && pawn.health.hediffSet.HasDirectlyAddedPartFor(part) is false)
-                        {
-                            pawn.health.AddHediff(TentacleDef, part);
-                        }
-                    }
+                    pawn.health.AddHediff(TentacleDef, bodyParts[i]);
                 }
             }
         }

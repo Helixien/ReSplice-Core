@@ -62,7 +62,7 @@ namespace ReSpliceCore
             }
             int trueMax = RS_DefOf.RS_InfusionComa.CompProps<HediffCompProperties_Disappears>().disappearsAfterTicks.TrueMax;
             TaggedString text = "RS.InfuseDarkArchiteWarningDesc".Translate(newTarget.Named("PAWN"), trueMax.ToStringTicksToPeriod().Named("COMADURATION"));
-            int num = GeneUtility.MetabolismAfterImplanting(newTarget, geneSet);
+            var num = MetabolismAfterInfusion(newTarget, geneSet);
             text += "\n\n" + "RS.InfuseDarkArchiteWarningNewMetabolism".Translate(newTarget.Named("PAWN"), num.Named("MET"), GeneTuning.MetabolismToFoodConsumptionFactorCurve.Evaluate(num).ToStringPercent().Named("CONSUMPTION"));
             text += "\n\n" + "WouldYouLikeToContinue".Translate();
             Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation(text, delegate
@@ -132,7 +132,7 @@ namespace ReSpliceCore
             {
                 yield break;
             }
-            int num = GeneUtility.MetabolismAfterImplanting(selPawn, geneSet);
+            int num = MetabolismAfterInfusion(selPawn, geneSet);
             if (num < GeneTuning.BiostatRange.TrueMin)
             {
                 yield return new FloatMenuOption("CannotGenericWorkCustom".Translate((string)("RS.OrderInfusionIntoPawn".Translate(selPawn.Named("PAWN")).Resolve().UncapitalizeFirst() + ": " + "ResultingMetTooLow".Translate() + " (") + num + ")"), null);
@@ -147,6 +147,14 @@ namespace ReSpliceCore
             {
                 SetTargetPawn(selPawn);
             });
+        }
+
+        private static int MetabolismAfterInfusion(Pawn pawn, GeneSet geneSet)
+        {
+            var typedGenes = pawn.genes.Endogenes.Select(endogene => new GeneDefWithType(endogene.def, xenogene: false)).ToList();
+            typedGenes.AddRange(pawn.genes.Xenogenes.Select(xenogene => new GeneDefWithType(xenogene.def, xenogene: true)));
+            typedGenes.AddRange(geneSet.GenesListForReading.Select(gene => new GeneDefWithType(gene, xenogene: true)));
+            return typedGenes.NonOverriddenGenes().Sum((GeneDef x) => x.biostatMet);
         }
 
         public bool PawnIdeoDisallowsInfusing(Pawn selPawn)
