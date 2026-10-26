@@ -3,7 +3,7 @@
 	<RecipeDef ParentName="SurgeryFlesh">
 		<defName>RS_InfuseDarkArchite</defName>
 		<label>Infuse dark archite</label>
-		<description>placeholder</description>
+		<description>Infuse a voidspike into a person to add its dark archite gene to their genetic code. This procedure requires a doctor and a medical bed.\n\nAfter infusion, the recipient enters a coma lasting one to three days, depending on the quality of the surgery.</description>
 		<jobString>infusing dark archite.</jobString>
 		<workerClass>ReSpliceCore.Recipe_InfuseDarkArchite</workerClass>
 		<workAmount>2000</workAmount>

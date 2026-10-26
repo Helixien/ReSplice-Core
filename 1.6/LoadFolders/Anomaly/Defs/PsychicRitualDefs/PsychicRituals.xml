@@ -3,9 +3,9 @@
 	<ReSpliceCore.PsychicRitualDef_CreateVoidSpike>
 		<defName>RS_DarkArchiteHarvesting</defName>
 		<label>dark archite harvesting</label>
-		<description>text.todo</description>
+		<description>Attempt to extract one of the target's dark archite genes and bind it into a voidspike. The voidspike can then be infused into another person.\n\nThe target will be killed and their corpse destroyed even if the harvest fails.</description>
 		<iconPath>UI/PsychicRituals/Hex_DarkArchiteHarvest</iconPath>
-		<outcomeDescription>One of the target’s dark archite genes will be harvested.\n\nWith the current ritual quality, chance of a successful harvest is {0}.</outcomeDescription>
+		<outcomeDescription>The target will be killed and their corpse destroyed even if the harvest fails. A successful harvest produces one voidspike containing a randomly selected dark archite gene from the target.\n\nWith the current ritual quality, the chance of a successful harvest is {0}.</outcomeDescription>
 		<researchPrerequisite>RS_DarkArchiteHarvesting</researchPrerequisite>
 		<hoursUntilOutcome>8</hoursUntilOutcome>
 		<targetRole>RS_HarvestTarget</targetRole>
