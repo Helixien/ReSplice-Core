@@ -93,6 +93,8 @@ namespace ReSpliceCore
 
         public virtual bool HasPendingOrder => false;
 
+        public bool NeedsInput(Thing thing) => Accepts(thing) && !innerContainer.Contains(thing);
+
         public bool TryAcceptThing(Thing thing, bool allowSpecialEffects = true)
         {
             if (!this.Accepts(thing))

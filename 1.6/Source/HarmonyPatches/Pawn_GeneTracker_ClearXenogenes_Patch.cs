@@ -26,6 +26,7 @@ namespace ReSpliceCore
             }
             __instance.cachedGenes = null;
             __instance.CheckForOverrides();
+            __instance.Notify_GenesChanged(__state[0].def);
         }
     }
 }

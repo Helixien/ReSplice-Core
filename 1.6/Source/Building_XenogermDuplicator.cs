@@ -48,7 +48,8 @@ namespace ReSpliceCore
                         {
                             floatList.Add(new FloatMenuOption(xenogerm.LabelCap, delegate
                             {
-                                if (xenogerm.GeneSet.ArchitesTotal > 0 && compRefuelable.Fuel < 1)
+                                var architeGenes = xenogerm.GeneSet.GenesListForReading.Count(gene => gene.biostatArc > 0);
+                                if (compRefuelable.Fuel < architeGenes)
                                 {
                                     Find.WindowStack.Add(new Dialog_MessageBox("RS.NotEnoughArchiteCapsulesLoaded".Translate(),
                                         "Confirm".Translate(), delegate

@@ -39,7 +39,7 @@ namespace ReSpliceCore
             {
                 foreach (var thing in pawn.Map.listerThings.ThingsOfDef(def))
                 {
-                    if (pending.Any(x => x.Accepts(thing)) && pawn.CanReserveAndReach(thing, PathEndMode.Touch, Danger.Deadly))
+                    if (pending.Any(x => x.NeedsInput(thing)) && pawn.CanReserveAndReach(thing, PathEndMode.Touch, Danger.Deadly))
                     {
                         yield return thing;
                     }
@@ -48,7 +48,7 @@ namespace ReSpliceCore
             foreach (var bank in RS_Utils.allGeneBanks.SelectMany(x => pawn.Map.listerThings.ThingsOfDef(x)))
             {
                 var comp = bank.TryGetComp<CompGenepackContainer>();
-                if (comp.ContainedGenepacks.Any(gene => pending.Any(x => x.Accepts(gene))) && pawn.CanReserveAndReach(bank, PathEndMode.Touch, Danger.Deadly))
+                if (comp.ContainedGenepacks.Any(gene => pending.Any(x => x.NeedsInput(gene))) && pawn.CanReserveAndReach(bank, PathEndMode.Touch, Danger.Deadly))
                 {
                     yield return bank;
                 }
@@ -80,7 +80,7 @@ namespace ReSpliceCore
             }
             var temp = toBeCarried;
             var storages = hauler.Map.listerThings.ThingsOfDef(ProcessorDef).Cast<Building_Processor>()
-            .Where(x => x.Accepts(temp) && hauler.CanReserveAndReach(x, PathEndMode.Touch, Danger.Deadly)).ToList();
+            .Where(x => x.NeedsInput(temp) && hauler.CanReserveAndReach(x, PathEndMode.Touch, Danger.Deadly)).ToList();
             return storages;
         }
 
@@ -89,7 +89,7 @@ namespace ReSpliceCore
             foreach (var gene in comp.ContainedGenepacks)
             {
                 var storages = hauler.Map.listerThings.ThingsOfDef(ProcessorDef).Cast<Building_Processor>()
-                    .Where(x => x.Accepts(gene) && hauler.CanReserveAndReach(x, PathEndMode.Touch, Danger.Deadly)).ToList();
+                    .Where(x => x.NeedsInput(gene) && hauler.CanReserveAndReach(x, PathEndMode.Touch, Danger.Deadly)).ToList();
                 if (storages.Any())
                 {
                     return gene;

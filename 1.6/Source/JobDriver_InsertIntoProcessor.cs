@@ -13,13 +13,7 @@ namespace ReSpliceCore
             this.FailOnDestroyedNullOrForbidden(TargetIndex.B);
             this.FailOn(delegate
             {
-                ThingOwner thingOwner = Container.TryGetInnerInteractableThingOwner();
-                if (thingOwner != null && !thingOwner.CanAcceptAnyOf(ThingToCarry))
-                {
-                    return true;
-                }
-                IHaulDestination haulDestination = Container as IHaulDestination;
-                return (haulDestination != null && !haulDestination.Accepts(ThingToCarry)) ? true : false;
+                return !((Building_Processor)Container).Accepts(ThingToCarry);
             });
             Toil getToHaulTarget = Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.ClosestTouch)
                 .FailOnSomeonePhysicallyInteracting(TargetIndex.A);

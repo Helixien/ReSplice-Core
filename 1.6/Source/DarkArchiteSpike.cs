@@ -212,7 +212,7 @@ namespace ReSpliceCore
                             Pawn pawn = item;
                             if (!pawn.IsQuestLodger() && pawn.genes != null && (pawn.IsColonistPlayerControlled || pawn.IsPrisonerOfColony || pawn.IsSlaveOfColony || (pawn.IsColonySubhuman && pawn.IsGhoul)))
                             {
-                                int num = GeneUtility.MetabolismAfterImplanting(pawn, geneSet);
+                                int num = MetabolismAfterInfusion(pawn, geneSet);
                                 if (num < GeneTuning.BiostatRange.TrueMin)
                                 {
                                     list.Add(new FloatMenuOption((string)(pawn.LabelShortCap + ": " + "ResultingMetTooLow".Translate() + " (") + num + ")", null, pawn, Color.white));
