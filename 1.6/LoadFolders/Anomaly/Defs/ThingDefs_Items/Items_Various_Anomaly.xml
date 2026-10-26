@@ -14,7 +14,7 @@
 		<useHitPoints>true</useHitPoints>
 		<stackLimit>1</stackLimit>
 		<canDeteriorateUnspawned>false</canDeteriorateUnspawned>
-		<deteriorateFromEnvironmentalEffects>false</deteriorateFromEnvironmentalEffects>
+		<deteriorateFromEnvironmentalEffects>true</deteriorateFromEnvironmentalEffects>
 		<statBases>
 			<MarketValue>500</MarketValue>
 			<DeteriorationRate>20</DeteriorationRate>

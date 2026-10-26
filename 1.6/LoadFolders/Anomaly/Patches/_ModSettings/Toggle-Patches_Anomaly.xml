@@ -20,7 +20,7 @@
 	<Operation Class="ModSettingsFramework.PatchOperationModOption">
 		<defaultValue>False</defaultValue>
 		<label>Disable voidspike degrading</label>
-		<tooltip>When enabled voidspikes will not degrade. (Default: False)</tooltip>
+		<tooltip>When enabled, voidspikes will not deteriorate from environmental exposure. (Default: False)</tooltip>
 		<id>RS_VoidspikeDegradation</id>
 		<category>RS_Anomaly</category>
 		<order>5</order>
@@ -28,11 +28,14 @@
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[defName="RS_DarkArchiteSpike"]/deteriorateFromEnvironmentalEffects</xpath>
 				<value>
-					<deteriorateFromEnvironmentalEffects>true</deteriorateFromEnvironmentalEffects>
+					<deteriorateFromEnvironmentalEffects>false</deteriorateFromEnvironmentalEffects>
 				</value>
 			</li>
-			<li Class="PatchOperationRemove">
+			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[defName="RS_DarkArchiteSpike"]/statBases/DeteriorationRate</xpath>
+				<value>
+					<DeteriorationRate>0</DeteriorationRate>
+				</value>
 			</li>
 		</operations>
 	</Operation>
