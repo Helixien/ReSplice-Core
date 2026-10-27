@@ -13,7 +13,7 @@ namespace ReSpliceCore
             this.FailOnDestroyedNullOrForbidden(TargetIndex.B);
             this.FailOn(delegate
             {
-                return !((Building_Processor)Container).Accepts(ThingToCarry);
+                return !((Building_Processor)Container).Accepts(job.GetTarget(TargetIndex.C).Thing);
             });
             Toil getToHaulTarget = Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.ClosestTouch)
                 .FailOnSomeonePhysicallyInteracting(TargetIndex.A);
