@@ -14,9 +14,23 @@ namespace ReSpliceCore
         public static Texture2D InsertXenogerm = ContentFinder<Texture2D>.Get("UI/Gizmos/InsertXenogerm");
 
         public Xenogerm xenogermToDuplicate;
-        public Xenogerm StoredXenogerm => this.innerContainer.OfType<Xenogerm>().FirstOrDefault();
 
-        public override bool HasPendingOrder => xenogermToDuplicate is not null;
+        public Xenogerm StoredXenogerm
+        {
+            get
+            {
+                foreach (var item in innerContainer)
+                {
+                    if (item is Xenogerm xenogerm)
+                    {
+                        return xenogerm;
+                    }
+                }
+                return null;
+            }
+        }
+
+        public override bool HasPendingOrder => xenogermToDuplicate is not null && !innerContainer.Contains(xenogermToDuplicate);
         public override SoundDef SustainerDef => RS_DefOf.RS_XenoGermDuplicator_Ambience;
 
         public CompRefuelable compRefuelable;
@@ -34,6 +48,7 @@ namespace ReSpliceCore
             }
             if (Faction == Faction.OfPlayer)
             {
+                var storedXenogerm = StoredXenogerm;
                 var separateGene = new Command_Action
                 {
                     defaultLabel = "RS.DuplicateXenogerm".Translate(),
@@ -70,7 +85,7 @@ namespace ReSpliceCore
                         Find.WindowStack.Add(new FloatMenu(floatList));
                     }
                 };
-                if (StoredXenogerm != null)
+                if (storedXenogerm is not null)
                 {
                     separateGene.Disable("RS.DuplicatorWorking".Translate());
                 }
@@ -80,7 +95,7 @@ namespace ReSpliceCore
                 }
                 yield return separateGene;
 
-                if (StoredXenogerm != null || xenogermToDuplicate != null)
+                if (storedXenogerm is not null || xenogermToDuplicate is not null)
                 {
                     yield return new Command_Action
                     {
@@ -96,7 +111,7 @@ namespace ReSpliceCore
                     };
                 }
 
-                if (Prefs.DevMode && StoredXenogerm != null)
+                if (Prefs.DevMode && storedXenogerm is not null)
                 {
                     Command_Action command_Action = new Command_Action
                     {
@@ -124,11 +139,12 @@ namespace ReSpliceCore
         public override string GetInspectString()
         {
             var sb = new StringBuilder();
-            if (StoredXenogerm != null)
+            var storedXenogerm = StoredXenogerm;
+            if (storedXenogerm is not null)
             {
-                var progress = ticksDone / (float)DuplicationDuration(StoredXenogerm);
+                var progress = ticksDone / (float)DuplicationDuration(storedXenogerm);
                 sb.AppendLine("RS.DuplicationProgress".Translate(progress.ToStringPercent()));
-                sb.AppendLine("RS.ContainsXenogerm".Translate(StoredXenogerm.Label));
+                sb.AppendLine("RS.ContainsXenogerm".Translate(storedXenogerm.Label));
             }
             sb.Append(base.GetInspectString());
             return sb.ToString();
@@ -137,9 +153,10 @@ namespace ReSpliceCore
         public override void Tick()
         {
             base.Tick();
-            if (Powered && StoredXenogerm != null)
+            var storedXenogerm = StoredXenogerm;
+            if (Powered && storedXenogerm is not null)
             {
-                var durationTicks = DuplicationDuration(StoredXenogerm);
+                var durationTicks = DuplicationDuration(storedXenogerm);
                 DoWork(durationTicks);
             }
         }

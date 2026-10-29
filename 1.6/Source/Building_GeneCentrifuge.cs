@@ -26,7 +26,10 @@ namespace ReSpliceCore
 
         public bool Busy => genepackToStore is not null || firstGenepackToCombine is not null || secondGenepackToCombine is not null || innerContainer.Count > 0;
 
-        public override bool HasPendingOrder => genepackToStore is not null || firstGenepackToCombine is not null || secondGenepackToCombine is not null;
+        public override bool HasPendingOrder =>
+            genepackToStore is not null && !innerContainer.Contains(genepackToStore)
+            || firstGenepackToCombine is not null && !innerContainer.Contains(firstGenepackToCombine)
+            || secondGenepackToCombine is not null && !innerContainer.Contains(secondGenepackToCombine);
 
         public override SoundDef SustainerDef => RS_DefOf.RS_GeneCentrifuge_Ambience;
 

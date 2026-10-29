@@ -73,24 +73,21 @@ namespace ReSpliceCore
         private IEnumerable<Building_Processor> GetProcessors(Pawn hauler, Thing targetThing, out Thing toBeCarried)
         {
             toBeCarried = targetThing;
+            var storages = hauler.Map.listerThings.ThingsOfDef(ProcessorDef).Cast<Building_Processor>().ToList();
             var comp = targetThing.TryGetComp<CompGenepackContainer>();
             if (comp != null)
             {
-                toBeCarried = GetGene(hauler, comp);
+                toBeCarried = GetGene(hauler, comp, storages);
             }
             var temp = toBeCarried;
-            var storages = hauler.Map.listerThings.ThingsOfDef(ProcessorDef).Cast<Building_Processor>()
-            .Where(x => x.NeedsInput(temp) && hauler.CanReserveAndReach(x, PathEndMode.Touch, Danger.Deadly)).ToList();
-            return storages;
+            return storages.Where(x => x.NeedsInput(temp) && hauler.CanReserveAndReach(x, PathEndMode.Touch, Danger.Deadly));
         }
 
-        public Thing GetGene(Pawn hauler, CompGenepackContainer comp)
+        public Thing GetGene(Pawn hauler, CompGenepackContainer comp, List<Building_Processor> storages)
         {
             foreach (var gene in comp.ContainedGenepacks)
             {
-                var storages = hauler.Map.listerThings.ThingsOfDef(ProcessorDef).Cast<Building_Processor>()
-                    .Where(x => x.NeedsInput(gene) && hauler.CanReserveAndReach(x, PathEndMode.Touch, Danger.Deadly)).ToList();
-                if (storages.Any())
+                if (storages.Any(x => x.NeedsInput(gene) && hauler.CanReserveAndReach(x, PathEndMode.Touch, Danger.Deadly)))
                 {
                     return gene;
                 }

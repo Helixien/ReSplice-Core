@@ -72,7 +72,7 @@ namespace ReSpliceCore
                 {
                     targetPawn.BillStack.Delete(bill);
                 }
-                CreateSurgeryBill(newTarget, RS_DefOf.RS_InfuseDarkArchite, null);
+                CreateSurgeryBill(newTarget, RS_DefOf.RS_InfuseDarkArchite, null, new List<Thing> { this });
                 targetPawn = newTarget;
                 SendLetter(newTarget);
             }, destructive: true));

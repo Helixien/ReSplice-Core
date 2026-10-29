@@ -8,14 +8,15 @@ namespace ReSpliceCore
     {
         public static void Postfix(Hediff __instance)
         {
+            var extension = __instance.def.GetModExtension<GeneExtension>();
+            if (extension is null)
+            {
+                return;
+            }
             if (__instance.pawn.RaceProps.Humanlike && __instance.pawn.health.hediffSet.hediffs.Any((Hediff a) => a.def == __instance.def) is false)
             {
-                var extension = __instance.def.GetModExtension<GeneExtension>();
-                if (extension != null)
-                {
-                    extension.TryRemoveXenogene(__instance.pawn);
-                    extension.TryRemoveEndogene(__instance.pawn);
-                }
+                extension.TryRemoveXenogene(__instance.pawn);
+                extension.TryRemoveEndogene(__instance.pawn);
             }
         }
     }

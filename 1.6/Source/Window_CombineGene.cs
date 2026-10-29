@@ -182,12 +182,6 @@ namespace ReSpliceCore
             for (int i = 0; i < genesListForReading.Count; i++)
             {
                 GeneDef gene = genesListForReading[i];
-                if (quickSearchWidget.filter.Active && matchingGenes.Contains(gene))
-                {
-                    matchingGenepacks.Contains(genepack);
-                }
-                else
-                    _ = 0;
                 bool overridden = leftChosenGroups.Any((GeneLeftChosenGroup x) => x.overriddenGenes.Contains(gene));
                 Rect geneRect = new Rect(curX, curY + 4f, GeneSize.x, GeneSize.y);
                 string extraTooltip = null;

@@ -12,8 +12,10 @@ namespace ReSpliceCore
         [HarmonyPriority(int.MinValue)]
         public static IEnumerable<Thing> Postfix(IEnumerable<Thing> result, Map map, ITrader trader = null)
         {
+            HashSet<Thing> yieldedThings = [];
             foreach (Thing thing in result)
             {
+                yieldedThings.Add(thing);
                 yield return thing;
             }
             HashSet<Thing> banks = [];
@@ -37,7 +39,10 @@ namespace ReSpliceCore
                 var comp = bank.TryGetComp<CompGenepackContainer>();
                 foreach (var genepack in comp.ContainedGenepacks.ToList())
                 {
-                    yield return genepack;
+                    if (yieldedThings.Add(genepack))
+                    {
+                        yield return genepack;
+                    }
                 }
             }
         }

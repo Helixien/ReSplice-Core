@@ -46,20 +46,17 @@ public class CompArchiteRefuelable : CompRefuelable
         if (!Props.targetFuelLevelConfigurable)
             return base.CompInspectStringExtra();
 
-        // Need to temporarily set the target fuel level configurable to false, so it doesn't add ConfiguredTargetFuelLevel string.
-        // Change "Target fuel level" to "Target archite capsule level".
-        try
+        var text = $"{Props.FuelLabel}: {fuel.ToStringDecimalIfSmall()} / {Props.fuelCapacity.ToStringDecimalIfSmall()}";
+        if (Props.consumeFuelOnlyWhenUsed is false && HasFuel)
         {
-            Props.targetFuelLevelConfigurable = false;
-
-            var text = base.CompInspectStringExtra();
-            text += "\n" + "RS.TargetArchiteCapsuleLevel".Translate(TargetFuelLevel.ToStringDecimalIfSmall());
-
-            return text;
+            var numTicks = (int)(fuel / Props.fuelConsumptionRate * 60000f);
+            text += $" ({numTicks.ToStringTicksToPeriod()})";
         }
-        finally
+        if (HasFuel is false && !Props.outOfFuelMessage.NullOrEmpty())
         {
-            Props.targetFuelLevelConfigurable = true;
+            string value = parent.def.building?.IsTurret is true ? ("CannotShoot".Translate() + ": " + Props.outOfFuelMessage).Resolve() : Props.outOfFuelMessage;
+            text += $"\n{value} ({GetFuelCountToFullyRefuel()}x {Props.fuelFilter.AnyAllowedDef.label})";
         }
+        return $"{text}\n" + "RS.TargetArchiteCapsuleLevel".Translate(TargetFuelLevel.ToStringDecimalIfSmall());
     }
 }
